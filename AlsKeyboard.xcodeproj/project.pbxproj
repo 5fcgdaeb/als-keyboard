@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20A2D351F32103D00F3A0C7 /* ProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A2D321F320F3600F3A0C7 /* ProcessViewController.swift */; };
 		A22EA91F1F2F625C00423D84 /* ALSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9171F2F622800423D84 /* ALSEngine.swift */; };
 		A22EA9201F2F625E00423D84 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9181F2F622800423D84 /* Command.swift */; };
 		A22EA9211F2F626100423D84 /* CommandGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9191F2F622800423D84 /* CommandGenerator.swift */; };
@@ -323,6 +324,7 @@
 				A56695F21CE8B34B00BD7EAF /* VideoViewController.swift in Sources */,
 				A22EA9261F2F626C00423D84 /* SDKInput.swift in Sources */,
 				A22EA9251F2F626900423D84 /* KeyboardManager.swift in Sources */,
+				A20A2D351F32103D00F3A0C7 /* ProcessViewController.swift in Sources */,
 				A22EA9211F2F626100423D84 /* CommandGenerator.swift in Sources */,
 				A56695F01CE8B34B00BD7EAF /* AppDelegate.swift in Sources */,
 				A22EA9201F2F625E00423D84 /* Command.swift in Sources */,

@@ -34,10 +34,11 @@ class VideoViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        preview.layer.sublayers?[0].frame = preview.bounds
-//        layer.frame = preview.bounds
-//        preview.layer.addSublayer(layer)
-//        view.layoutIfNeeded()
+        preview.frame = preview.bounds
+        layer.frame = preview.bounds
+        preview.layer.addSublayer(layer)
+        view.layoutIfNeeded()
+        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,10 +79,6 @@ class VideoViewController: UIViewController {
         
         metaOutput.metadataObjectTypes = [AVMetadataObjectTypeFace]
         
-        preview.frame = preview.bounds
-        preview.layer.addSublayer(layer)
-        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        
         wrapper?.prepare()
         
         session.startRunning()
@@ -90,6 +87,9 @@ class VideoViewController: UIViewController {
 
 extension VideoViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureMetadataOutputObjectsDelegate {
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+        connection.videoOrientation = AVCaptureVideoOrientation.portrait
+        connection.isVideoMirrored = false
+        
         if !currentMetadata.isEmpty {
             let boundsArray = currentMetadata
                 .flatMap { $0 as? AVMetadataFaceObject }
