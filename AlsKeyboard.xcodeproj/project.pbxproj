@@ -15,7 +15,6 @@
 		A22EA9241F2F626700423D84 /* FRIGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91C1F2F622800423D84 /* FRIGenerator.swift */; };
 		A22EA9251F2F626900423D84 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91D1F2F622800423D84 /* KeyboardManager.swift */; };
 		A22EA9261F2F626C00423D84 /* SDKInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91E1F2F622800423D84 /* SDKInput.swift */; };
-		A22EA92A1F2F63B300423D84 /* ProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9281F2F63B300423D84 /* ProcessViewController.swift */; };
 		A56695F01CE8B34B00BD7EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */; };
 		A56695F21CE8B34B00BD7EAF /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */; };
 		A56695F51CE8B34B00BD7EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F31CE8B34B00BD7EAF /* Main.storyboard */; };
@@ -47,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A20A2D321F320F3600F3A0C7 /* ProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessViewController.swift; sourceTree = "<group>"; };
 		A22EA9171F2F622800423D84 /* ALSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSEngine.swift; sourceTree = "<group>"; };
 		A22EA9181F2F622800423D84 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		A22EA9191F2F622800423D84 /* CommandGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandGenerator.swift; sourceTree = "<group>"; };
@@ -55,7 +55,6 @@
 		A22EA91C1F2F622800423D84 /* FRIGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRIGenerator.swift; sourceTree = "<group>"; };
 		A22EA91D1F2F622800423D84 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		A22EA91E1F2F622800423D84 /* SDKInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKInput.swift; sourceTree = "<group>"; };
-		A22EA9281F2F63B300423D84 /* ProcessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProcessViewController.swift; path = "../../facekeyboard/faceKeyboard Code/Vision/ProcessViewController.swift"; sourceTree = "<group>"; };
 		A56695EC1CE8B34B00BD7EAF /* AlsKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlsKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +149,7 @@
 				A5A1B2D11CEA317B00626AC5 /* DlibWrapper.mm */,
 				A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */,
 				A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */,
-				A22EA9281F2F63B300423D84 /* ProcessViewController.swift */,
+				A20A2D321F320F3600F3A0C7 /* ProcessViewController.swift */,
 				A56695F31CE8B34B00BD7EAF /* Main.storyboard */,
 				A56695F61CE8B34B00BD7EAF /* Assets.xcassets */,
 				A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */,
@@ -322,7 +321,6 @@
 				A22EA91F1F2F625C00423D84 /* ALSEngine.swift in Sources */,
 				A22EA9221F2F626300423D84 /* Extensions.swift in Sources */,
 				A56695F21CE8B34B00BD7EAF /* VideoViewController.swift in Sources */,
-				A22EA92A1F2F63B300423D84 /* ProcessViewController.swift in Sources */,
 				A22EA9261F2F626C00423D84 /* SDKInput.swift in Sources */,
 				A22EA9251F2F626900423D84 /* KeyboardManager.swift in Sources */,
 				A22EA9211F2F626100423D84 /* CommandGenerator.swift in Sources */,

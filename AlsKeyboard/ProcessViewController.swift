@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 class ProcessViewController: KeyboardDelegate {
-    let imageView: UIImageView
+    let imageView: UIView
     var labelX = 100
     
-    init(imageView: UIImageView) {
+    init(imageView: UIView) {
         self.imageView = imageView
     }
     
