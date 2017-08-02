@@ -46,7 +46,6 @@ class VideoViewController: UIViewController {
     }
     
     func setupCamera(maxFpsDesired: Double = 240) {
-        session.sessionPreset = AVCaptureSessionPresetPhoto
         let frontCamera = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .front)
         
         do {
@@ -72,6 +71,9 @@ class VideoViewController: UIViewController {
         if session.canAddOutput(metaOutput) {
             session.addOutput(metaOutput)
         }
+        
+        // For iphone7
+        session.sessionPreset = AVCaptureSessionPreset1280x720
         
         session.commitConfiguration()
         

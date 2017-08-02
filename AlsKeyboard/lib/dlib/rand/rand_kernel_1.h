@@ -10,6 +10,7 @@
 #include "../is_kind.h"
 #include <iostream>
 #include "../serialize.h"
+#include "../string.h"
 
 namespace dlib
 {
@@ -37,6 +38,14 @@ namespace dlib
             ) 
             {
                 init();
+            }
+
+            rand (
+                time_t seed_value
+            )
+            {
+                init();
+                set_seed(cast_to_string(seed_value));
             }
 
             rand (
@@ -126,6 +135,15 @@ namespace dlib
                 const uint64 a = get_random_32bit_number();
                 const uint64 b = get_random_32bit_number();
                 return (a<<32)|b;
+            }
+
+            double get_double_in_range (
+                double begin,
+                double end
+            )
+            {
+                DLIB_ASSERT(begin <= end);
+                return begin + get_random_double()*(end-begin);
             }
 
             double get_random_double (

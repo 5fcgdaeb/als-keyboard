@@ -3,7 +3,16 @@
 # information about it at http://www.cmake.org
 #
 
-cmake_minimum_required(VERSION 2.8.4)
+cmake_minimum_required(VERSION 2.8.12)
+
+# create a variable called target_name and set it to the string "dtest"
+set (target_name dtest)
+PROJECT(${target_name})
+
+# compile the dlib/all/source.cpp file into its own object just to make sure it compiles
+set(DLIB_TEST_COMPILE_ALL_SOURCE_CPP ON)
+
+include(../cmake)
 
 # This variable contains a list of all the tests we are building
 # into the regression test suite.
@@ -33,6 +42,7 @@ set (tests
    conditioning_class_c.cpp
    conditioning_class.cpp
    config_reader.cpp
+   correlation_tracker.cpp
    crc32.cpp
    create_iris_datafile.cpp
    data_io.cpp
@@ -143,10 +153,16 @@ set (tests
    vectorstream.cpp
    )
 
-# create a variable called target_name and set it to the string "dtest"
-set (target_name dtest)
+# Tests that require C++11 support
+if (COMPILER_CAN_DO_CPP_11)
+   set(tests ${tests}
+      dnn.cpp
+      cublas.cpp
+      find_optimal_parameters.cpp
+      elastic_net.cpp
+      )
+endif()
 
-PROJECT(${target_name})
 
 # add all the cpp files we want to compile to this list.  This tells
 # cmake that they are part of our target (which is the executable named dtest)
@@ -158,14 +174,13 @@ if (CMAKE_COMPILER_IS_GNUCXX)
 endif()
 
 
-# Tell cmake to link our target executable to dlib.
-include(../cmake)
 TARGET_LINK_LIBRARIES(${target_name} dlib )
 
 
 if (NOT DLIB_NO_GUI_SUPPORT)
    add_subdirectory(gui)
    add_subdirectory(examples)
+   add_subdirectory(tools)
 endif()
 
 

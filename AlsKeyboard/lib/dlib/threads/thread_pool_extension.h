@@ -13,6 +13,8 @@
 #include "../array.h"
 #include "../smart_pointers_thread_safe.h"
 #include "../smart_pointers.h"
+#include <exception>
+#include <thread>
 
 namespace dlib
 {
@@ -125,7 +127,7 @@ namespace dlib
 
 // ----------------------------------------------------------------------------------------
 
-    class thread_pool_implementation : private multithreaded_object
+    class thread_pool_implementation 
     {
         /*!
             CONVENTION
@@ -410,7 +412,7 @@ namespace dlib
 
         struct task_state_type
         {
-            task_state_type() : is_being_processed(false), task_id(0), next_task_id(2), arg1(0), arg2(0) {}
+            task_state_type() : is_being_processed(false), task_id(0), next_task_id(2), arg1(0), arg2(0), eptr(nullptr) {}
 
             bool is_ready () const 
             /*!
@@ -451,6 +453,17 @@ namespace dlib
             bfp_type bfp;
 
             shared_ptr<function_object_copy> function_copy;
+            mutable std::exception_ptr eptr; // non-null if the task threw an exception
+
+            void propagate_exception() const
+            {
+                if (eptr)
+                {
+                    auto tmp = eptr;
+                    eptr = nullptr;
+                    std::rethrow_exception(tmp);
+                }
+            }
 
         };
 
@@ -461,6 +474,8 @@ namespace dlib
         signaler task_done_signaler;
         signaler task_ready_signaler;
         bool we_are_destructing;
+
+        std::vector<std::thread> threads;
 
         // restricted functions
         thread_pool_implementation(thread_pool_implementation&);        // copy constructor
@@ -493,7 +508,25 @@ namespace dlib
         ~thread_pool (
         )
         {
-            impl->shutdown_pool();
+            try
+            {
+                impl->shutdown_pool();
+            }
+            catch (std::exception& e)
+            {
+                std::cerr << "An unhandled exception was inside a dlib::thread_pool when it was destructed." << std::endl;
+                std::cerr << "It's what string is: \n" << e.what() << std::endl;
+                using namespace std;
+                assert(false);
+                abort();
+            }
+            catch (...)
+            {
+                std::cerr << "An unhandled exception was inside a dlib::thread_pool when it was destructed." << std::endl;
+                using namespace std;
+                assert(false);
+                abort();
+            }
         }
 
         void wait_for_task (

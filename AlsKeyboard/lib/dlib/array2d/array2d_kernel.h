@@ -72,7 +72,7 @@ namespace dlib
                         - (*this)[x] == data[x]
             !*/
 
-            friend class array2d;
+            friend class array2d<T,mem_manager>;
             friend class row_helper;
 
         public:
@@ -159,6 +159,21 @@ namespace dlib
 
             set_size(rows,cols);
         }
+
+#ifdef DLIB_HAS_RVALUE_REFERENCES
+        array2d(array2d&& item) : array2d()
+        {
+            swap(item);
+        }
+
+        array2d& operator= (
+            array2d&& rhs
+        )
+        {
+            swap(rhs);
+            return *this;
+        }
+#endif
 
         virtual ~array2d (
         ) { clear(); }
