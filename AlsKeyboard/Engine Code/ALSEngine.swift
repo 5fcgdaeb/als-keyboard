@@ -28,7 +28,7 @@ let MAXIMUM_MOUTH_UPPER_LIP_Y_LOCATION_CHANGE = CGFloat(30)
 let MINIMUM_RECOGNITION_LIMIT_FOR_LONG_BLINK = CGFloat(2)
 let MINIMUM_EYE_BROW_DIFFERENCE = CGFloat(5)
 let MINIMUM_EYE_BROW_AND_EYE_DIFFERENCE = CGFloat(5)
-let MINIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = 0.3
+let MINIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = 0.5
 let MINIMUM_MOUTH_DIFFERENCE = CGFloat(200)
 let MINIMUM_EYE_MOVEMENT_DISTANCE = CGFloat(200)
 
@@ -59,7 +59,6 @@ class ALSEngine: NSObject {
     }
     
     func process(sdkInput: SDKInput) {
-    
         guard let faceRecognitionInput = FRIGenerator().generateFRI(withSDKInput: sdkInput) else {
             print("Face recognition input isn't valid, skipping. [\(Date().alsFriendlyDate())]")
             return
@@ -71,7 +70,7 @@ class ALSEngine: NSObject {
             return
         }
     
-        print("COMMAND \(commandFromThisInput!.commandID) ISSUED!")
+//        print("COMMAND \(commandFromThisInput!.commandID) ISSUED!")
         
         self.keyboardEngine.process(command: commandFromThisInput!)
     }

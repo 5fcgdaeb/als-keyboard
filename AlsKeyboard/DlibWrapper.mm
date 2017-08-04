@@ -42,7 +42,7 @@
     self.prepared = YES;
 }
 
-- (void)doWorkOnSampleBuffer:(CMSampleBufferRef)sampleBuffer inRects:(NSArray<NSValue *> *)rects {
+- (NSMutableArray *)doWorkOnSampleBuffer:(CMSampleBufferRef)sampleBuffer inRects:(NSArray<NSValue *> *)rects {
     
     if (!self.prepared) {
         [self prepare];
@@ -53,7 +53,7 @@
     // MARK: magic
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CVPixelBufferLockBaseAddress(imageBuffer, kCVPixelBufferLock_ReadOnly);
-
+    
     size_t width = CVPixelBufferGetWidth(imageBuffer);
     size_t height = CVPixelBufferGetHeight(imageBuffer);
     char *baseBuffer = (char *)CVPixelBufferGetBaseAddress(imageBuffer);
@@ -66,7 +66,7 @@
     long position = 0;
     while (img.move_next()) {
         dlib::bgr_pixel& pixel = img.element();
-
+        
         // assuming bgra format here
         long bufferLocation = position * 4; //(row * width + column) * 4;
         char b = baseBuffer[bufferLocation];
@@ -87,6 +87,8 @@
     // convert the face bounds list to dlib format
     std::vector<dlib::rectangle> convertedRectangles = [DlibWrapper convertCGRectValueArray:rects];
     
+    NSMutableArray* points = [[NSMutableArray alloc] init];
+    
     // for every detected face
     for (unsigned long j = 0; j < convertedRectangles.size(); ++j)
     {
@@ -98,13 +100,19 @@
         // and draw them into the image (samplebuffer)
         for (unsigned long k = 0; k < shape.num_parts(); k++) {
             dlib::point p = shape.part(k);
-            draw_solid_circle(img, p, 3, dlib::rgb_pixel(0, 255, 255));
+            long x = p.x();
+            long y = p.y();
+            NSNumber* xNumber = [NSNumber numberWithLong:x];
+            NSNumber* yNumber = [NSNumber numberWithLong:y];
+            [points addObject: xNumber];
+            [points addObject: yNumber];
+            //            draw_solid_circle(img, p, 3, dlib::rgb_pixel(0, 255, 255));
         }
     }
     
     // lets put everything back where it belongs
     CVPixelBufferLockBaseAddress(imageBuffer, 0);
-
+    
     // copy dlib image data back into samplebuffer
     img.reset();
     position = 0;
@@ -121,7 +129,10 @@
         
         position++;
     }
+    
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+    
+    return points;
 }
 
 + (std::vector<dlib::rectangle>)convertCGRectValueArray:(NSArray<NSValue *> *)rects {
@@ -133,7 +144,7 @@
         long right = left + rect.size.width;
         long bottom = top + rect.size.height;
         dlib::rectangle dlibRect(left, top, right, bottom);
-
+        
         myConvertedRects.push_back(dlibRect);
     }
     return myConvertedRects;

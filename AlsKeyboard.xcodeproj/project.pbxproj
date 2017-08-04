@@ -125,7 +125,6 @@
 				A5A1B2D31CEA35B300626AC5 /* libdlib.a */,
 				A5A1B2D51CEA41E200626AC5 /* Accelerate.framework */,
 				A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */,
-				A22EA9161F2F622800423D84 /* Engine Code */,
 				A56695EE1CE8B34B00BD7EAF /* AlsKeyboard */,
 				A56696031CE8B34B00BD7EAF /* AlsKeyboardTests */,
 				A566960E1CE8B34B00BD7EAF /* AlsKeyboardUITests */,
@@ -146,6 +145,7 @@
 		A56695EE1CE8B34B00BD7EAF /* AlsKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				A22EA9161F2F622800423D84 /* Engine Code */,
 				A5A1B2D01CEA317B00626AC5 /* DlibWrapper.h */,
 				A5A1B2D11CEA317B00626AC5 /* DlibWrapper.mm */,
 				A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */,

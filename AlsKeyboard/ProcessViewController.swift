@@ -11,26 +11,28 @@ import UIKit
 
 class ProcessViewController: KeyboardDelegate {
     let imageView: UIView
-    var labelX = 100
+    var labelX = 10
     
     init(imageView: UIView) {
         self.imageView = imageView
     }
     
     func displayTextUpdated(value: String) {
-        print("displayTextUpdated: \(value)")
+//        print("displayTextUpdated: \(value)")
     }
     
     func displayReceivedCommand(value: String) {
-        self.addLabelToView(value: value)
+        DispatchQueue.main.async(){
+            self.addLabelToView(value: value)
+        }
     }
     
     func clearCommandBuffer() {
-        print("clearCommandBuffer")
+//        print("clearCommandBuffer")
     }
     
     func deleteFirstCommandFromBuffer() {
-        print("deleteFirstCommandFromBuffer")
+//        print("deleteFirstCommandFromBuffer")
     }
     
     func addLabelToView(value: String) {
@@ -40,6 +42,6 @@ class ProcessViewController: KeyboardDelegate {
         label.textAlignment = .center
         label.text = "\(value)"
         self.imageView.addSubview(label)
-        labelX = labelX + 50
+        labelX = labelX + 20
     }
 }
