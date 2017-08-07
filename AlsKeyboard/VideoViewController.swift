@@ -12,6 +12,8 @@ import AVFoundation
 class VideoViewController: UIViewController {
     
     @IBOutlet weak var preview: UIView!
+    @IBOutlet weak var writeMessageLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var session = AVCaptureSession()
     var alsEngine: ALSEngine?
@@ -21,10 +23,12 @@ class VideoViewController: UIViewController {
     let sampleQueue = DispatchQueue(label: "com.zweigraf.DisplayLiveSamples.sampleQueue", attributes: [])
     let faceQueue = DispatchQueue(label: "com.zweigraf.DisplayLiveSamples.faceQueue", attributes: [])
     
+    var lastFrameDate: Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.alsEngine = ALSEngine(withKeyboardDelegate: ProcessViewController(imageView: self.preview))
+        self.alsEngine = ALSEngine(withKeyboardDelegate: ProcessViewController(view: preview, writeMessage: writeMessageLabel, message: messageLabel))
         
         setupCamera()
     }
@@ -69,7 +73,9 @@ class VideoViewController: UIViewController {
         }
         
         // For iphone7 comment out for ipad
-        session.sessionPreset = AVCaptureSessionPreset1280x720
+//        session.sessionPreset = AVCaptureSessionPreset1280x720
+        
+        session.sessionPreset = AVCaptureSessionPresetPhoto
         
         session.commitConfiguration()
         
@@ -88,26 +94,40 @@ extension VideoViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AVC
         connection.videoOrientation = AVCaptureVideoOrientation.portrait
         connection.isVideoMirrored = true
         
-        if !self.currentMetadata.isEmpty {
-            let boundsArray = self.currentMetadata
-                .flatMap { $0 as? AVMetadataFaceObject }
-                .map { (faceObject) -> NSValue in
-                    let convertedObject = captureOutput.transformedMetadataObject(for: faceObject, connection: connection)
-                    return NSValue(cgRect: convertedObject!.bounds)
-            }
-            
-            if let points = self.wrapper?.doWork(on: sampleBuffer, inRects: boundsArray) {
-                var mappedPoints: [CGPoint] = []
-                for i in stride(from: 0, to: points.count, by: 2) {
-                    let x: Int = points.object(at: i) as! Int
-                    let y: Int = points.object(at: i + 1) as! Int
-                    mappedPoints.append(CGPoint(x: x, y: y))
-                }
-                let sdkInput = SDKInput(faceCoordinates: mappedPoints)
-                self.alsEngine!.process(sdkInput: sdkInput)
+        var shouldWeProcess: Bool = false
+        
+        if lastFrameDate == nil {
+            shouldWeProcess = true
+        } else {
+            let difference = diff(firstDate: lastFrameDate!, secondDate: Date())
+            if difference > 80 {
+                shouldWeProcess = true
             }
         }
-        self.layer.enqueue(sampleBuffer)
+        
+        if shouldWeProcess {
+            if !self.currentMetadata.isEmpty {
+                let boundsArray = self.currentMetadata
+                    .flatMap { $0 as? AVMetadataFaceObject }
+                    .map { (faceObject) -> NSValue in
+                        let convertedObject = captureOutput.transformedMetadataObject(for: faceObject, connection: connection)
+                        return NSValue(cgRect: convertedObject!.bounds)
+                }
+                
+                if let points = self.wrapper?.doWork(on: sampleBuffer, inRects: boundsArray) {
+                    var mappedPoints: [CGPoint] = []
+                    for i in stride(from: 0, to: points.count, by: 2) {
+                        let x: Int = points.object(at: i) as! Int
+                        let y: Int = points.object(at: i + 1) as! Int
+                        mappedPoints.append(CGPoint(x: x, y: y))
+                    }
+                    let sdkInput = SDKInput(faceCoordinates: mappedPoints)
+                    self.alsEngine!.process(sdkInput: sdkInput)
+                }
+            }
+            self.layer.enqueue(sampleBuffer)
+            lastFrameDate = Date()
+        }
     }
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didDrop sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
@@ -116,5 +136,10 @@ extension VideoViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AVC
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         currentMetadata = metadataObjects as [AnyObject]
+    }
+    
+    func diff(firstDate:Date, secondDate:Date) -> Int {
+        let difference = firstDate.millisecondsSince1970 - secondDate.millisecondsSince1970
+        return abs(Int(difference))
     }
 }

@@ -106,7 +106,7 @@
             NSNumber* yNumber = [NSNumber numberWithLong:y];
             [points addObject: xNumber];
             [points addObject: yNumber];
-            //            draw_solid_circle(img, p, 3, dlib::rgb_pixel(0, 255, 255));
+            draw_solid_circle(img, p, 3, dlib::rgb_pixel(0, 255, 255));
         }
     }
     
