@@ -23,7 +23,6 @@ class ProcessViewController: KeyboardDelegate {
     func displayTextUpdated(value: String) {
         DispatchQueue.main.async {
             self.message.text = "\(value)"
-            print("\(value)")
         }
     }
     
@@ -34,11 +33,9 @@ class ProcessViewController: KeyboardDelegate {
     }
     
     func clearCommandBuffer() {
-        print("clearCommandBuffer")
     }
     
     func deleteFirstCommandFromBuffer() {
-        print("deleteFirstCommandFromBuffer")
     }
     
     func addLabelToView(value: String) {

@@ -61,7 +61,6 @@ class ALSEngine: NSObject {
     
     func process(sdkInput: SDKInput) {
         guard let faceRecognitionInput = FRIGenerator().generateFRI(withSDKInput: sdkInput) else {
-            print("Face recognition input isn't valid, skipping. [\(Date().alsFriendlyDate())]")
             return
         }
         
