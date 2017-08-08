@@ -50,6 +50,22 @@ class CommandGenerator: NSObject {
         let mouthX = mouth(comparisonCoordinates: comparisonCoordinates).xCoordinates
         let mouthY = mouth(comparisonCoordinates: comparisonCoordinates).yCoordinates
         
+        let haveEyebrowsBeenRaised = self.haveEyebrowsBeenRaised(comparisonCoordinates: comparisonCoordinates)
+        let haveEyesBeenBlinked = self.haveEyesBeenBlinked(comparisonCoordinates: comparisonCoordinates)
+        let isSmiling = self.isSmiling(comparisonCoordinates: comparisonCoordinates)
+        
+        //        if haveEyebrowsBeenRaised {
+        //            return Command.allCommands()[0]
+        //        }
+        //
+        //        if haveEyesBeenBlinked {
+        //            return Command.allCommands()[1]
+        //        }
+        //
+        //        if isSmiling {
+        //            return Command.allCommands()[7]
+        //        }
+        
         allComparisonCoordinates = [
             "rightEyebrowX": rightEyebrowX,
             "rightEyebrowY": rightEyebrowY,
@@ -59,10 +75,15 @@ class CommandGenerator: NSObject {
             "rightEyeY": rightEyeY,
             "leftEyeX": leftEyeX,
             "leftEyeY": leftEyeY,
-            "noseX": noseX,
-            "noseY": noseY,
+            "noseTopX": noseX,
+            "noseTopY": noseY,
             "mouthX": mouthX,
-            "mouthY": mouthY
+            "mouthY": mouthY,
+            "date": Date().millisecondsSince1970,
+            "haveEyebrowsBeenRaised": haveEyebrowsBeenRaised,
+            "haveEyesBeenBlinked": haveEyesBeenBlinked,
+            "isSmiling": isSmiling,
+            "coordinates": "18-22 23-27 37-42 43-48 28-31 49x55x-63y67y"
         ]
         
         do {
@@ -78,43 +99,43 @@ class CommandGenerator: NSObject {
     }
     
     func rightEyebrow(comparisonCoordinates: [CGPoint]) -> (xCoordinates: CGFloat, yCoordinates: CGFloat) {
-        let xCoordinates = comparisonCoordinates[18].x + comparisonCoordinates[19].x + comparisonCoordinates[20].x + comparisonCoordinates[21].x + comparisonCoordinates[22].x
-        let yCoordinates = comparisonCoordinates[18].y + comparisonCoordinates[19].y + comparisonCoordinates[20].y + comparisonCoordinates[21].y + comparisonCoordinates[22].y
+        let xCoordinates = (comparisonCoordinates[18].x + comparisonCoordinates[19].x + comparisonCoordinates[20].x + comparisonCoordinates[21].x + comparisonCoordinates[22].x) / 5
+        let yCoordinates = (comparisonCoordinates[18].y + comparisonCoordinates[19].y + comparisonCoordinates[20].y + comparisonCoordinates[21].y + comparisonCoordinates[22].y) / 5
         
         return (xCoordinates, yCoordinates)
     }
     
     func leftEyebrow(comparisonCoordinates: [CGPoint]) -> (xCoordinates: CGFloat, yCoordinates: CGFloat) {
-        let xCoordinates = comparisonCoordinates[23].x + comparisonCoordinates[24].x + comparisonCoordinates[25].x + comparisonCoordinates[26].x + comparisonCoordinates[27].x
-        let yCoordinates = comparisonCoordinates[23].y + comparisonCoordinates[24].y + comparisonCoordinates[25].y + comparisonCoordinates[26].y + comparisonCoordinates[27].y
+        let xCoordinates = (comparisonCoordinates[23].x + comparisonCoordinates[24].x + comparisonCoordinates[25].x + comparisonCoordinates[26].x + comparisonCoordinates[27].x) / 5
+        let yCoordinates = (comparisonCoordinates[23].y + comparisonCoordinates[24].y + comparisonCoordinates[25].y + comparisonCoordinates[26].y + comparisonCoordinates[27].y) / 5
         
         return (xCoordinates, yCoordinates)
     }
     
     func rightEye(comparisonCoordinates: [CGPoint]) -> (xCoordinates: CGFloat, yCoordinates: CGFloat) {
-        let xCoordinates = comparisonCoordinates[37].x + comparisonCoordinates[38].x + comparisonCoordinates[39].x + comparisonCoordinates[40].x + comparisonCoordinates[41].x + comparisonCoordinates[42].x
-        let yCoordinates = comparisonCoordinates[37].y + comparisonCoordinates[38].y + comparisonCoordinates[39].y + comparisonCoordinates[40].y + comparisonCoordinates[41].y + comparisonCoordinates[42].y
+        let xCoordinates = (comparisonCoordinates[37].x + comparisonCoordinates[38].x + comparisonCoordinates[39].x + comparisonCoordinates[40].x + comparisonCoordinates[41].x + comparisonCoordinates[42].x) / 6
+        let yCoordinates = (comparisonCoordinates[37].y + comparisonCoordinates[38].y + comparisonCoordinates[39].y + comparisonCoordinates[40].y + comparisonCoordinates[41].y + comparisonCoordinates[42].y) / 6
         
         return (xCoordinates, yCoordinates)
     }
     
     func leftEye(comparisonCoordinates: [CGPoint]) -> (xCoordinates: CGFloat, yCoordinates: CGFloat) {
-        let xCoordinates = comparisonCoordinates[43].x + comparisonCoordinates[44].x + comparisonCoordinates[45].x + comparisonCoordinates[46].x + comparisonCoordinates[47].x + comparisonCoordinates[48].x
-        let yCoordinates = comparisonCoordinates[43].y + comparisonCoordinates[44].y + comparisonCoordinates[45].y + comparisonCoordinates[46].y + comparisonCoordinates[47].y + comparisonCoordinates[48].y
+        let xCoordinates = (comparisonCoordinates[43].x + comparisonCoordinates[44].x + comparisonCoordinates[45].x + comparisonCoordinates[46].x + comparisonCoordinates[47].x + comparisonCoordinates[48].x) / 6
+        let yCoordinates = (comparisonCoordinates[43].y + comparisonCoordinates[44].y + comparisonCoordinates[45].y + comparisonCoordinates[46].y + comparisonCoordinates[47].y + comparisonCoordinates[48].y) / 6
         
         return (xCoordinates, yCoordinates)
     }
     
     func nose(comparisonCoordinates: [CGPoint]) -> (xCoordinates: CGFloat, yCoordinates: CGFloat) {
-        let xCoordinates = comparisonCoordinates[28].x + comparisonCoordinates[29].x + comparisonCoordinates[30].x + comparisonCoordinates[31].x
-        let yCoordinates = comparisonCoordinates[28].y + comparisonCoordinates[29].y + comparisonCoordinates[30].y + comparisonCoordinates[31].y
+        let xCoordinates = (comparisonCoordinates[28].x + comparisonCoordinates[29].x + comparisonCoordinates[30].x + comparisonCoordinates[31].x) / 4
+        let yCoordinates = (comparisonCoordinates[28].y + comparisonCoordinates[29].y + comparisonCoordinates[30].y + comparisonCoordinates[31].y) / 4
         
         return (xCoordinates, yCoordinates)
     }
     
     func mouth(comparisonCoordinates: [CGPoint]) -> (xCoordinates: CGFloat, yCoordinates: CGFloat) {
-        let xCoordinates = comparisonCoordinates[49].x + comparisonCoordinates[55].x
-        let yCoordinates = comparisonCoordinates[63].y + comparisonCoordinates[67].y
+        let xCoordinates = (comparisonCoordinates[49].x + comparisonCoordinates[55].x) / 2
+        let yCoordinates = (comparisonCoordinates[63].y + comparisonCoordinates[67].y) / 2
         
         return (xCoordinates, yCoordinates)
     }
@@ -152,5 +173,40 @@ class CommandGenerator: NSObject {
         } catch {
             return ("Error Occured", false)
         }
+    }
+    
+    func haveEyebrowsBeenRaised(comparisonCoordinates: [CGPoint]) -> Bool {
+        let sumOfRightX = comparisonCoordinates[18].x + comparisonCoordinates[19].x + comparisonCoordinates[20].x + comparisonCoordinates[21].x + comparisonCoordinates[22].x
+        let sumOfLeftX = comparisonCoordinates[23].x + comparisonCoordinates[24].x + comparisonCoordinates[25].x + comparisonCoordinates[26].x + comparisonCoordinates[27].x
+        let sumOfRightY = comparisonCoordinates[18].y + comparisonCoordinates[19].y + comparisonCoordinates[20].y + comparisonCoordinates[21].y + comparisonCoordinates[22].y
+        let sumOfLeftY = comparisonCoordinates[23].y + comparisonCoordinates[24].y + comparisonCoordinates[25].y + comparisonCoordinates[26].y + comparisonCoordinates[27].y
+        
+        let averageOfRightX = sumOfRightX / 5
+        let averageOfRightY = sumOfRightY / 5
+        
+        let averageOfLeftX = sumOfLeftX / 5
+        let averageOfLeftY = sumOfLeftY / 5
+        
+        let averageLastX = (averageOfRightX + averageOfLeftX) / 2
+        let averageLastY = (averageOfRightY + averageOfLeftY) / 2
+        
+        return averageLastY > 10 && abs(averageLastX) < 10
+    }
+    
+    func haveEyesBeenBlinked(comparisonCoordinates: [CGPoint]) -> Bool {
+        let sumOfTopY = comparisonCoordinates[38].y + comparisonCoordinates[39].y + comparisonCoordinates[44].y + comparisonCoordinates[45].y
+        let sumOfBottomY = comparisonCoordinates[42].y + comparisonCoordinates[41].y + comparisonCoordinates[48].y + comparisonCoordinates[47].y
+        
+        let averageOfTopY = sumOfTopY / 4
+        let averageOfBottomY = sumOfBottomY / 4
+        
+        return abs(averageOfTopY - averageOfBottomY) > 10
+    }
+    
+    func isSmiling(comparisonCoordinates: [CGPoint]) -> Bool {
+        let leftCorner = comparisonCoordinates[55].x
+        let rightCorner = comparisonCoordinates[49].x
+        
+        return abs(leftCorner - rightCorner) > 10 && abs(leftCorner - rightCorner) < 20
     }
 }
