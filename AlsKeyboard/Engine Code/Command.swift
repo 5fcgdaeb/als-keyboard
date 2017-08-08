@@ -23,8 +23,7 @@ struct Command {
         let command6 = Command(commandID: "EyeMove", shortCode: "EM", createdAt: Date())
         let command7 = Command(commandID: "EyeMove", shortCode: "Y", createdAt: Date())
         let command8 = Command(commandID: "Smile", shortCode: "SM", createdAt: Date())
-        let command9 = Command(commandID: "EverythingMoved", shortCode: "DEL", createdAt: Date())
         
-        return [command1, command2, command3, command4, command5, command6, command7, command8, command9]
+        return [command1, command2, command3, command4, command5, command6, command7, command8]
     }
 }

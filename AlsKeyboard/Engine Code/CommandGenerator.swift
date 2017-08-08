@@ -47,7 +47,7 @@ class CommandGenerator: NSObject {
         let isEverythingMoved = self.isEverythingMoved(comparisonCoordinates: comparisonCoordinates)
         
         if isEverythingMoved {
-            return Command.allCommands()[8]
+            return nil
         }
         
         if isSmiling {

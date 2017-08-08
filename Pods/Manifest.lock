@@ -1,0 +1,12 @@
+PODS:
+  - EFAutoScrollLabel (1.0.2)
+
+DEPENDENCIES:
+  - EFAutoScrollLabel (~> 1.0.2)
+
+SPEC CHECKSUMS:
+  EFAutoScrollLabel: c5b0d3da32c2783fce5d7b1fdf9b875be25c37ce
+
+PODFILE CHECKSUM: 37879ab15e311d8f039aaf558ec127ab53ef667e
+
+COCOAPODS: 1.2.1

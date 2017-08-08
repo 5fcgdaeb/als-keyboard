@@ -122,6 +122,7 @@ extension VideoViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AVC
                         mappedPoints.append(CGPoint(x: x, y: y))
                     }
                     let sdkInput = SDKInput(faceCoordinates: mappedPoints)
+                    alsEngine?.startTyping()
                     self.alsEngine!.process(sdkInput: sdkInput)
                 }
             }

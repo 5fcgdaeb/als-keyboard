@@ -52,7 +52,6 @@ class ALSEngine: NSObject {
     }
     
     func startTyping() {
-        self.keyboardEngine.resetState()
         self.keyboardEngine.startTyping()
     }
     

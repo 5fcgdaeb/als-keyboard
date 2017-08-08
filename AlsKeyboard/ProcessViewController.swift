@@ -21,7 +21,10 @@ class ProcessViewController: KeyboardDelegate {
     }
     
     func displayTextUpdated(value: String) {
-        print("displayTextUpdated: \(value)")
+        DispatchQueue.main.async {
+            self.message.text = "\(value)"
+            print("\(value)")
+        }
     }
     
     func displayReceivedCommand(value: String) {
@@ -39,10 +42,12 @@ class ProcessViewController: KeyboardDelegate {
     }
     
     func addLabelToView(value: String) {
-        if "\(value)" == "DEL" {
-            self.writeMessage.text = ""
-        } else {
-            self.writeMessage.text = self.writeMessage.text! + "\(value)"
+        if self.writeMessage.text != nil {
+            if self.writeMessage.text!.characters.count > 61 {
+                self.writeMessage.text = ""
+            } else {
+                self.writeMessage.text = self.writeMessage.text! + "\(value)"
+            }
         }
     }
 }
