@@ -19,19 +19,6 @@ class FaceRecognitionInput: NSObject {
         self.timeStampOfInput = timeStamp
     }
     
-    func rightEyeBrowCoordinates() -> [CGPoint] {
-        let coordinate1: CGPoint = self.sdkInput.faceCoordinates[0]
-        let coordinate2: CGPoint = self.sdkInput.faceCoordinates[1]
-        let coordinate3: CGPoint = self.sdkInput.faceCoordinates[2]
-        let coordinate4: CGPoint = self.sdkInput.faceCoordinates[3]
-        return [coordinate1, coordinate2, coordinate3, coordinate4]
-    }
-    
-    func averageRightEyeBrowLocation() -> CGPoint {
-        let rightEyeBrowCoordinates = self.rightEyeBrowCoordinates()
-        return self.averageOfCoordinates(coordinates: rightEyeBrowCoordinates)
-    }
-    
     func timeDifference(fromInput otherInput:FaceRecognitionInput) -> Int {
         let difference = self.timeStampOfInput.millisecondsSince1970 - otherInput.timeStampOfInput.millisecondsSince1970
         return abs(Int(difference))
@@ -86,9 +73,5 @@ class FaceRecognitionInput: NSObject {
         let averageYCoordinate = sumOfY / CGFloat(coordinates.count)
         
         return CGPoint(x: averageXCoordinate, y: averageYCoordinate)
-    }
-    
-    func averageOfWholeFace() -> CGPoint {
-        return self.averageOfCoordinates(coordinates: self.sdkInput.faceCoordinates)
     }
 }

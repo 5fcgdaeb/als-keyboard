@@ -1,0 +1,870 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21CF95E4EA7219DB598841C62793E035 /* EFAutoScrollLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682E380C2EFCB52DE6251BDB7A8D760 /* EFAutoScrollLabel-dummy.m */; };
+		2E241B92BDD79BC8D1416A61DC775DF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		52E5980E6CD5B024826E8F5D8C57A998 /* Pods-AlsKeyboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BC8B1FA9051FBB0206EA5C7513F73E /* Pods-AlsKeyboard-dummy.m */; };
+		5AB6E2AA4618A7DBC2480BBD73118A15 /* EFAutoScrollLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F913F82DB639C880AC1A5684EE813E71 /* EFAutoScrollLabel.swift */; };
+		6109207CB45F4C0B0D688F36B25935B4 /* Pods-AlsKeyboardTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CBA305750DCCFF87367135659F47875 /* Pods-AlsKeyboardTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		643A32723B69731EAD1BDCB36A9F055E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		86589396C309B08FC2E408F98AFDAA7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		A681062538EC0D5A593373CFC3E7FEC8 /* Pods-AlsKeyboardUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7014EEF6439C8183FF46F9F1063CA1 /* Pods-AlsKeyboardUITests-dummy.m */; };
+		B1969ED8DD961986C7A3C3AB7C89D8C9 /* Pods-AlsKeyboardUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 78300594D8DFCA8E6593AA06FE63FF01 /* Pods-AlsKeyboardUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDC09BC089CE189DF80FB27A011416A3 /* Pods-AlsKeyboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9D7ACED4E60738C6DE54D966495AC66 /* Pods-AlsKeyboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5861547A1D880034B0ED2EAA46ACACD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		E80B296C6C41A979C4CD447EE3704D32 /* Pods-AlsKeyboardTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE96869A83BB03A774D7D7F9F43A95F /* Pods-AlsKeyboardTests-dummy.m */; };
+		E8C0D8B64D8B4B59B9A10B6DD442816B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		EE06F56BFEC8815B894DB76CCF7EB5FC /* EFAutoScrollLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 245DAB3D6FE34100BB24A909B50A8EE5 /* EFAutoScrollLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DED109CF5716A900964D9526934E5ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF9B31C4EBC03B303651139661C10725;
+			remoteInfo = EFAutoScrollLabel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BE96869A83BB03A774D7D7F9F43A95F /* Pods-AlsKeyboardTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AlsKeyboardTests-dummy.m"; sourceTree = "<group>"; };
+		0CBA305750DCCFF87367135659F47875 /* Pods-AlsKeyboardTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AlsKeyboardTests-umbrella.h"; sourceTree = "<group>"; };
+		0CCBB1842B25AA7E39145628E5CDA2E1 /* EFAutoScrollLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = EFAutoScrollLabel.modulemap; sourceTree = "<group>"; };
+		2009338CF1CF92854BC01B29AA37A56B /* Pods-AlsKeyboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AlsKeyboard.modulemap"; sourceTree = "<group>"; };
+		245DAB3D6FE34100BB24A909B50A8EE5 /* EFAutoScrollLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFAutoScrollLabel-umbrella.h"; sourceTree = "<group>"; };
+		26A0A1289FF81AD2D33B43C9042B9C50 /* Pods-AlsKeyboardTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AlsKeyboardTests.modulemap"; sourceTree = "<group>"; };
+		2D32D98D6311C3EEF8F41D1406F9B649 /* Pods-AlsKeyboardTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AlsKeyboardTests-frameworks.sh"; sourceTree = "<group>"; };
+		3C7014EEF6439C8183FF46F9F1063CA1 /* Pods-AlsKeyboardUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AlsKeyboardUITests-dummy.m"; sourceTree = "<group>"; };
+		4317F35C4FE7CBC4E44A2205B49CF37F /* Pods-AlsKeyboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlsKeyboardTests.release.xcconfig"; sourceTree = "<group>"; };
+		432D49EBD9EEB64BC38C96E6FEA93911 /* Pods-AlsKeyboard-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AlsKeyboard-resources.sh"; sourceTree = "<group>"; };
+		460E9407C7220EC99E780B7651924F78 /* Pods-AlsKeyboard-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AlsKeyboard-frameworks.sh"; sourceTree = "<group>"; };
+		4D09F9DEB9E77E76C11F2E70C5F7226E /* Pods-AlsKeyboardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlsKeyboardUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5802E0FB095E1A90B3D0267A6EB27C24 /* Pods-AlsKeyboardTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlsKeyboardTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5AB2044BEB8034C96B36CA23C9C853F7 /* Pods-AlsKeyboardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlsKeyboardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BF0A8B9D3A5F5FCAFE15DD4E6DD8AEA /* Pods-AlsKeyboard-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlsKeyboard-acknowledgements.plist"; sourceTree = "<group>"; };
+		6412C7B6EBC5A4918663C0AC27B988DF /* EFAutoScrollLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EFAutoScrollLabel-prefix.pch"; sourceTree = "<group>"; };
+		78300594D8DFCA8E6593AA06FE63FF01 /* Pods-AlsKeyboardUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AlsKeyboardUITests-umbrella.h"; sourceTree = "<group>"; };
+		78BC8B1FA9051FBB0206EA5C7513F73E /* Pods-AlsKeyboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AlsKeyboard-dummy.m"; sourceTree = "<group>"; };
+		808B753C4384CF4F19222BA7C9B4160E /* Pods-AlsKeyboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlsKeyboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B8D78E3A9A40881DA7DB81526EF95A5 /* Pods-AlsKeyboardTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AlsKeyboardTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9682E380C2EFCB52DE6251BDB7A8D760 /* EFAutoScrollLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EFAutoScrollLabel-dummy.m"; sourceTree = "<group>"; };
+		A63B016A10CFB0EEB4F67E539E7457DF /* Pods-AlsKeyboardTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AlsKeyboardTests-resources.sh"; sourceTree = "<group>"; };
+		AD156C3846DC1C04B44430E63DDBAB33 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEEF7DCABD8BF9F644A030C174E69253 /* Pods-AlsKeyboardUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AlsKeyboardUITests.modulemap"; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B97596DCBF4472544CE3C853673490AF /* Pods_AlsKeyboardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AlsKeyboardUITests.framework; path = "Pods-AlsKeyboardUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BABC58B8CFCBAFC6993035C22923998D /* Pods-AlsKeyboardUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AlsKeyboardUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C43AFB60A880F1022F6339DCF0AF719E /* Pods-AlsKeyboardUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AlsKeyboardUITests-resources.sh"; sourceTree = "<group>"; };
+		C489CFA12841E5512392ED2097C4D8A5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D746714E4B0F768B675366DA8F81DE05 /* EFAutoScrollLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EFAutoScrollLabel.xcconfig; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D9D7ACED4E60738C6DE54D966495AC66 /* Pods-AlsKeyboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AlsKeyboard-umbrella.h"; sourceTree = "<group>"; };
+		DA8C50D19FE7F0BC30B464FDDABA25E3 /* Pods_AlsKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AlsKeyboard.framework; path = "Pods-AlsKeyboard.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB5A82965F2C117B3E848FE363FCF682 /* Pods-AlsKeyboard-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AlsKeyboard-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E542200A61F49B72458B424903750843 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9077491E64613D609198D9FF67284E0 /* Pods-AlsKeyboardUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AlsKeyboardUITests-frameworks.sh"; sourceTree = "<group>"; };
+		ED853298ED3178F32C2417478C1A2612 /* Pods-AlsKeyboardUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlsKeyboardUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F3D8231F93FB4AF730B181C06C987ACA /* Pods-AlsKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlsKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
+		F709F3B7E74DFFF4A50A1DB13F861944 /* EFAutoScrollLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EFAutoScrollLabel.framework; path = EFAutoScrollLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72BFC89BA84DF6625B7E922BD688E88 /* Pods_AlsKeyboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AlsKeyboardTests.framework; path = "Pods-AlsKeyboardTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F913F82DB639C880AC1A5684EE813E71 /* EFAutoScrollLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EFAutoScrollLabel.swift; path = EFAutoScrollLabel/Classes/EFAutoScrollLabel.swift; sourceTree = "<group>"; };
+		FE611FA45003E3066183D43E1B839ADD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEB00E5BF8743A0D31667112C69D78CB /* Pods-AlsKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlsKeyboard.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BCE0D7E47BC63648F699EBB6D8A8276 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5861547A1D880034B0ED2EAA46ACACD /* Foundation.framework in Frameworks */,
+				643A32723B69731EAD1BDCB36A9F055E /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57E89950F9BD276C46A525A4A0EE40CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8C0D8B64D8B4B59B9A10B6DD442816B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77894669577E2A5C22553234415F30BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86589396C309B08FC2E408F98AFDAA7F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A35D81DB116E8F4EEDF00FCD9C220373 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E241B92BDD79BC8D1416A61DC775DF6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06E03515C157F96B8E919C6021A4D690 /* Pods-AlsKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C489CFA12841E5512392ED2097C4D8A5 /* Info.plist */,
+				2009338CF1CF92854BC01B29AA37A56B /* Pods-AlsKeyboard.modulemap */,
+				DB5A82965F2C117B3E848FE363FCF682 /* Pods-AlsKeyboard-acknowledgements.markdown */,
+				5BF0A8B9D3A5F5FCAFE15DD4E6DD8AEA /* Pods-AlsKeyboard-acknowledgements.plist */,
+				78BC8B1FA9051FBB0206EA5C7513F73E /* Pods-AlsKeyboard-dummy.m */,
+				460E9407C7220EC99E780B7651924F78 /* Pods-AlsKeyboard-frameworks.sh */,
+				432D49EBD9EEB64BC38C96E6FEA93911 /* Pods-AlsKeyboard-resources.sh */,
+				D9D7ACED4E60738C6DE54D966495AC66 /* Pods-AlsKeyboard-umbrella.h */,
+				F3D8231F93FB4AF730B181C06C987ACA /* Pods-AlsKeyboard.debug.xcconfig */,
+				FEB00E5BF8743A0D31667112C69D78CB /* Pods-AlsKeyboard.release.xcconfig */,
+			);
+			name = "Pods-AlsKeyboard";
+			path = "Target Support Files/Pods-AlsKeyboard";
+			sourceTree = "<group>";
+		};
+		0DB79CAE6BC220A9B30729CFA896CBC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C01F1B25D1575E06F7EB282629C7C1FC /* EFAutoScrollLabel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		13AEEDADE9ED60145C72588E311AFD31 /* Pods-AlsKeyboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				E542200A61F49B72458B424903750843 /* Info.plist */,
+				26A0A1289FF81AD2D33B43C9042B9C50 /* Pods-AlsKeyboardTests.modulemap */,
+				8B8D78E3A9A40881DA7DB81526EF95A5 /* Pods-AlsKeyboardTests-acknowledgements.markdown */,
+				5802E0FB095E1A90B3D0267A6EB27C24 /* Pods-AlsKeyboardTests-acknowledgements.plist */,
+				0BE96869A83BB03A774D7D7F9F43A95F /* Pods-AlsKeyboardTests-dummy.m */,
+				2D32D98D6311C3EEF8F41D1406F9B649 /* Pods-AlsKeyboardTests-frameworks.sh */,
+				A63B016A10CFB0EEB4F67E539E7457DF /* Pods-AlsKeyboardTests-resources.sh */,
+				0CBA305750DCCFF87367135659F47875 /* Pods-AlsKeyboardTests-umbrella.h */,
+				5AB2044BEB8034C96B36CA23C9C853F7 /* Pods-AlsKeyboardTests.debug.xcconfig */,
+				4317F35C4FE7CBC4E44A2205B49CF37F /* Pods-AlsKeyboardTests.release.xcconfig */,
+			);
+			name = "Pods-AlsKeyboardTests";
+			path = "Target Support Files/Pods-AlsKeyboardTests";
+			sourceTree = "<group>";
+		};
+		1F192283156A4DD39AA49A35C5A78F06 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				06E03515C157F96B8E919C6021A4D690 /* Pods-AlsKeyboard */,
+				13AEEDADE9ED60145C72588E311AFD31 /* Pods-AlsKeyboardTests */,
+				E97D10565D5EC6BAD9C1217A7A4803BF /* Pods-AlsKeyboardUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2FFB82B34A7E15B0AA245DD56A1B82C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F709F3B7E74DFFF4A50A1DB13F861944 /* EFAutoScrollLabel.framework */,
+				DA8C50D19FE7F0BC30B464FDDABA25E3 /* Pods_AlsKeyboard.framework */,
+				F72BFC89BA84DF6625B7E922BD688E88 /* Pods_AlsKeyboardTests.framework */,
+				B97596DCBF4472544CE3C853673490AF /* Pods_AlsKeyboardUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				0DB79CAE6BC220A9B30729CFA896CBC7 /* Pods */,
+				2FFB82B34A7E15B0AA245DD56A1B82C0 /* Products */,
+				1F192283156A4DD39AA49A35C5A78F06 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A982FE3FD2F98EB2CC662DAEFEFEAEE1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CCBB1842B25AA7E39145628E5CDA2E1 /* EFAutoScrollLabel.modulemap */,
+				D746714E4B0F768B675366DA8F81DE05 /* EFAutoScrollLabel.xcconfig */,
+				9682E380C2EFCB52DE6251BDB7A8D760 /* EFAutoScrollLabel-dummy.m */,
+				6412C7B6EBC5A4918663C0AC27B988DF /* EFAutoScrollLabel-prefix.pch */,
+				245DAB3D6FE34100BB24A909B50A8EE5 /* EFAutoScrollLabel-umbrella.h */,
+				FE611FA45003E3066183D43E1B839ADD /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/EFAutoScrollLabel";
+			sourceTree = "<group>";
+		};
+		C01F1B25D1575E06F7EB282629C7C1FC /* EFAutoScrollLabel */ = {
+			isa = PBXGroup;
+			children = (
+				F913F82DB639C880AC1A5684EE813E71 /* EFAutoScrollLabel.swift */,
+				A982FE3FD2F98EB2CC662DAEFEFEAEE1 /* Support Files */,
+			);
+			name = EFAutoScrollLabel;
+			path = EFAutoScrollLabel;
+			sourceTree = "<group>";
+		};
+		E97D10565D5EC6BAD9C1217A7A4803BF /* Pods-AlsKeyboardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AD156C3846DC1C04B44430E63DDBAB33 /* Info.plist */,
+				AEEF7DCABD8BF9F644A030C174E69253 /* Pods-AlsKeyboardUITests.modulemap */,
+				BABC58B8CFCBAFC6993035C22923998D /* Pods-AlsKeyboardUITests-acknowledgements.markdown */,
+				ED853298ED3178F32C2417478C1A2612 /* Pods-AlsKeyboardUITests-acknowledgements.plist */,
+				3C7014EEF6439C8183FF46F9F1063CA1 /* Pods-AlsKeyboardUITests-dummy.m */,
+				E9077491E64613D609198D9FF67284E0 /* Pods-AlsKeyboardUITests-frameworks.sh */,
+				C43AFB60A880F1022F6339DCF0AF719E /* Pods-AlsKeyboardUITests-resources.sh */,
+				78300594D8DFCA8E6593AA06FE63FF01 /* Pods-AlsKeyboardUITests-umbrella.h */,
+				808B753C4384CF4F19222BA7C9B4160E /* Pods-AlsKeyboardUITests.debug.xcconfig */,
+				4D09F9DEB9E77E76C11F2E70C5F7226E /* Pods-AlsKeyboardUITests.release.xcconfig */,
+			);
+			name = "Pods-AlsKeyboardUITests";
+			path = "Target Support Files/Pods-AlsKeyboardUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		334B1A5CB67C461498E8EBE02E45FB47 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE06F56BFEC8815B894DB76CCF7EB5FC /* EFAutoScrollLabel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF5DECB36F2FA047C602591C55E8C0A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1969ED8DD961986C7A3C3AB7C89D8C9 /* Pods-AlsKeyboardUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5659ABC1877E531C54169B1050AC6BBB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6109207CB45F4C0B0D688F36B25935B4 /* Pods-AlsKeyboardTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FA79E1148A0D6439DB2B2E4B2646BFB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC09BC089CE189DF80FB27A011416A3 /* Pods-AlsKeyboard-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		236605C526124B146ED76C4A418DCB9B /* Pods-AlsKeyboardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EF56B1269CFFB37E4E0471CF1F35EB0 /* Build configuration list for PBXNativeTarget "Pods-AlsKeyboardUITests" */;
+			buildPhases = (
+				D8F9364C822BC736A7116C9196DDB059 /* Sources */,
+				A35D81DB116E8F4EEDF00FCD9C220373 /* Frameworks */,
+				4DF5DECB36F2FA047C602591C55E8C0A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-AlsKeyboardUITests";
+			productName = "Pods-AlsKeyboardUITests";
+			productReference = B97596DCBF4472544CE3C853673490AF /* Pods_AlsKeyboardUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5032711B1D3C0AACDA4FCC8B811FBB56 /* Pods-AlsKeyboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB01A51AF047E6C73D26C00F96038AA3 /* Build configuration list for PBXNativeTarget "Pods-AlsKeyboardTests" */;
+			buildPhases = (
+				1D6F6D4FDA48E98344E1B76A6A085207 /* Sources */,
+				77894669577E2A5C22553234415F30BD /* Frameworks */,
+				5659ABC1877E531C54169B1050AC6BBB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-AlsKeyboardTests";
+			productName = "Pods-AlsKeyboardTests";
+			productReference = F72BFC89BA84DF6625B7E922BD688E88 /* Pods_AlsKeyboardTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DD74269C6B7A6F449446D7E872D30B0C /* Pods-AlsKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8380FB378F8C5772E8D8CB0F8E8443E0 /* Build configuration list for PBXNativeTarget "Pods-AlsKeyboard" */;
+			buildPhases = (
+				552C52977BAC52AF9838E9C106C15008 /* Sources */,
+				57E89950F9BD276C46A525A4A0EE40CE /* Frameworks */,
+				8FA79E1148A0D6439DB2B2E4B2646BFB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3ADBD4D6A57565B6CBC5757E0DEF2EE /* PBXTargetDependency */,
+			);
+			name = "Pods-AlsKeyboard";
+			productName = "Pods-AlsKeyboard";
+			productReference = DA8C50D19FE7F0BC30B464FDDABA25E3 /* Pods_AlsKeyboard.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EF9B31C4EBC03B303651139661C10725 /* EFAutoScrollLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E72D39268AE007A845EFBF565BE7B3E /* Build configuration list for PBXNativeTarget "EFAutoScrollLabel" */;
+			buildPhases = (
+				CC7E7A54D3C4CC5531C8A89A849A4CD4 /* Sources */,
+				3BCE0D7E47BC63648F699EBB6D8A8276 /* Frameworks */,
+				334B1A5CB67C461498E8EBE02E45FB47 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EFAutoScrollLabel;
+			productName = EFAutoScrollLabel;
+			productReference = F709F3B7E74DFFF4A50A1DB13F861944 /* EFAutoScrollLabel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2FFB82B34A7E15B0AA245DD56A1B82C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF9B31C4EBC03B303651139661C10725 /* EFAutoScrollLabel */,
+				DD74269C6B7A6F449446D7E872D30B0C /* Pods-AlsKeyboard */,
+				5032711B1D3C0AACDA4FCC8B811FBB56 /* Pods-AlsKeyboardTests */,
+				236605C526124B146ED76C4A418DCB9B /* Pods-AlsKeyboardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D6F6D4FDA48E98344E1B76A6A085207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80B296C6C41A979C4CD447EE3704D32 /* Pods-AlsKeyboardTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		552C52977BAC52AF9838E9C106C15008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E5980E6CD5B024826E8F5D8C57A998 /* Pods-AlsKeyboard-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC7E7A54D3C4CC5531C8A89A849A4CD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CF95E4EA7219DB598841C62793E035 /* EFAutoScrollLabel-dummy.m in Sources */,
+				5AB6E2AA4618A7DBC2480BBD73118A15 /* EFAutoScrollLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F9364C822BC736A7116C9196DDB059 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A681062538EC0D5A593373CFC3E7FEC8 /* Pods-AlsKeyboardUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A3ADBD4D6A57565B6CBC5757E0DEF2EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EFAutoScrollLabel;
+			target = EF9B31C4EBC03B303651139661C10725 /* EFAutoScrollLabel */;
+			targetProxy = DED109CF5716A900964D9526934E5ED1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		266597A3E867EAEF18F4B09629819F4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4317F35C4FE7CBC4E44A2205B49CF37F /* Pods-AlsKeyboardTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AlsKeyboardTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AlsKeyboardTests/Pods-AlsKeyboardTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AlsKeyboardTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		270993CFA70F98BB2B1CEC15DB1953EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 808B753C4384CF4F19222BA7C9B4160E /* Pods-AlsKeyboardUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AlsKeyboardUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AlsKeyboardUITests/Pods-AlsKeyboardUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AlsKeyboardUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3CB62B83C4398DFF55B1270B61F12121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D09F9DEB9E77E76C11F2E70C5F7226E /* Pods-AlsKeyboardUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AlsKeyboardUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AlsKeyboardUITests/Pods-AlsKeyboardUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AlsKeyboardUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		52D599FEF2B7CE672358D47265DDCB4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AB2044BEB8034C96B36CA23C9C853F7 /* Pods-AlsKeyboardTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AlsKeyboardTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AlsKeyboardTests/Pods-AlsKeyboardTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AlsKeyboardTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		643C76AA582046977B7877822ED7A258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		68C69E1843C7D2E83AABFF7C8E960D72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D746714E4B0F768B675366DA8F81DE05 /* EFAutoScrollLabel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EFAutoScrollLabel/EFAutoScrollLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EFAutoScrollLabel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EFAutoScrollLabel/EFAutoScrollLabel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EFAutoScrollLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6AEBB55853E84DEF856588992A2FC60C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D746714E4B0F768B675366DA8F81DE05 /* EFAutoScrollLabel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EFAutoScrollLabel/EFAutoScrollLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EFAutoScrollLabel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EFAutoScrollLabel/EFAutoScrollLabel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = EFAutoScrollLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		75C055F53447466D3298256DD4E2DA91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEB00E5BF8743A0D31667112C69D78CB /* Pods-AlsKeyboard.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AlsKeyboard/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AlsKeyboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8E3140FC5DB4BF8191655262CD1660E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3D8231F93FB4AF730B181C06C987ACA /* Pods-AlsKeyboard.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AlsKeyboard/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AlsKeyboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C03B8870130C98D1B02B59D003687524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				643C76AA582046977B7877822ED7A258 /* Debug */,
+				C03B8870130C98D1B02B59D003687524 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E72D39268AE007A845EFBF565BE7B3E /* Build configuration list for PBXNativeTarget "EFAutoScrollLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AEBB55853E84DEF856588992A2FC60C /* Debug */,
+				68C69E1843C7D2E83AABFF7C8E960D72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EF56B1269CFFB37E4E0471CF1F35EB0 /* Build configuration list for PBXNativeTarget "Pods-AlsKeyboardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270993CFA70F98BB2B1CEC15DB1953EE /* Debug */,
+				3CB62B83C4398DFF55B1270B61F12121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8380FB378F8C5772E8D8CB0F8E8443E0 /* Build configuration list for PBXNativeTarget "Pods-AlsKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E3140FC5DB4BF8191655262CD1660E9 /* Debug */,
+				75C055F53447466D3298256DD4E2DA91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB01A51AF047E6C73D26C00F96038AA3 /* Build configuration list for PBXNativeTarget "Pods-AlsKeyboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52D599FEF2B7CE672358D47265DDCB4D /* Debug */,
+				266597A3E867EAEF18F4B09629819F4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
