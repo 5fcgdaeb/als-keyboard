@@ -26,8 +26,8 @@
 		A56696101CE8B34B00BD7EAF /* AlsKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566960F1CE8B34B00BD7EAF /* AlsKeyboardUITests.swift */; };
 		A5A1B2D21CEA317B00626AC5 /* DlibWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A5A1B2D11CEA317B00626AC5 /* DlibWrapper.mm */; };
 		A5A1B2D41CEA35B300626AC5 /* libdlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1B2D31CEA35B300626AC5 /* libdlib.a */; };
-		A5A1B2D61CEA41E200626AC5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1B2D51CEA41E200626AC5 /* Accelerate.framework */; };
 		A5A1B2D81CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat in Resources */ = {isa = PBXBuildFile; fileRef = A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */; };
+		BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */; };
 		E2776C282171182EB4F95A5C /* Pods_AlsKeyboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E895BA39EEEA06CD290C48C /* Pods_AlsKeyboardUITests.framework */; };
 		F6BD193CF5094A5FF14C0BA4 /* Pods_AlsKeyboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */; };
 /* End PBXBuildFile section */
@@ -79,11 +79,11 @@
 		A5A1B2CF1CEA317B00626AC5 /* AlsKeyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlsKeyboard-Bridging-Header.h"; sourceTree = "<group>"; };
 		A5A1B2D01CEA317B00626AC5 /* DlibWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DlibWrapper.h; sourceTree = "<group>"; };
 		A5A1B2D11CEA317B00626AC5 /* DlibWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DlibWrapper.mm; sourceTree = "<group>"; };
-		A5A1B2D31CEA35B300626AC5 /* libdlib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdlib.a; path = AlsKeyboard/lib/libdlib.a; sourceTree = "<group>"; };
-		A5A1B2D51CEA41E200626AC5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = shape_predictor_68_face_landmarks.dat; path = AlsKeyboard/lib/shape_predictor_68_face_landmarks.dat; sourceTree = "<group>"; };
+		A5A1B2D31CEA35B300626AC5 /* libdlib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdlib.a; sourceTree = "<group>"; };
+		A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = shape_predictor_68_face_landmarks.dat; sourceTree = "<group>"; };
 		A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlsKeyboardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B596517905A7D32CF66AC5CE /* Pods-AlsKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.release.xcconfig"; sourceTree = "<group>"; };
+		BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BE39840255B4EA271704529E /* Pods-AlsKeyboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardUITests/Pods-AlsKeyboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB9D7C778D7DF89115900D1F /* Pods-AlsKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		E40E4001567FC2C86E92C8AC /* Pods-AlsKeyboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardTests/Pods-AlsKeyboardTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A1B2D61CEA41E200626AC5 /* Accelerate.framework in Frameworks */,
+				BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */,
 				A5A1B2D41CEA35B300626AC5 /* libdlib.a in Frameworks */,
 				4001E4AD27527E624ED234FB /* Pods_AlsKeyboard.framework in Frameworks */,
 			);
@@ -122,6 +122,7 @@
 		5DE157A41F044DE0AC109B1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */,
 				8A06847AF1653B5891D83AF7 /* Pods_AlsKeyboard.framework */,
 				A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */,
 				3E895BA39EEEA06CD290C48C /* Pods_AlsKeyboardUITests.framework */,
@@ -147,9 +148,6 @@
 		A56695E31CE8B34B00BD7EAF = {
 			isa = PBXGroup;
 			children = (
-				A5A1B2D31CEA35B300626AC5 /* libdlib.a */,
-				A5A1B2D51CEA41E200626AC5 /* Accelerate.framework */,
-				A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */,
 				A56695EE1CE8B34B00BD7EAF /* AlsKeyboard */,
 				A56696031CE8B34B00BD7EAF /* AlsKeyboardTests */,
 				A566960E1CE8B34B00BD7EAF /* AlsKeyboardUITests */,
@@ -172,17 +170,12 @@
 		A56695EE1CE8B34B00BD7EAF /* AlsKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				A22EA9161F2F622800423D84 /* Engine Code */,
-				A5A1B2D01CEA317B00626AC5 /* DlibWrapper.h */,
-				A5A1B2D11CEA317B00626AC5 /* DlibWrapper.mm */,
 				A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */,
-				A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */,
-				A20A2D321F320F3600F3A0C7 /* ProcessViewController.swift */,
-				A56695F31CE8B34B00BD7EAF /* Main.storyboard */,
-				A56695F61CE8B34B00BD7EAF /* Assets.xcassets */,
-				A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */,
-				A56695FB1CE8B34B00BD7EAF /* Info.plist */,
-				A5A1B2CF1CEA317B00626AC5 /* AlsKeyboard-Bridging-Header.h */,
+				BBCE8DB020CAA5D700DBE34A /* Storyboards */,
+				BBCE8DAF20CAA5CB00DBE34A /* View Controllers */,
+				BBCE8DB120CAA60400DBE34A /* dlib */,
+				BBCE8DAE20CAA5AA00DBE34A /* Configuration */,
+				A22EA9161F2F622800423D84 /* Engine Code */,
 			);
 			path = AlsKeyboard;
 			sourceTree = "<group>";
@@ -216,6 +209,45 @@
 				118EFC3CA248C26C06544824 /* Pods-AlsKeyboardUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BBCE8DAE20CAA5AA00DBE34A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				A5A1B2D01CEA317B00626AC5 /* DlibWrapper.h */,
+				A5A1B2D11CEA317B00626AC5 /* DlibWrapper.mm */,
+				A5A1B2CF1CEA317B00626AC5 /* AlsKeyboard-Bridging-Header.h */,
+				A56695F61CE8B34B00BD7EAF /* Assets.xcassets */,
+				A56695FB1CE8B34B00BD7EAF /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		BBCE8DAF20CAA5CB00DBE34A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */,
+				A20A2D321F320F3600F3A0C7 /* ProcessViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BBCE8DB020CAA5D700DBE34A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A56695F31CE8B34B00BD7EAF /* Main.storyboard */,
+				A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BBCE8DB120CAA60400DBE34A /* dlib */ = {
+			isa = PBXGroup;
+			children = (
+				A5A1B2D31CEA35B300626AC5 /* libdlib.a */,
+				A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */,
+			);
+			path = dlib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -685,17 +717,18 @@
 					DLIB_USE_BLAS,
 					DLIB_USE_LAPACK,
 				);
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/AlsKeyboard/lib";
-				INFOPLIST_FILE = AlsKeyboard/Info.plist;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/AlsKeyboard/lib/";
+				INFOPLIST_FILE = AlsKeyboard/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/AlsKeyboard/lib",
+					"$(PROJECT_DIR)/AlsKeyboard/lib/dlib",
+					"$(PROJECT_DIR)/AlsKeyboard/dlib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AlsKeyboard/AlsKeyboard-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AlsKeyboard/Configuration/AlsKeyboard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -716,17 +749,18 @@
 					DLIB_USE_BLAS,
 					DLIB_USE_LAPACK,
 				);
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/AlsKeyboard/lib";
-				INFOPLIST_FILE = AlsKeyboard/Info.plist;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/AlsKeyboard/lib/";
+				INFOPLIST_FILE = AlsKeyboard/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/AlsKeyboard/lib",
+					"$(PROJECT_DIR)/AlsKeyboard/lib/dlib",
+					"$(PROJECT_DIR)/AlsKeyboard/dlib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AlsKeyboard/AlsKeyboard-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AlsKeyboard/Configuration/AlsKeyboard-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

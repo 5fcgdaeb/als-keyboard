@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import DisplayLiveSamples
 
 class DisplayLiveSamplesTests: XCTestCase {
     
