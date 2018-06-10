@@ -1,1 +1,2 @@
-AlsKeyboard/dlib* linguist-vendored
+AlsKeyboard/dlib/* linguist-vendored
+AlsKeyboard/Configuration/* linguist-vendored
