@@ -1,12 +1,16 @@
 PODS:
-  - EFAutoScrollLabel (1.0.2)
+  - EFAutoScrollLabel (4.0.2)
 
 DEPENDENCIES:
-  - EFAutoScrollLabel (~> 1.0.2)
+  - EFAutoScrollLabel
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - EFAutoScrollLabel
 
 SPEC CHECKSUMS:
-  EFAutoScrollLabel: c5b0d3da32c2783fce5d7b1fdf9b875be25c37ce
+  EFAutoScrollLabel: 0534a0535b5ab9131c939dcf45aaa9f398156e97
 
-PODFILE CHECKSUM: 37879ab15e311d8f039aaf558ec127ab53ef667e
+PODFILE CHECKSUM: 9c1f9b593940bfc529199497e6b34dc92f463741
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.2

@@ -6,7 +6,7 @@ target 'AlsKeyboard' do
   use_frameworks!
 
   # Pods for AlsKeyboard
-  pod "EFAutoScrollLabel", '~> 1.0.2'
+  pod "EFAutoScrollLabel"
 
   target 'AlsKeyboardTests' do
     inherit! :search_paths

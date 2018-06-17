@@ -65,7 +65,7 @@ class ALSEngine: NSObject {
         }
         
         if let commandFromThisInput = self.commandGenerator.process(input: faceRecognitionInput) {
-            self.keyboardEngine.process(command: commandFromThisInput!)
+            self.keyboardEngine.process(command: commandFromThisInput)
         }
     }
 }

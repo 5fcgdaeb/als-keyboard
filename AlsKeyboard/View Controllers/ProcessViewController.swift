@@ -40,7 +40,7 @@ class ProcessViewController: KeyboardDelegate {
     
     func addLabelToView(value: String) {
         if self.writeMessage.text != nil {
-            if self.writeMessage.text!.characters.count > 61 {
+            if self.writeMessage.text!.count > 61 {
                 self.writeMessage.text = ""
             } else {
                 self.writeMessage.text = self.writeMessage.text! + "\(value)"
