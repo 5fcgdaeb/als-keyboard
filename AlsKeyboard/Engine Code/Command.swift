@@ -15,6 +15,7 @@ struct Command {
     let createdAt: Date
     
     static func allCommands() -> [Command] {
+        
         let command1 = Command(commandID: "EyebrowRaise", shortCode: "ER", createdAt: Date())
         let command2 = Command(commandID: "Blink", shortCode: "BB", createdAt: Date())
         let command3 = Command(commandID: "LongBlink", shortCode: "LB", createdAt: Date())

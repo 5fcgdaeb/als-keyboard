@@ -60,6 +60,7 @@ class ALSEngine: NSObject {
     }
     
     func process(sdkInput: SDKInput) {
+        
         guard let faceRecognitionInput = FRIGenerator().generateFRI(withSDKInput: sdkInput) else {
             return
         }

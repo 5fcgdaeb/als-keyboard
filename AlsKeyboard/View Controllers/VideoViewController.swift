@@ -51,7 +51,8 @@ class VideoViewController: UIViewController {
         do {
             let input = try AVCaptureDeviceInput(device: frontCamera!)
             session.addInput(input)
-        } catch {
+        }
+        catch {
             print("Error: can't access camera")
             return
         }
@@ -72,17 +73,17 @@ class VideoViewController: UIViewController {
             session.addOutput(metaOutput)
         }
         
-        // For iphone7 comment out for ipad
-//        session.sessionPreset = AVCaptureSessionPreset1280x720
-        
-        session.sessionPreset = AVCaptureSessionPresetPhoto
-        
+        if UserHardware.IS_IPAD {
+            session.sessionPreset = AVCaptureSessionPresetPhoto
+        }
+        else {
+            session.sessionPreset = AVCaptureSessionPreset1280x720
+        }
+
         session.commitConfiguration()
         
         output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
-        
         metaOutput.metadataObjectTypes = [AVMetadataObjectTypeFace]
-        
         wrapper?.prepare()
         
         session.startRunning()
@@ -106,10 +107,9 @@ extension VideoViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AVC
         }
         
         if shouldWeProcess {
+            
             if !self.currentMetadata.isEmpty {
-                let boundsArray = self.currentMetadata
-                    .flatMap { $0 as? AVMetadataFaceObject }
-                    .map { (faceObject) -> NSValue in
+                let boundsArray = self.currentMetadata.flatMap { $0 as? AVMetadataFaceObject }.map { (faceObject) -> NSValue in
                         let convertedObject = captureOutput.transformedMetadataObject(for: faceObject, connection: connection)
                         return NSValue(cgRect: convertedObject!.bounds)
                 }
@@ -121,6 +121,7 @@ extension VideoViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AVC
                         let y: Int = points.object(at: i + 1) as! Int
                         mappedPoints.append(CGPoint(x: x, y: y))
                     }
+                    
                     let sdkInput = SDKInput(faceCoordinates: mappedPoints)
                     alsEngine?.startTyping()
                     self.alsEngine!.process(sdkInput: sdkInput)

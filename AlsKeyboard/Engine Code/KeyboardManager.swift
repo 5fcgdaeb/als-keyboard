@@ -88,7 +88,8 @@ class KeyboardManager: NSObject {
         
         if length < 3 {
             return
-        } else {
+        }
+        else {
             let command1 = self.bufferedCommands[length - 3]
             let command2 = self.bufferedCommands[length - 2]
             let command3 = self.bufferedCommands[length - 1]
@@ -100,7 +101,8 @@ class KeyboardManager: NSObject {
                 self.bufferedCommands.removeAll()
                 self.delegate?.displayTextUpdated(value: self.currentText)
                 self.delegate?.displayReceivedCommand(value: " ")
-            } else {
+            }
+            else {
                 self.bufferedCommands.removeFirst()
                 self.delegate?.displayTextUpdated(value: self.currentText)
                 self.delegate?.deleteFirstCommandFromBuffer()
