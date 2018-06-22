@@ -29,6 +29,7 @@
 		A5A1B2D81CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat in Resources */ = {isa = PBXBuildFile; fileRef = A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */; };
 		BB4AA63F20DD30F4006EE5FA /* ARSceneKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4AA63E20DD30F4006EE5FA /* ARSceneKit.storyboard */; };
 		BB4AA64120DD3192006EE5FA /* MainARSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */; };
+		BB8D512B20DD3EAF00D81E51 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D512A20DD3EAF00D81E51 /* FacialExpression.swift */; };
 		BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */; };
 		BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4812F20D9659D00762EAE /* UserHardware.swift */; };
 		E2776C282171182EB4F95A5C /* Pods_AlsKeyboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E895BA39EEEA06CD290C48C /* Pods_AlsKeyboardUITests.framework */; };
@@ -88,6 +89,7 @@
 		B596517905A7D32CF66AC5CE /* Pods-AlsKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.release.xcconfig"; sourceTree = "<group>"; };
 		BB4AA63E20DD30F4006EE5FA /* ARSceneKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARSceneKit.storyboard; sourceTree = "<group>"; };
 		BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainARSceneVC.swift; sourceTree = "<group>"; };
+		BB8D512A20DD3EAF00D81E51 /* FacialExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
 		BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BBD4812F20D9659D00762EAE /* UserHardware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHardware.swift; sourceTree = "<group>"; };
 		BE39840255B4EA271704529E /* Pods-AlsKeyboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardUITests/Pods-AlsKeyboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				A22EA91D1F2F622800423D84 /* KeyboardManager.swift */,
 				A22EA91E1F2F622800423D84 /* SDKInput.swift */,
 				A22EA91A1F2F622800423D84 /* Extensions.swift */,
+				BB8D512A20DD3EAF00D81E51 /* FacialExpression.swift */,
 			);
 			path = "Engine Code";
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				A22EA9211F2F626100423D84 /* CommandGenerator.swift in Sources */,
 				A56695F01CE8B34B00BD7EAF /* AppDelegate.swift in Sources */,
 				A22EA9201F2F625E00423D84 /* Command.swift in Sources */,
+				BB8D512B20DD3EAF00D81E51 /* FacialExpression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
