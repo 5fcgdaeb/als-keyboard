@@ -177,10 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */,
-				BBCE8DB020CAA5D700DBE34A /* Storyboards */,
-				BBCE8DAF20CAA5CB00DBE34A /* View Controllers */,
-				BBCE8DAE20CAA5AA00DBE34A /* Configuration */,
+				BBCE8DAF20CAA5CB00DBE34A /* UI Layer */,
 				A22EA9161F2F622800423D84 /* Engine Code */,
+				BBCE8DAE20CAA5AA00DBE34A /* Configuration */,
 			);
 			path = AlsKeyboard;
 			sourceTree = "<group>";
@@ -244,15 +243,16 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		BBCE8DAF20CAA5CB00DBE34A /* View Controllers */ = {
+		BBCE8DAF20CAA5CB00DBE34A /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
 				BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */,
 				A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */,
 				A20A2D321F320F3600F3A0C7 /* ProcessViewController.swift */,
+				BBCE8DB020CAA5D700DBE34A /* Storyboards */,
 				BBD4812E20D9658A00762EAE /* Helpers */,
 			);
-			path = "View Controllers";
+			path = "UI Layer";
 			sourceTree = "<group>";
 		};
 		BBCE8DB020CAA5D700DBE34A /* Storyboards */ = {
