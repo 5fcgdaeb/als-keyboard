@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  DisplayLiveSamples
+//  ALSKeyboard
 //
 //  Created by Luis Reisewitz on 15.05.16.
 //  Copyright © 2016 ZweiGraf. All rights reserved.
@@ -13,7 +13,6 @@ import ARKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         

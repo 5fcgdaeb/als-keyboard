@@ -9,12 +9,24 @@
 import UIKit
 import ARKit
 
-class MainARSceneVC: UIViewController, ARSessionDelegate {
+class MainARSceneVC: UIViewController, ARSessionDelegate, KeyboardDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet var facialMovesLabel: UILabel!
+    @IBOutlet var charactersLabel: UILabel!
+    
+    private var engine: ALSEngine?
+    
+    var moveDetector: MoveDetector {
+        get {
+            return (self.engine?.moveDetector)!
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.engine = ALSEngine(withKeyboardDelegate: self)
         
         self.sceneView.scene = SCNScene()
         self.sceneView.rendersContinuously = true
@@ -39,6 +51,10 @@ class MainARSceneVC: UIViewController, ARSessionDelegate {
         if let mostLikelyMove = mostLikelyMoves.first {
             print("\(Date().timeIntervalSince1970) - \(mostLikelyMove)")
         }
+        
+        let convertedInput = Dictionary(uniqueKeysWithValues: faceAnchor.blendShapes.map({ ($0.0.rawValue, $0.1.floatValue) }))
+        let facialMoves = self.moveDetector.detectMoves(fromInput: FaceInputData(faceAnchors: convertedInput))
+        self.engine?.keyboardEngine.process(facialMove: facialMoves.first!)
     }
 
     public func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {}
@@ -57,6 +73,22 @@ class MainARSceneVC: UIViewController, ARSessionDelegate {
         DispatchQueue.main.async {
             print("The AR session failed: \(errorMessage)")
         }
+    }
+    
+    func displayTextUpdated(value: String) {
+        DispatchQueue.main.async {}
+    }
+    
+    func displayReceivedCommand(value: String) {
+        DispatchQueue.main.async {}
+    }
+    
+    func clearCommandBuffer() { }
+    
+    func deleteFirstCommandFromBuffer() {}
+    
+    func addLabelToView(value: String) {
+        DispatchQueue.main.async {}
     }
 
 }

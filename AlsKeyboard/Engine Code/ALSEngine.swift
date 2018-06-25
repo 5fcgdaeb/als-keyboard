@@ -43,12 +43,12 @@ protocol KeyboardDelegate {
 
 class ALSEngine: NSObject {
 
-    let commandGenerator: CommandGenerator
-    let keyboardEngine: KeyboardManager
+    let moveDetector: MoveDetector
+    let keyboardEngine: FacialMoveKeyboard
     
     init(withKeyboardDelegate keyboardDelegate: KeyboardDelegate) {
-        self.commandGenerator = CommandGenerator()
-        self.keyboardEngine = KeyboardManager(withDelegate: keyboardDelegate)
+        self.moveDetector = DLibMoveDetector()
+        self.keyboardEngine = SimpleKeyboard(withDelegate: keyboardDelegate)
     }
     
     func startTyping() {
@@ -59,14 +59,11 @@ class ALSEngine: NSObject {
         self.keyboardEngine.resetState()
     }
     
-    func process(sdkInput: SDKInput) {
+    func process(faceInputData data: FaceInputData) {
         
-        guard let faceRecognitionInput = FRIGenerator().generateFRI(withSDKInput: sdkInput) else {
-            return
-        }
-        
-        if let commandFromThisInput = self.commandGenerator.process(input: faceRecognitionInput) {
-            self.keyboardEngine.process(command: commandFromThisInput)
+        let detectedMoves = self.moveDetector.detectMoves(fromInput: data)
+        if detectedMoves.count > 0 {
+            self.keyboardEngine.process(facialMove: detectedMoves.first!)
         }
     }
 }

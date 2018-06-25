@@ -10,26 +10,32 @@
 		4001E4AD27527E624ED234FB /* Pods_AlsKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A06847AF1653B5891D83AF7 /* Pods_AlsKeyboard.framework */; };
 		A20A2D351F32103D00F3A0C7 /* ProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A2D321F320F3600F3A0C7 /* ProcessViewController.swift */; };
 		A22EA91F1F2F625C00423D84 /* ALSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9171F2F622800423D84 /* ALSEngine.swift */; };
-		A22EA9201F2F625E00423D84 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9181F2F622800423D84 /* Command.swift */; };
-		A22EA9211F2F626100423D84 /* CommandGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9191F2F622800423D84 /* CommandGenerator.swift */; };
-		A22EA9221F2F626300423D84 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91A1F2F622800423D84 /* Extensions.swift */; };
-		A22EA9231F2F626500423D84 /* FaceRecognitionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91B1F2F622800423D84 /* FaceRecognitionInput.swift */; };
-		A22EA9241F2F626700423D84 /* FRIGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91C1F2F622800423D84 /* FRIGenerator.swift */; };
-		A22EA9251F2F626900423D84 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91D1F2F622800423D84 /* KeyboardManager.swift */; };
-		A22EA9261F2F626C00423D84 /* SDKInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91E1F2F622800423D84 /* SDKInput.swift */; };
+		A22EA9231F2F626500423D84 /* FaceInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91B1F2F622800423D84 /* FaceInputData.swift */; };
 		A56695F01CE8B34B00BD7EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */; };
 		A56695F21CE8B34B00BD7EAF /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */; };
 		A56695F51CE8B34B00BD7EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F31CE8B34B00BD7EAF /* Main.storyboard */; };
 		A56695F71CE8B34B00BD7EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56695F61CE8B34B00BD7EAF /* Assets.xcassets */; };
 		A56695FA1CE8B34B00BD7EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */; };
-		A56696051CE8B34B00BD7EAF /* AlsKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56696041CE8B34B00BD7EAF /* AlsKeyboardTests.swift */; };
+		A56696051CE8B34B00BD7EAF /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */; };
 		A56696101CE8B34B00BD7EAF /* AlsKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566960F1CE8B34B00BD7EAF /* AlsKeyboardUITests.swift */; };
-		A5A1B2D21CEA317B00626AC5 /* DlibWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A5A1B2D11CEA317B00626AC5 /* DlibWrapper.mm */; };
-		A5A1B2D41CEA35B300626AC5 /* libdlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1B2D31CEA35B300626AC5 /* libdlib.a */; };
-		A5A1B2D81CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat in Resources */ = {isa = PBXBuildFile; fileRef = A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */; };
 		BB4AA63F20DD30F4006EE5FA /* ARSceneKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4AA63E20DD30F4006EE5FA /* ARSceneKit.storyboard */; };
 		BB4AA64120DD3192006EE5FA /* MainARSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */; };
-		BB8D512B20DD3EAF00D81E51 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D512A20DD3EAF00D81E51 /* FacialExpression.swift */; };
+		BB4F492120DFC03E00F19109 /* MoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492020DFC03E00F19109 /* MoveDetector.swift */; };
+		BB4F492420DFC05C00F19109 /* ARKitMoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492320DFC05C00F19109 /* ARKitMoveDetector.swift */; };
+		BB4F492620DFC07E00F19109 /* DLibMoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492520DFC07E00F19109 /* DLibMoveDetector.swift */; };
+		BB4F492920DFCA0000F19109 /* FacialMoveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492820DFCA0000F19109 /* FacialMoveKeyboard.swift */; };
+		BB4F492B20DFCA2700F19109 /* SimpleKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492A20DFCA2700F19109 /* SimpleKeyboard.swift */; };
+		BB4F492D20DFCA3C00F19109 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492C20DFCA3C00F19109 /* FacialExpression.swift */; };
+		BB71E0EA20E14595004C219D /* FaceInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91B1F2F622800423D84 /* FaceInputData.swift */; };
+		BB71E0EB20E14595004C219D /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492C20DFCA3C00F19109 /* FacialExpression.swift */; };
+		BB71E0EC20E14595004C219D /* FacialMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */; };
+		BB71E0ED20E14595004C219D /* MoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492020DFC03E00F19109 /* MoveDetector.swift */; };
+		BB71E0EE20E14595004C219D /* ARKitMoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492320DFC05C00F19109 /* ARKitMoveDetector.swift */; };
+		BB71E0EF20E14595004C219D /* DLibMoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492520DFC07E00F19109 /* DLibMoveDetector.swift */; };
+		BB71E0F020E14595004C219D /* FacialMoveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492820DFCA0000F19109 /* FacialMoveKeyboard.swift */; };
+		BB71E0F120E14595004C219D /* SimpleKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492A20DFCA2700F19109 /* SimpleKeyboard.swift */; };
+		BB71E0F220E14596004C219D /* ALSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9171F2F622800423D84 /* ALSEngine.swift */; };
+		BB8D512B20DD3EAF00D81E51 /* FacialMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */; };
 		BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */; };
 		BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4812F20D9659D00762EAE /* UserHardware.swift */; };
 		E2776C282171182EB4F95A5C /* Pods_AlsKeyboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E895BA39EEEA06CD290C48C /* Pods_AlsKeyboardUITests.framework */; };
@@ -60,13 +66,7 @@
 		8A06847AF1653B5891D83AF7 /* Pods_AlsKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlsKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20A2D321F320F3600F3A0C7 /* ProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessViewController.swift; sourceTree = "<group>"; };
 		A22EA9171F2F622800423D84 /* ALSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSEngine.swift; sourceTree = "<group>"; };
-		A22EA9181F2F622800423D84 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		A22EA9191F2F622800423D84 /* CommandGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandGenerator.swift; sourceTree = "<group>"; };
-		A22EA91A1F2F622800423D84 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		A22EA91B1F2F622800423D84 /* FaceRecognitionInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRecognitionInput.swift; sourceTree = "<group>"; };
-		A22EA91C1F2F622800423D84 /* FRIGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRIGenerator.swift; sourceTree = "<group>"; };
-		A22EA91D1F2F622800423D84 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
-		A22EA91E1F2F622800423D84 /* SDKInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKInput.swift; sourceTree = "<group>"; };
+		A22EA91B1F2F622800423D84 /* FaceInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceInputData.swift; sourceTree = "<group>"; };
 		A56695EC1CE8B34B00BD7EAF /* AlsKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlsKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -75,21 +75,22 @@
 		A56695F91CE8B34B00BD7EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A56695FB1CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A56696001CE8B34B00BD7EAF /* AlsKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlsKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A56696041CE8B34B00BD7EAF /* AlsKeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsKeyboardTests.swift; sourceTree = "<group>"; };
+		A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		A56696061CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A566960B1CE8B34B00BD7EAF /* AlsKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlsKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A566960F1CE8B34B00BD7EAF /* AlsKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsKeyboardUITests.swift; sourceTree = "<group>"; };
 		A56696111CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5A1B2CF1CEA317B00626AC5 /* AlsKeyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlsKeyboard-Bridging-Header.h"; sourceTree = "<group>"; };
-		A5A1B2D01CEA317B00626AC5 /* DlibWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DlibWrapper.h; sourceTree = "<group>"; };
-		A5A1B2D11CEA317B00626AC5 /* DlibWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DlibWrapper.mm; sourceTree = "<group>"; };
-		A5A1B2D31CEA35B300626AC5 /* libdlib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdlib.a; sourceTree = "<group>"; };
-		A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = shape_predictor_68_face_landmarks.dat; sourceTree = "<group>"; };
 		A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlsKeyboardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B596517905A7D32CF66AC5CE /* Pods-AlsKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.release.xcconfig"; sourceTree = "<group>"; };
 		BB4AA63E20DD30F4006EE5FA /* ARSceneKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARSceneKit.storyboard; sourceTree = "<group>"; };
 		BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainARSceneVC.swift; sourceTree = "<group>"; };
-		BB8D512A20DD3EAF00D81E51 /* FacialExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
+		BB4F492020DFC03E00F19109 /* MoveDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDetector.swift; sourceTree = "<group>"; };
+		BB4F492320DFC05C00F19109 /* ARKitMoveDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitMoveDetector.swift; sourceTree = "<group>"; };
+		BB4F492520DFC07E00F19109 /* DLibMoveDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLibMoveDetector.swift; sourceTree = "<group>"; };
+		BB4F492820DFCA0000F19109 /* FacialMoveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialMoveKeyboard.swift; sourceTree = "<group>"; };
+		BB4F492A20DFCA2700F19109 /* SimpleKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleKeyboard.swift; sourceTree = "<group>"; };
+		BB4F492C20DFCA3C00F19109 /* FacialExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
+		BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialMove.swift; sourceTree = "<group>"; };
 		BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BBD4812F20D9659D00762EAE /* UserHardware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHardware.swift; sourceTree = "<group>"; };
 		BE39840255B4EA271704529E /* Pods-AlsKeyboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardUITests/Pods-AlsKeyboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,7 +104,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */,
-				A5A1B2D41CEA35B300626AC5 /* libdlib.a in Frameworks */,
 				4001E4AD27527E624ED234FB /* Pods_AlsKeyboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,15 +141,12 @@
 		A22EA9161F2F622800423D84 /* Engine Code */ = {
 			isa = PBXGroup;
 			children = (
+				A22EA91B1F2F622800423D84 /* FaceInputData.swift */,
+				BB4F492C20DFCA3C00F19109 /* FacialExpression.swift */,
+				BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */,
+				BB4F492220DFC04C00F19109 /* Move Detectors */,
+				BB4F492720DFC9E900F19109 /* Keyboards */,
 				A22EA9171F2F622800423D84 /* ALSEngine.swift */,
-				A22EA9181F2F622800423D84 /* Command.swift */,
-				A22EA9191F2F622800423D84 /* CommandGenerator.swift */,
-				A22EA91B1F2F622800423D84 /* FaceRecognitionInput.swift */,
-				A22EA91C1F2F622800423D84 /* FRIGenerator.swift */,
-				A22EA91D1F2F622800423D84 /* KeyboardManager.swift */,
-				A22EA91E1F2F622800423D84 /* SDKInput.swift */,
-				A22EA91A1F2F622800423D84 /* Extensions.swift */,
-				BB8D512A20DD3EAF00D81E51 /* FacialExpression.swift */,
 			);
 			path = "Engine Code";
 			sourceTree = "<group>";
@@ -182,7 +179,6 @@
 				A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */,
 				BBCE8DB020CAA5D700DBE34A /* Storyboards */,
 				BBCE8DAF20CAA5CB00DBE34A /* View Controllers */,
-				BBCE8DB120CAA60400DBE34A /* dlib */,
 				BBCE8DAE20CAA5AA00DBE34A /* Configuration */,
 				A22EA9161F2F622800423D84 /* Engine Code */,
 			);
@@ -192,7 +188,7 @@
 		A56696031CE8B34B00BD7EAF /* AlsKeyboardTests */ = {
 			isa = PBXGroup;
 			children = (
-				A56696041CE8B34B00BD7EAF /* AlsKeyboardTests.swift */,
+				A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */,
 				A56696061CE8B34B00BD7EAF /* Info.plist */,
 			);
 			path = AlsKeyboardTests;
@@ -220,12 +216,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BB4F492220DFC04C00F19109 /* Move Detectors */ = {
+			isa = PBXGroup;
+			children = (
+				BB4F492020DFC03E00F19109 /* MoveDetector.swift */,
+				BB4F492320DFC05C00F19109 /* ARKitMoveDetector.swift */,
+				BB4F492520DFC07E00F19109 /* DLibMoveDetector.swift */,
+			);
+			path = "Move Detectors";
+			sourceTree = "<group>";
+		};
+		BB4F492720DFC9E900F19109 /* Keyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BB4F492820DFCA0000F19109 /* FacialMoveKeyboard.swift */,
+				BB4F492A20DFCA2700F19109 /* SimpleKeyboard.swift */,
+			);
+			path = Keyboards;
+			sourceTree = "<group>";
+		};
 		BBCE8DAE20CAA5AA00DBE34A /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				A5A1B2D01CEA317B00626AC5 /* DlibWrapper.h */,
-				A5A1B2D11CEA317B00626AC5 /* DlibWrapper.mm */,
-				A5A1B2CF1CEA317B00626AC5 /* AlsKeyboard-Bridging-Header.h */,
 				A56695F61CE8B34B00BD7EAF /* Assets.xcassets */,
 				A56695FB1CE8B34B00BD7EAF /* Info.plist */,
 			);
@@ -246,20 +258,11 @@
 		BBCE8DB020CAA5D700DBE34A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				A56695F31CE8B34B00BD7EAF /* Main.storyboard */,
 				A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */,
+				A56695F31CE8B34B00BD7EAF /* Main.storyboard */,
 				BB4AA63E20DD30F4006EE5FA /* ARSceneKit.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		BBCE8DB120CAA60400DBE34A /* dlib */ = {
-			isa = PBXGroup;
-			children = (
-				A5A1B2D31CEA35B300626AC5 /* libdlib.a */,
-				A5A1B2D71CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat */,
-			);
-			path = dlib;
 			sourceTree = "<group>";
 		};
 		BBD4812E20D9658A00762EAE /* Helpers */ = {
@@ -349,13 +352,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = WCG9HNJRTD;
 						LastSwiftMigration = 0820;
-						TestTargetID = A56695EB1CE8B34B00BD7EAF;
 					};
 					A566960A1CE8B34B00BD7EAF = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = WCG9HNJRTD;
 						LastSwiftMigration = 0820;
-						TestTargetID = A56695EB1CE8B34B00BD7EAF;
 					};
 				};
 			};
@@ -388,7 +389,6 @@
 				A56695F71CE8B34B00BD7EAF /* Assets.xcassets in Resources */,
 				BB4AA63F20DD30F4006EE5FA /* ARSceneKit.storyboard in Resources */,
 				A56695F51CE8B34B00BD7EAF /* Main.storyboard in Resources */,
-				A5A1B2D81CEA431600626AC5 /* shape_predictor_68_face_landmarks.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,21 +488,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A22EA9231F2F626500423D84 /* FaceRecognitionInput.swift in Sources */,
-				A22EA9241F2F626700423D84 /* FRIGenerator.swift in Sources */,
+				BB4F492B20DFCA2700F19109 /* SimpleKeyboard.swift in Sources */,
+				A22EA9231F2F626500423D84 /* FaceInputData.swift in Sources */,
+				BB4F492620DFC07E00F19109 /* DLibMoveDetector.swift in Sources */,
 				BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */,
-				A5A1B2D21CEA317B00626AC5 /* DlibWrapper.mm in Sources */,
+				BB4F492D20DFCA3C00F19109 /* FacialExpression.swift in Sources */,
 				A22EA91F1F2F625C00423D84 /* ALSEngine.swift in Sources */,
+				BB4F492420DFC05C00F19109 /* ARKitMoveDetector.swift in Sources */,
+				BB4F492120DFC03E00F19109 /* MoveDetector.swift in Sources */,
 				BB4AA64120DD3192006EE5FA /* MainARSceneVC.swift in Sources */,
-				A22EA9221F2F626300423D84 /* Extensions.swift in Sources */,
 				A56695F21CE8B34B00BD7EAF /* VideoViewController.swift in Sources */,
-				A22EA9261F2F626C00423D84 /* SDKInput.swift in Sources */,
-				A22EA9251F2F626900423D84 /* KeyboardManager.swift in Sources */,
+				BB4F492920DFCA0000F19109 /* FacialMoveKeyboard.swift in Sources */,
 				A20A2D351F32103D00F3A0C7 /* ProcessViewController.swift in Sources */,
-				A22EA9211F2F626100423D84 /* CommandGenerator.swift in Sources */,
 				A56695F01CE8B34B00BD7EAF /* AppDelegate.swift in Sources */,
-				A22EA9201F2F625E00423D84 /* Command.swift in Sources */,
-				BB8D512B20DD3EAF00D81E51 /* FacialExpression.swift in Sources */,
+				BB8D512B20DD3EAF00D81E51 /* FacialMove.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,7 +509,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A56696051CE8B34B00BD7EAF /* AlsKeyboardTests.swift in Sources */,
+				BB71E0EA20E14595004C219D /* FaceInputData.swift in Sources */,
+				BB71E0EB20E14595004C219D /* FacialExpression.swift in Sources */,
+				BB71E0EC20E14595004C219D /* FacialMove.swift in Sources */,
+				BB71E0ED20E14595004C219D /* MoveDetector.swift in Sources */,
+				BB71E0EE20E14595004C219D /* ARKitMoveDetector.swift in Sources */,
+				BB71E0EF20E14595004C219D /* DLibMoveDetector.swift in Sources */,
+				BB71E0F020E14595004C219D /* FacialMoveKeyboard.swift in Sources */,
+				BB71E0F120E14595004C219D /* SimpleKeyboard.swift in Sources */,
+				BB71E0F220E14596004C219D /* ALSEngine.swift in Sources */,
+				A56696051CE8B34B00BD7EAF /* KeyboardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,7 +696,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AlsKeyboard/Configuration/AlsKeyboard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -720,7 +727,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AlsKeyboard/Configuration/AlsKeyboard-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -730,14 +736,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6DD41D788CBDD9755E971763 /* Pods-AlsKeyboardTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = WCG9HNJRTD;
-				INFOPLIST_FILE = DisplayLiveSamplesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zweigraf.DisplayLiveSamplesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlskeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DisplayLiveSamples.app/DisplayLiveSamples";
 			};
 			name = Debug;
 		};
@@ -745,14 +748,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E40E4001567FC2C86E92C8AC /* Pods-AlsKeyboardTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = WCG9HNJRTD;
-				INFOPLIST_FILE = DisplayLiveSamplesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zweigraf.DisplayLiveSamplesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlskeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DisplayLiveSamples.app/DisplayLiveSamples";
 			};
 			name = Release;
 		};
@@ -761,12 +761,11 @@
 			baseConfigurationReference = BE39840255B4EA271704529E /* Pods-AlsKeyboardUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = WCG9HNJRTD;
-				INFOPLIST_FILE = DisplayLiveSamplesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zweigraf.DisplayLiveSamplesUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlskeyboardUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = DisplayLiveSamples;
 			};
 			name = Debug;
 		};
@@ -775,12 +774,11 @@
 			baseConfigurationReference = 118EFC3CA248C26C06544824 /* Pods-AlsKeyboardUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = WCG9HNJRTD;
-				INFOPLIST_FILE = DisplayLiveSamplesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zweigraf.DisplayLiveSamplesUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlskeyboardUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = DisplayLiveSamples;
 			};
 			name = Release;
 		};
