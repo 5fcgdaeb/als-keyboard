@@ -25,9 +25,13 @@ class KeyboardTests: XCTestCase, KeyboardDelegate {
         super.tearDown()
     }
     
-    func testExample() {
-        var keyboard = SimpleKeyboard(withDelegate: self)
-//        keyboard.
+    func testMoveDetection() {
+        
+        self.moveDetector?.listenForMoves { (facialMove) in
+            print("Move came in!")
+        }
+        
+        self.moveDetector?.feed(faceData: FaceInputData(faceCoordinates: []))
     }
     
     func testWholeFlow() {
@@ -37,11 +41,13 @@ class KeyboardTests: XCTestCase, KeyboardDelegate {
         // 2. FacialMove?
         // 3. Character?
         
-        let inputData = FaceInputData(faceCoordinates: [])
-        let facialMove = self.moveDetector?.detectMoves(fromInput: inputData)
-        self.keyboard.process(facialMove: facialMove.first!)
+//        let inputData = FaceInputData(faceCoordinates: [])
+//        let facialMove = self.moveDetector?.detectMoves(fromInput: inputData)
+//        self.keyboard.process(facialMove: facialMove.first!)
         
     }
+    
+    
     
     func displayTextUpdated(value: String) {}
     func displayReceivedCommand(value: String) {}

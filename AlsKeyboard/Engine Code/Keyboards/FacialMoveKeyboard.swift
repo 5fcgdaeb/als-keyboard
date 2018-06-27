@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct KeyboardOutput {
-    var bufferedFacialMoves: [FacialMove]
-    var typedCharacter: String?
-}
 
 protocol FacialMoveKeyboard {
+    
+    func listenForKeyboardEvents(withHandler handler: @escaping (String) -> ())
+    
     var commandMapping: [[FacialExpression] : String] { get }
-    func process(facialMove move: FacialMove) -> KeyboardOutput
+    
     func startTyping()
     func resetState()
+
 }

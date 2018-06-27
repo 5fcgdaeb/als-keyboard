@@ -9,5 +9,9 @@
 import Foundation
 
 protocol MoveDetector {
-    func detectMoves(fromInput input: FaceInputData) -> [FacialMove]
+    
+    func feed(faceData input: FaceInputData)
+
+    func listenForMoves(withHandler handler: @escaping (FacialMove) -> ())
+
 }

@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-class MainARSceneVC: UIViewController, ARSessionDelegate, KeyboardDelegate {
+class MainARSceneVC: UIViewController, ARSessionDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet var facialMovesLabel: UILabel!
@@ -17,25 +17,21 @@ class MainARSceneVC: UIViewController, ARSessionDelegate, KeyboardDelegate {
     
     private var engine: ALSEngine?
     
-    var moveDetector: MoveDetector {
+    private var moveDetector: MoveDetector {
         get {
             return (self.engine?.moveDetector)!
         }
     }
     
+    private var moveReceived: (FacialMove) -> () = { facialMove in }
+    private var keyboardEventReceived: (String) -> () = { character in }
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        self.engine = ALSEngine(withKeyboardDelegate: self)
-        
-        self.sceneView.scene = SCNScene()
-        self.sceneView.rendersContinuously = true
-        self.sceneView.session.delegate = self
-        self.sceneView.automaticallyUpdatesLighting = true
-        
-        let faceTrackingConfiguration = ARFaceTrackingConfiguration()
-        faceTrackingConfiguration.isLightEstimationEnabled = true
-        self.sceneView.session.run(faceTrackingConfiguration, options: [.resetTracking, .removeExistingAnchors])
+        self.integrateToALSEngine()
+        self.startUpSceneKit()
     }
     
     // MARK: - ARSessionDelegate methods
@@ -44,17 +40,12 @@ class MainARSceneVC: UIViewController, ARSessionDelegate, KeyboardDelegate {
     public func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {}
 
     public func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
+        
         guard let faceAnchor = anchors.first as? ARFaceAnchor else { return }
         
-        let mostLikelyMoves = faceAnchor.blendShapes.filter({$0.1.floatValue >= 0.7}).map({ "\($0.0.rawValue) - \($0.1.floatValue)" })
-        
-        if let mostLikelyMove = mostLikelyMoves.first {
-            print("\(Date().timeIntervalSince1970) - \(mostLikelyMove)")
-        }
-        
         let convertedInput = Dictionary(uniqueKeysWithValues: faceAnchor.blendShapes.map({ ($0.0.rawValue, $0.1.floatValue) }))
-        let facialMoves = self.moveDetector.detectMoves(fromInput: FaceInputData(faceAnchors: convertedInput))
-        self.engine?.keyboardEngine.process(facialMove: facialMoves.first!)
+        let faceInput = FaceInputData(faceAnchors: convertedInput)
+        self.moveDetector.feed(faceData: faceInput)
     }
 
     public func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {}
@@ -75,20 +66,29 @@ class MainARSceneVC: UIViewController, ARSessionDelegate, KeyboardDelegate {
         }
     }
     
-    func displayTextUpdated(value: String) {
-        DispatchQueue.main.async {}
+    // MARK: - Private methods
+    private func integrateToALSEngine() {
+        
+        self.engine = ALSEngine()
+        self.moveReceived = { [unowned self] facialMove  in
+            DispatchQueue.main.async {
+                self.facialMovesLabel.text = self.facialMovesLabel.text! + facialMove.expression.coolDescription()
+            }
+        }
+        self.moveDetector.listenForMoves(withHandler: self.moveReceived)
     }
     
-    func displayReceivedCommand(value: String) {
-        DispatchQueue.main.async {}
-    }
-    
-    func clearCommandBuffer() { }
-    
-    func deleteFirstCommandFromBuffer() {}
-    
-    func addLabelToView(value: String) {
-        DispatchQueue.main.async {}
+    private func startUpSceneKit() {
+        
+        self.sceneView.scene = SCNScene()
+        self.sceneView.rendersContinuously = true
+        self.sceneView.session.delegate = self
+        self.sceneView.automaticallyUpdatesLighting = true
+        
+        let faceTrackingConfiguration = ARFaceTrackingConfiguration()
+        faceTrackingConfiguration.isLightEstimationEnabled = true
+        self.sceneView.session.run(faceTrackingConfiguration, options: [.resetTracking, .removeExistingAnchors])
+        
     }
 
 }

@@ -17,7 +17,6 @@ class VideoViewController: UIViewController {
     
     var session = AVCaptureSession()
     var alsEngine: ALSEngine?
-//    let wrapper = DlibWrapper()
     let layer = AVSampleBufferDisplayLayer()
     var currentMetadata: [AnyObject] = []
     let sampleQueue = DispatchQueue(label: "com.zweigraf.DisplayLiveSamples.sampleQueue", attributes: [])
@@ -27,10 +26,7 @@ class VideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.alsEngine = ALSEngine(withKeyboardDelegate: ProcessViewController(view: preview, writeMessage: writeMessageLabel, message: messageLabel))
-        
-        setupCamera()
+//        setupCamera()
     }
     
     override func didReceiveMemoryWarning() {
@@ -116,19 +112,6 @@ extension VideoViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AVC
                         let convertedObject = captureOutput.transformedMetadataObject(for: faceObject, connection: connection)
                         return NSValue(cgRect: convertedObject!.bounds)
                 }
-                
-//                if let points = self.wrapper?.doWork(on: sampleBuffer, inRects: boundsArray) {
-//                    var mappedPoints: [CGPoint] = []
-//                    for i in stride(from: 0, to: points.count, by: 2) {
-//                        let x: Int = points.object(at: i) as! Int
-//                        let y: Int = points.object(at: i + 1) as! Int
-//                        mappedPoints.append(CGPoint(x: x, y: y))
-//                    }
-//                    
-//                    alsEngine?.startTyping()
-//                    let faceInputData = FaceInputData(faceCoordinates: mappedPoints)
-//                    self.alsEngine!.process(faceInputData: faceInputData)
-//                }
             }
             self.layer.enqueue(sampleBuffer)
             lastFrameDate = Date()

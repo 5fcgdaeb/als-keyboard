@@ -91,4 +91,7 @@ class DLibMoveDetector: MoveDetector {
         
         return abs(leftCorner - rightCorner) > 10 && abs(leftCorner - rightCorner) < 20
     }
+    
+    func feed(faceData input: FaceInputData) {}
+    func listenForMoves(withHandler handler: @escaping (FacialMove) -> ()) {}
 }

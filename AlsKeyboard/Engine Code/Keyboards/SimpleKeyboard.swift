@@ -8,38 +8,44 @@
 
 import Foundation
 
+let MINIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = 0.3
+let MAXIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = 3500 // 500 milliseconds
+
 class SimpleKeyboard: FacialMoveKeyboard {
     
     var commandMapping: [[FacialExpression]: String]
-    private var currentState: KeyboardOutput
-    private var delegate: KeyboardDelegate?
+    
+    private var moveDetector: MoveDetector
+    private var bufferedFacialMoves: [FacialMove] = []
     private var shouldItType = false
+    private var observers: [(String) -> ()] = []
     
-    init(withDelegate: KeyboardDelegate) {
-        self.commandMapping = [[.blink, .jawMove]: "C",]
-        self.delegate = withDelegate
-        self.currentState = KeyboardOutput(bufferedFacialMoves: [], typedCharacter: nil)
-    }
-    
-    func process(facialMove move: FacialMove) -> KeyboardOutput {
+    init(withMoveDetector moveDetector: MoveDetector) {
+        self.commandMapping = [[.blink, .jawMove]: "C"]
+        self.moveDetector = moveDetector
         
-        let areThereAnyBufferedCommands = self.currentState.bufferedFacialMoves.count > 0
-        
-        if areThereAnyBufferedCommands {
-            let previousCommand = self.currentState.bufferedFacialMoves[self.currentState.bufferedFacialMoves.count - 1]
-            let timeDifferenceInSeconds = Double(move.secondsSince1970() - previousCommand.secondsSince1970())
-            if timeDifferenceInSeconds < MINIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS {
-                return self.currentState
+        self.moveDetector.listenForMoves { (facialMove) in
+            
+            let areThereAnyBufferedCommands = self.bufferedFacialMoves.count > 0
+            
+            if areThereAnyBufferedCommands {
+                let previousCommand = self.bufferedFacialMoves[self.bufferedFacialMoves.count - 1]
+                let timeDifferenceInSeconds = Double(facialMove.secondsSince1970() - previousCommand.secondsSince1970())
+                if timeDifferenceInSeconds < MINIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS {
+                    return
+                }
+            }
+            
+            self.bufferedFacialMoves.append(facialMove)
+            
+            if self.shouldItType {
+                self.analyzeCommandToGenerateText()
             }
         }
-        
-        self.currentState.bufferedFacialMoves.append(move)
-        
-        if self.shouldItType {
-            self.analyzeCommandToGenerateText()
-        }
-        
-        return self.currentState
+    }
+    
+    func listenForKeyboardEvents(withHandler handler: @escaping (String) -> ()) {
+        self.observers.append(handler)
     }
     
     func startTyping() {
@@ -47,35 +53,26 @@ class SimpleKeyboard: FacialMoveKeyboard {
     }
     
     func resetState() {
-        self.currentState = KeyboardOutput(bufferedFacialMoves: [], typedCharacter: nil)
-//        self.delegate?.displayTextUpdated(value: self.currentText)
-//        self.delegate?.clearCommandBuffer()
+        self.bufferedFacialMoves.removeAll()
     }
     
     private func analyzeCommandToGenerateText() {
         
-        let length = self.currentState.bufferedFacialMoves.count
-        
-        if length < 3 {
+        let bufferedMoveCount = self.bufferedFacialMoves.count
+        if bufferedMoveCount < 3 {
             return
         }
         else {
-            let facialMove1 = self.currentState.bufferedFacialMoves[length - 3]
-            let facialMove2 = self.currentState.bufferedFacialMoves[length - 2]
-            let facialMove3 = self.currentState.bufferedFacialMoves[length - 1]
+            let facialMove1 = self.bufferedFacialMoves[bufferedMoveCount - 3]
+            let facialMove2 = self.bufferedFacialMoves[bufferedMoveCount - 2]
+            let facialMove3 = self.bufferedFacialMoves[bufferedMoveCount - 1]
             
             let expressions = [facialMove1, facialMove2, facialMove3].map { $0.expression }
             
             if let mappingValue = self.commandMapping[expressions] {
-//                self.currentText = self.currentText + mappingValue
-//                self.bufferedFacialMoves.removeAll()
-//                self.delegate?.displayTextUpdated(value: self.currentText)
-                self.delegate?.displayReceivedCommand(value: " ")
-            }
-            else {
-//                self.bufferedFacialMoves.removeFirst()
-//                self.delegate?.displayTextUpdated(value: self.currentText)
-                self.delegate?.deleteFirstCommandFromBuffer()
+                for observer in self.observers {
+                    observer(mappingValue)
+                }
             }
         }
     }
