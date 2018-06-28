@@ -11,7 +11,6 @@
 		A22EA91F1F2F625C00423D84 /* ALSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9171F2F622800423D84 /* ALSEngine.swift */; };
 		A22EA9231F2F626500423D84 /* FaceInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA91B1F2F622800423D84 /* FaceInputData.swift */; };
 		A56695F01CE8B34B00BD7EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */; };
-		A56695F21CE8B34B00BD7EAF /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */; };
 		A56695F51CE8B34B00BD7EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F31CE8B34B00BD7EAF /* Main.storyboard */; };
 		A56695F71CE8B34B00BD7EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56695F61CE8B34B00BD7EAF /* Assets.xcassets */; };
 		A56695FA1CE8B34B00BD7EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */; };
@@ -37,6 +36,9 @@
 		BB8D512B20DD3EAF00D81E51 /* FacialMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */; };
 		BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */; };
 		BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4812F20D9659D00762EAE /* UserHardware.swift */; };
+		BBEE83E720E537F700618FBD /* VisionSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E620E537F700618FBD /* VisionSceneVC.swift */; };
+		BBEE83E920E5384500618FBD /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E820E5384500618FBD /* PreviewView.swift */; };
+		BBEE83EB20E5407000618FBD /* OrientationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */; };
 		E2776C282171182EB4F95A5C /* Pods_AlsKeyboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E895BA39EEEA06CD290C48C /* Pods_AlsKeyboardUITests.framework */; };
 		F6BD193CF5094A5FF14C0BA4 /* Pods_AlsKeyboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,7 +69,6 @@
 		A22EA91B1F2F622800423D84 /* FaceInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceInputData.swift; sourceTree = "<group>"; };
 		A56695EC1CE8B34B00BD7EAF /* AlsKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlsKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		A56695F41CE8B34B00BD7EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A56695F61CE8B34B00BD7EAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A56695F91CE8B34B00BD7EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +92,9 @@
 		BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialMove.swift; sourceTree = "<group>"; };
 		BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BBD4812F20D9659D00762EAE /* UserHardware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHardware.swift; sourceTree = "<group>"; };
+		BBEE83E620E537F700618FBD /* VisionSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionSceneVC.swift; sourceTree = "<group>"; };
+		BBEE83E820E5384500618FBD /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationExtensions.swift; sourceTree = "<group>"; };
 		BE39840255B4EA271704529E /* Pods-AlsKeyboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardUITests/Pods-AlsKeyboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB9D7C778D7DF89115900D1F /* Pods-AlsKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		E40E4001567FC2C86E92C8AC /* Pods-AlsKeyboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardTests/Pods-AlsKeyboardTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,8 +239,8 @@
 		BB71E0F620E161A7004C219D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */,
-				A56695F11CE8B34B00BD7EAF /* VideoViewController.swift */,
+				BBEE83EE20E54ABE00618FBD /* ARKit Path */,
+				BBEE83EF20E54AD200618FBD /* Vision Framework Path */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -274,8 +278,26 @@
 			isa = PBXGroup;
 			children = (
 				BBD4812F20D9659D00762EAE /* UserHardware.swift */,
+				BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BBEE83EE20E54ABE00618FBD /* ARKit Path */ = {
+			isa = PBXGroup;
+			children = (
+				BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */,
+			);
+			path = "ARKit Path";
+			sourceTree = "<group>";
+		};
+		BBEE83EF20E54AD200618FBD /* Vision Framework Path */ = {
+			isa = PBXGroup;
+			children = (
+				BBEE83E620E537F700618FBD /* VisionSceneVC.swift */,
+				BBEE83E820E5384500618FBD /* PreviewView.swift */,
+			);
+			path = "Vision Framework Path";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,14 +517,16 @@
 			files = (
 				BB4F492B20DFCA2700F19109 /* SimpleKeyboard.swift in Sources */,
 				A22EA9231F2F626500423D84 /* FaceInputData.swift in Sources */,
+				BBEE83EB20E5407000618FBD /* OrientationExtensions.swift in Sources */,
 				BB4F492620DFC07E00F19109 /* DLibMoveDetector.swift in Sources */,
 				BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */,
 				BB4F492D20DFCA3C00F19109 /* FacialExpression.swift in Sources */,
+				BBEE83E920E5384500618FBD /* PreviewView.swift in Sources */,
+				BBEE83E720E537F700618FBD /* VisionSceneVC.swift in Sources */,
 				A22EA91F1F2F625C00423D84 /* ALSEngine.swift in Sources */,
 				BB4F492420DFC05C00F19109 /* ARKitMoveDetector.swift in Sources */,
 				BB4F492120DFC03E00F19109 /* MoveDetector.swift in Sources */,
 				BB4AA64120DD3192006EE5FA /* MainARSceneVC.swift in Sources */,
-				A56695F21CE8B34B00BD7EAF /* VideoViewController.swift in Sources */,
 				BB4F492920DFCA0000F19109 /* FacialMoveKeyboard.swift in Sources */,
 				A56695F01CE8B34B00BD7EAF /* AppDelegate.swift in Sources */,
 				BB8D512B20DD3EAF00D81E51 /* FacialMove.swift in Sources */,

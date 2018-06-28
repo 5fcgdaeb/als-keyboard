@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var storyboard: UIStoryboard? = .none
         
-        if ARFaceTrackingConfiguration.isSupported {
+        if ARFaceTrackingConfiguration.isSupported { // Use ARKit 1.5 FaceTrackingConfiguration + TrueDepth Camera
             storyboard = UIStoryboard(name: "ARSceneKit", bundle: nil)
         }
-        else {
+        else { // Use Vision Framework
             storyboard = UIStoryboard(name: "Main", bundle: nil)
         }
         window?.rootViewController = storyboard?.instantiateInitialViewController()
