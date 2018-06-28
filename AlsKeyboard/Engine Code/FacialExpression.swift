@@ -36,6 +36,8 @@ public enum FacialExpression: String {
             return "😁"
         }
     }
+    
+    static let allValues = [FacialExpression.eyebrowMove, FacialExpression.lookLeft, FacialExpression.lookRight, FacialExpression.blink, FacialExpression.longBlink, FacialExpression.jawMove, FacialExpression.smile]
 }
 
 extension Array: Hashable where Element == FacialExpression {
