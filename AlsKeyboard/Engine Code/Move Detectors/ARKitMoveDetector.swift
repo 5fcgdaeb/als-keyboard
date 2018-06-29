@@ -9,6 +9,8 @@
 import Foundation
 import ARKit
 
+let MOVE_DETECTION_THRESHOLD: Float = 0.7
+
 class ARKitMoveDetector: MoveDetector {
     
     private var observers: [(FacialMove) -> ()] = []
@@ -24,7 +26,7 @@ class ARKitMoveDetector: MoveDetector {
         var faceAnchors = input.faceAnchors
         
         faceAnchors.forEach{
-            if $0.value < 0.7 {
+            if $0.value < MOVE_DETECTION_THRESHOLD {
                 faceAnchors[$0.key] = nil
             }
         }

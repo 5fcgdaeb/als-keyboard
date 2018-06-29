@@ -37,9 +37,9 @@ class MainARSceneVC: UIViewController, ARSessionDelegate {
     // MARK: - UI Outlets
     
     @IBAction func settingsTapped(_ sender: UIControl) {
-        let storyboard = UIStoryboard(name: "Tutorial_Face", bundle: nil)
+        let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
-        viewController?.modalPresentationStyle = .popover   
+        viewController?.modalPresentationStyle = .overCurrentContext
         self.present(viewController!, animated: true, completion: nil)
     }
     
@@ -78,7 +78,7 @@ class MainARSceneVC: UIViewController, ARSessionDelegate {
     // MARK: - Private methods
     private func integrateToALSEngine() {
         
-        self.engine = ALSEngine()
+        self.engine = ALSEngine.shared()
         self.moveReceived = { [unowned self] facialMove  in
             DispatchQueue.main.async {
                 self.facialMovesLabel.text = self.facialMovesLabel.text! + facialMove.expression.coolDescription()

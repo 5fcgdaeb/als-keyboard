@@ -16,6 +16,8 @@
 		A56695FA1CE8B34B00BD7EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */; };
 		A56696051CE8B34B00BD7EAF /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */; };
 		A56696101CE8B34B00BD7EAF /* AlsKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566960F1CE8B34B00BD7EAF /* AlsKeyboardUITests.swift */; };
+		BB49DA0A20E681D000D87620 /* VisionKitMoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0920E681D000D87620 /* VisionKitMoveDetector.swift */; };
+		BB49DA0C20E688B600D87620 /* TutorialPracticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0B20E688B600D87620 /* TutorialPracticeVC.swift */; };
 		BB4AA63F20DD30F4006EE5FA /* ARSceneKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4AA63E20DD30F4006EE5FA /* ARSceneKit.storyboard */; };
 		BB4AA64120DD3192006EE5FA /* MainARSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */; };
 		BB4F492120DFC03E00F19109 /* MoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492020DFC03E00F19109 /* MoveDetector.swift */; };
@@ -39,8 +41,8 @@
 		BBEE83E720E537F700618FBD /* VisionSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E620E537F700618FBD /* VisionSceneVC.swift */; };
 		BBEE83E920E5384500618FBD /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E820E5384500618FBD /* PreviewView.swift */; };
 		BBEE83EB20E5407000618FBD /* OrientationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */; };
-		BBEE83F120E54EE900618FBD /* Tutorial_Face.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEE83F020E54EE900618FBD /* Tutorial_Face.storyboard */; };
-		BBEE83F320E54FE400618FBD /* TutorialFaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83F220E54FE400618FBD /* TutorialFaceVC.swift */; };
+		BBEE83F120E54EE900618FBD /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEE83F020E54EE900618FBD /* Tutorial.storyboard */; };
+		BBEE83F320E54FE400618FBD /* TutorialIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83F220E54FE400618FBD /* TutorialIntroVC.swift */; };
 		E2776C282171182EB4F95A5C /* Pods_AlsKeyboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E895BA39EEEA06CD290C48C /* Pods_AlsKeyboardUITests.framework */; };
 		F6BD193CF5094A5FF14C0BA4 /* Pods_AlsKeyboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		A56696111CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlsKeyboardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B596517905A7D32CF66AC5CE /* Pods-AlsKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.release.xcconfig"; sourceTree = "<group>"; };
+		BB49DA0920E681D000D87620 /* VisionKitMoveDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionKitMoveDetector.swift; sourceTree = "<group>"; };
+		BB49DA0B20E688B600D87620 /* TutorialPracticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPracticeVC.swift; sourceTree = "<group>"; };
 		BB4AA63E20DD30F4006EE5FA /* ARSceneKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARSceneKit.storyboard; sourceTree = "<group>"; };
 		BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainARSceneVC.swift; sourceTree = "<group>"; };
 		BB4F492020DFC03E00F19109 /* MoveDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDetector.swift; sourceTree = "<group>"; };
@@ -97,8 +101,8 @@
 		BBEE83E620E537F700618FBD /* VisionSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionSceneVC.swift; sourceTree = "<group>"; };
 		BBEE83E820E5384500618FBD /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationExtensions.swift; sourceTree = "<group>"; };
-		BBEE83F020E54EE900618FBD /* Tutorial_Face.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial_Face.storyboard; sourceTree = "<group>"; };
-		BBEE83F220E54FE400618FBD /* TutorialFaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFaceVC.swift; sourceTree = "<group>"; };
+		BBEE83F020E54EE900618FBD /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		BBEE83F220E54FE400618FBD /* TutorialIntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialIntroVC.swift; sourceTree = "<group>"; };
 		BE39840255B4EA271704529E /* Pods-AlsKeyboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardUITests/Pods-AlsKeyboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB9D7C778D7DF89115900D1F /* Pods-AlsKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		E40E4001567FC2C86E92C8AC /* Pods-AlsKeyboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardTests/Pods-AlsKeyboardTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 			children = (
 				BB4F492020DFC03E00F19109 /* MoveDetector.swift */,
 				BB4F492320DFC05C00F19109 /* ARKitMoveDetector.swift */,
+				BB49DA0920E681D000D87620 /* VisionKitMoveDetector.swift */,
 				BB4F492520DFC07E00F19109 /* DLibMoveDetector.swift */,
 			);
 			path = "Move Detectors";
@@ -274,7 +279,7 @@
 				A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */,
 				A56695F31CE8B34B00BD7EAF /* Main.storyboard */,
 				BB4AA63E20DD30F4006EE5FA /* ARSceneKit.storyboard */,
-				BBEE83F020E54EE900618FBD /* Tutorial_Face.storyboard */,
+				BBEE83F020E54EE900618FBD /* Tutorial.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -292,7 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				BB4AA64020DD3192006EE5FA /* MainARSceneVC.swift */,
-				BBEE83F220E54FE400618FBD /* TutorialFaceVC.swift */,
+				BBEE83F220E54FE400618FBD /* TutorialIntroVC.swift */,
+				BB49DA0B20E688B600D87620 /* TutorialPracticeVC.swift */,
 			);
 			path = "ARKit Path";
 			sourceTree = "<group>";
@@ -421,7 +427,7 @@
 				A56695FA1CE8B34B00BD7EAF /* LaunchScreen.storyboard in Resources */,
 				A56695F71CE8B34B00BD7EAF /* Assets.xcassets in Resources */,
 				BB4AA63F20DD30F4006EE5FA /* ARSceneKit.storyboard in Resources */,
-				BBEE83F120E54EE900618FBD /* Tutorial_Face.storyboard in Resources */,
+				BBEE83F120E54EE900618FBD /* Tutorial.storyboard in Resources */,
 				A56695F51CE8B34B00BD7EAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,12 +534,14 @@
 				BB4F492620DFC07E00F19109 /* DLibMoveDetector.swift in Sources */,
 				BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */,
 				BB4F492D20DFCA3C00F19109 /* FacialExpression.swift in Sources */,
+				BB49DA0A20E681D000D87620 /* VisionKitMoveDetector.swift in Sources */,
 				BBEE83E920E5384500618FBD /* PreviewView.swift in Sources */,
 				BBEE83E720E537F700618FBD /* VisionSceneVC.swift in Sources */,
 				A22EA91F1F2F625C00423D84 /* ALSEngine.swift in Sources */,
 				BB4F492420DFC05C00F19109 /* ARKitMoveDetector.swift in Sources */,
+				BB49DA0C20E688B600D87620 /* TutorialPracticeVC.swift in Sources */,
 				BB4F492120DFC03E00F19109 /* MoveDetector.swift in Sources */,
-				BBEE83F320E54FE400618FBD /* TutorialFaceVC.swift in Sources */,
+				BBEE83F320E54FE400618FBD /* TutorialIntroVC.swift in Sources */,
 				BB4AA64120DD3192006EE5FA /* MainARSceneVC.swift in Sources */,
 				BB4F492920DFCA0000F19109 /* FacialMoveKeyboard.swift in Sources */,
 				A56695F01CE8B34B00BD7EAF /* AppDelegate.swift in Sources */,

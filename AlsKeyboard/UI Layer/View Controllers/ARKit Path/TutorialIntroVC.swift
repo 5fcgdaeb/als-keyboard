@@ -8,14 +8,14 @@
 
 import UIKit
 
-class TutorialFaceVC: UIViewController {
+class TutorialIntroVC: UIViewController {
     
     @IBAction func cancelTapped(_ sender: UIControl) {
         self.dismiss(animated: true, completion: nil)
     }
 }
 
-extension TutorialFaceVC: UITableViewDelegate, UITableViewDataSource {
+extension TutorialIntroVC: UITableViewDelegate, UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FacialExpression.allValues.count

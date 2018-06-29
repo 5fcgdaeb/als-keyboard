@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var storyboard: UIStoryboard? = .none
         
+        ALSEngine.arkitSupported = ARFaceTrackingConfiguration.isSupported
+        
         if ARFaceTrackingConfiguration.isSupported { // Use ARKit 1.5 FaceTrackingConfiguration + TrueDepth Camera
             storyboard = UIStoryboard(name: "ARSceneKit", bundle: nil)
         }
