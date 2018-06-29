@@ -34,6 +34,15 @@ class MainARSceneVC: UIViewController, ARSessionDelegate {
         self.startUpSceneKit()
     }
     
+    // MARK: - UI Outlets
+    
+    @IBAction func settingsTapped(_ sender: UIControl) {
+        let storyboard = UIStoryboard(name: "Tutorial_Face", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
+        viewController?.modalPresentationStyle = .popover   
+        self.present(viewController!, animated: true, completion: nil)
+    }
+    
     // MARK: - ARSessionDelegate methods
     public func session(_ session: ARSession, didUpdate frame: ARFrame) {}
     

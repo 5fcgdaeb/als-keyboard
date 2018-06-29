@@ -10,16 +10,22 @@ import UIKit
 
 class TutorialFaceVC: UIViewController {
     
+    @IBAction func cancelTapped(_ sender: UIControl) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
-extension TutorialFaceVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TutorialFaceVC: UITableViewDelegate, UITableViewDataSource {
  
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FacialExpression.allValues.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FacialExpressionCell", for: indexPath)
+        let expression = FacialExpression.allValues[indexPath.row]
+        cell.textLabel?.text = expression.coolDescription()
+        cell.detailTextLabel?.text = expression.formalDescription()
+        return cell
     }
-    
 }

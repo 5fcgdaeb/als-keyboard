@@ -37,6 +37,25 @@ public enum FacialExpression: String {
         }
     }
     
+    func formalDescription() -> String {
+        switch self {
+        case .eyebrowMove:
+            return "Moving the Eyebrow(s)"
+        case .lookLeft:
+            return "Looking Left"
+        case .lookRight:
+            return "Looking Right"
+        case .blink:
+            return "Blink"
+        case .longBlink:
+            return "Long Blink"
+        case .jawMove:
+            return "Moving the Jaw"
+        case .smile:
+            return "Smiling"
+        }
+    }
+    
     static let allValues = [FacialExpression.eyebrowMove, FacialExpression.lookLeft, FacialExpression.lookRight, FacialExpression.blink, FacialExpression.longBlink, FacialExpression.jawMove, FacialExpression.smile]
 }
 
