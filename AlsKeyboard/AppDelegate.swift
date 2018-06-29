@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  ALSKeyboard
+//  AlsKeyboardTests
 //
-//  Created by Luis Reisewitz on 15.05.16.
-//  Copyright © 2016 ZweiGraf. All rights reserved.
+//  Created by Guven Bolukbasi on 29.06.2018.
+//  Copyright © 2018 DorianLabs. All rights reserved.
 //
 
 import UIKit

@@ -1,14 +1,15 @@
 //
-//  DisplayLiveSamplesUITests.swift
-//  DisplayLiveSamplesUITests
 //
-//  Created by Luis Reisewitz on 15.05.16.
-//  Copyright © 2016 ZweiGraf. All rights reserved.
+//  FaceInputDataTests.swift
+//  AlsKeyboardTests
+//
+//  Created by Guven Bolukbasi on 29.06.2018.
+//  Copyright © 2018 DorianLabs. All rights reserved.
 //
 
 import XCTest
 
-class DisplayLiveSamplesUITests: XCTestCase {
+class AlsKeyboardUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

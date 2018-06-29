@@ -9,6 +9,9 @@
 import Foundation
 import CoreGraphics
 
+let MINIMUM_FACE_RECOGNITION_INPUT = 5
+let MAXIMUM_FACE_RECOGNITION_INPUT = 10000
+
 class DLibMoveDetector: MoveDetector {
     
     var allFaceRecognitionInputs: [FaceInputData] = []

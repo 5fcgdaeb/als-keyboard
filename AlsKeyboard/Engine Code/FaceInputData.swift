@@ -9,11 +9,25 @@
 import Foundation
 import UIKit
 
+let MOTION_THRESHOLD = CGFloat(4)
+
 class FaceInputData: NSObject {
     
     let faceCoordinates: [CGPoint]
     let faceAnchors: [String: Float]
     let timeStamp: Date
+    
+    var isAnchorBased: Bool {
+        get {
+            return self.faceAnchors.count > 0
+        }
+    }
+    
+    var isCoordinateBased: Bool {
+        get {
+            return !self.isAnchorBased
+        }
+    }
     
     init(faceCoordinates: [CGPoint]) {
         self.faceCoordinates = faceCoordinates
@@ -27,12 +41,14 @@ class FaceInputData: NSObject {
         self.timeStamp = Date()
     }
     
-    func timeDifference(fromInput otherInput:FaceInputData) -> Int {
-        let difference = self.timeStamp.timeIntervalSince1970 - otherInput.timeStamp.timeIntervalSince1970
-        return abs(Int(difference))
+    func timeDifference(fromInput otherInput:FaceInputData) -> TimeInterval {
+        return abs(self.timeStamp.timeIntervalSince(otherInput.timeStamp))
     }
     
     func maximumMovement(fromInput otherInput:FaceInputData) -> CGFloat {
+        
+        guard self.isCoordinateBased else { return -1 }
+        
         var maximum = CGFloat(0)
         for (index, coordinate) in self.faceCoordinates.enumerated() {
             let otherCoordinate = otherInput.faceCoordinates[index]
@@ -45,6 +61,9 @@ class FaceInputData: NSObject {
     }
     
     func isEverythingBelowMotionThreshold(fromInput otherInput:FaceInputData) -> Bool {
+        
+        guard self.isCoordinateBased else { return false }
+        
         for (index, coordinate) in self.faceCoordinates.enumerated() {
             let otherCoordinate = otherInput.faceCoordinates[index]
             let differenceInX = abs(coordinate.x - otherCoordinate.x)
@@ -58,6 +77,9 @@ class FaceInputData: NSObject {
     }
     
     func comparisonCoordinates(withOtherInput input:FaceInputData) -> [CGPoint] {
+        
+        guard self.isCoordinateBased else { return [CGPoint.init()] }
+        
         var allCoordinates: [CGPoint] = []
         for (index, coordinate) in self.faceCoordinates.enumerated() {
             let differenceInX = coordinate.x - input.faceCoordinates[index].x
@@ -70,6 +92,9 @@ class FaceInputData: NSObject {
     }
     
     private func averageOfCoordinates(coordinates: [CGPoint]) -> CGPoint {
+        
+        guard self.isCoordinateBased else { return CGPoint.init() }
+        
         var sumOfX: CGFloat = 0
         var sumOfY: CGFloat = 0
         for coordinate in coordinates {

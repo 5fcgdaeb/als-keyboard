@@ -9,7 +9,7 @@
 import Foundation
 
 let MINIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = 0.3
-let MAXIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = 3500 // 500 milliseconds
+let MAXIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = Double(3.5) // 500 milliseconds
 
 class SimpleKeyboard: FacialMoveKeyboard {
     
@@ -21,16 +21,24 @@ class SimpleKeyboard: FacialMoveKeyboard {
     private var observers: [(String) -> ()] = []
     
     init(withMoveDetector moveDetector: MoveDetector) {
-        self.commandMapping = [[.blink, .jawMove]: "C"]
-        self.moveDetector = moveDetector
         
-        self.moveDetector.listenForMoves { (facialMove) in
+        self.moveDetector = moveDetector
+        self.commandMapping = [[.blink, .jawMove]: "C"]
+        
+        self.moveDetector.listenForMoves(withHandler: self.moveReceivedClosure())
+    }
+    
+    func moveReceivedClosure() -> (FacialMove) -> () {
+        
+        return {
             
-            let areThereAnyBufferedCommands = self.bufferedFacialMoves.count > 0
+            [unowned self] facialMove in
             
-            if areThereAnyBufferedCommands {
-                let previousCommand = self.bufferedFacialMoves[self.bufferedFacialMoves.count - 1]
-                let timeDifferenceInSeconds = Double(facialMove.secondsSince1970() - previousCommand.secondsSince1970())
+            let areThereBufferedMoves = self.bufferedFacialMoves.count > 0
+            
+            if areThereBufferedMoves {
+                let previousMove = self.bufferedFacialMoves[self.bufferedFacialMoves.count - 1]
+                let timeDifferenceInSeconds = Double(facialMove.secondsSince1970() - previousMove.secondsSince1970())
                 if timeDifferenceInSeconds < MINIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS {
                     return
                 }

@@ -1,27 +1,27 @@
 //
-//  DisplayLiveSamplesTests.swift
-//  DisplayLiveSamplesTests
+//  FaceInputDataTests.swift
+//  AlsKeyboardTests
 //
-//  Created by Luis Reisewitz on 15.05.16.
-//  Copyright © 2016 ZweiGraf. All rights reserved.
+//  Created by Guven Bolukbasi on 29.06.2018.
+//  Copyright © 2018 DorianLabs. All rights reserved.
 //
 
 import XCTest
 
-class KeyboardTests: XCTestCase, KeyboardDelegate {
+class KeyboardTests: XCTestCase {
     
     var moveDetector: MoveDetector?
     var keyboard: FacialMoveKeyboard?
     
     override func setUp() {
-        self.moveDetector = ARKitMoveDetector()
-        self.keyboard = SimpleKeyboard(withDelegate: self)
+//        self.moveDetector = ARKitMoveDetector()
+//        self.keyboard = SimpleKeyboard(withDelegate: self)
         super.setUp()
     }
     
     override func tearDown() {
-        self.moveDetector = nil
-        self.keyboard = nil
+//        self.moveDetector = nil
+//        self.keyboard = nil
         super.tearDown()
     }
     
@@ -46,12 +46,5 @@ class KeyboardTests: XCTestCase, KeyboardDelegate {
 //        self.keyboard.process(facialMove: facialMove.first!)
         
     }
-    
-    
-    
-    func displayTextUpdated(value: String) {}
-    func displayReceivedCommand(value: String) {}
-    func clearCommandBuffer() {}
-    func deleteFirstCommandFromBuffer() {}
     
 }
