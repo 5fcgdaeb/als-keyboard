@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             storyboard = UIStoryboard(name: "ARSceneKit", bundle: nil)
         }
         else { // Use Vision Framework
-            storyboard = UIStoryboard(name: "Main", bundle: nil)
+            storyboard = UIStoryboard(name: "VisionKit", bundle: nil)
         }
         window?.rootViewController = storyboard?.instantiateInitialViewController()
         

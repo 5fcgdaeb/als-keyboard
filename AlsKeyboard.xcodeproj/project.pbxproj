@@ -42,6 +42,7 @@
 		BBA8E3A220EA1F1F005660A8 /* FacialMoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8E3A120EA1F1F005660A8 /* FacialMoveTests.swift */; };
 		BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */; };
 		BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4812F20D9659D00762EAE /* UserHardware.swift */; };
+		BBE71A8720EA7C7A00ECDC88 /* VisionKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE71A8620EA7C7A00ECDC88 /* VisionKit.storyboard */; };
 		BBEE83E720E537F700618FBD /* VisionSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E620E537F700618FBD /* VisionSceneVC.swift */; };
 		BBEE83E920E5384500618FBD /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E820E5384500618FBD /* PreviewView.swift */; };
 		BBEE83EB20E5407000618FBD /* OrientationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */; };
@@ -97,6 +98,7 @@
 		BBA8E3A120EA1F1F005660A8 /* FacialMoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialMoveTests.swift; sourceTree = "<group>"; };
 		BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BBD4812F20D9659D00762EAE /* UserHardware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHardware.swift; sourceTree = "<group>"; };
+		BBE71A8620EA7C7A00ECDC88 /* VisionKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VisionKit.storyboard; sourceTree = "<group>"; };
 		BBEE83E620E537F700618FBD /* VisionSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionSceneVC.swift; sourceTree = "<group>"; };
 		BBEE83E820E5384500618FBD /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationExtensions.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				A56695F31CE8B34B00BD7EAF /* Main.storyboard */,
 				BB4AA63E20DD30F4006EE5FA /* ARSceneKit.storyboard */,
 				BBEE83F020E54EE900618FBD /* Tutorial.storyboard */,
+				BBE71A8620EA7C7A00ECDC88 /* VisionKit.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE71A8720EA7C7A00ECDC88 /* VisionKit.storyboard in Resources */,
 				BBA8E3A020EA110D005660A8 /* README.md in Resources */,
 				A56695FA1CE8B34B00BD7EAF /* LaunchScreen.storyboard in Resources */,
 				A56695F71CE8B34B00BD7EAF /* Assets.xcassets in Resources */,

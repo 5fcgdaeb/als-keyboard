@@ -32,7 +32,7 @@ class FacialMoveTests: XCTestCase {
     func testMoveEquality() {
         
         let move1 = FacialMove(.blink)
-        sleep(1)
+        usleep(100)
         let move2 = FacialMove(.blink)
         
         XCTAssertFalse(move1 == move2)

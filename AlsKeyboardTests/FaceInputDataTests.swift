@@ -32,7 +32,7 @@ class FaceInputDataTests: XCTestCase {
     func testTimeDifferenceBetweenInputs() {
         
         let input1 = FaceInputData(faceCoordinates: [])
-        sleep(1)
+        usleep(100)
         let input2 = FaceInputData(faceCoordinates: [])
         
         XCTAssertTrue(input1.timeDifference(fromInput: input2) > 0)

@@ -134,13 +134,6 @@ class VisionSceneVC: UIViewController {
         }
     }
     
-    @IBAction func UpdateDetectionType(_ sender: UISegmentedControl) {
-        // use segmentedControl to switch over VNRequest
-        faceDetectionRequest = sender.selectedSegmentIndex == 0 ? VNDetectFaceRectanglesRequest(completionHandler: handleFaces) : VNDetectFaceLandmarksRequest(completionHandler: handleFaceLandmarks)
-        
-        setupVision()
-    }
-    
     private func configureSession() {
         
         if self.setupResult != .success {
@@ -154,16 +147,7 @@ class VisionSceneVC: UIViewController {
         do {
             var defaultVideoDevice: AVCaptureDevice?
             
-            // Choose the back dual camera if available, otherwise default to a wide angle camera.
-            if let dualCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInDualCamera, mediaType: AVMediaTypeVideo, position: .back) {
-                defaultVideoDevice = dualCameraDevice
-            }
-                
-            else if let backCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .back) {
-                defaultVideoDevice = backCameraDevice
-            }
-                
-            else if let frontCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .front) {
+            if let frontCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .front) {
                 defaultVideoDevice = frontCameraDevice
             }
             
@@ -354,6 +338,8 @@ extension VisionSceneVC: AVCaptureVideoDataOutputSampleBufferDelegate{
     // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
     func captureOutput(_ output: AVCaptureOutput, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
+        print("Incoming sample buffer: \(Date())")
+//        connection.videoMinFrameDuration = CMTimeMake(20, FPS);
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer),
             let exifOrientation = CGImagePropertyOrientation(rawValue: exifOrientationFromDeviceOrientation()) else { return }
         
