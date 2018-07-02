@@ -15,7 +15,6 @@
 		A56695F71CE8B34B00BD7EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56695F61CE8B34B00BD7EAF /* Assets.xcassets */; };
 		A56695FA1CE8B34B00BD7EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */; };
 		A56696051CE8B34B00BD7EAF /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */; };
-		A56696101CE8B34B00BD7EAF /* AlsKeyboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566960F1CE8B34B00BD7EAF /* AlsKeyboardUITests.swift */; };
 		BB49DA0A20E681D000D87620 /* VisionKitMoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0920E681D000D87620 /* VisionKitMoveDetector.swift */; };
 		BB49DA0C20E688B600D87620 /* TutorialPracticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0B20E688B600D87620 /* TutorialPracticeVC.swift */; };
 		BB49DA0E20E690DE00D87620 /* FaceInputDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0D20E690DE00D87620 /* FaceInputDataTests.swift */; };
@@ -46,18 +45,10 @@
 		BBEE83EB20E5407000618FBD /* OrientationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */; };
 		BBEE83F120E54EE900618FBD /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEE83F020E54EE900618FBD /* Tutorial.storyboard */; };
 		BBEE83F320E54FE400618FBD /* TutorialIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83F220E54FE400618FBD /* TutorialIntroVC.swift */; };
-		E2776C282171182EB4F95A5C /* Pods_AlsKeyboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E895BA39EEEA06CD290C48C /* Pods_AlsKeyboardUITests.framework */; };
 		F6BD193CF5094A5FF14C0BA4 /* Pods_AlsKeyboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A566960C1CE8B34B00BD7EAF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A56695E41CE8B34B00BD7EAF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A56695EB1CE8B34B00BD7EAF;
-			remoteInfo = DisplayLiveSamples;
-		};
 		BB62CBAC20E6AFDA009472C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A56695E41CE8B34B00BD7EAF /* Project object */;
@@ -83,7 +74,6 @@
 		A56696001CE8B34B00BD7EAF /* AlsKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlsKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		A56696061CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A566960B1CE8B34B00BD7EAF /* AlsKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlsKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A566960F1CE8B34B00BD7EAF /* AlsKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsKeyboardUITests.swift; sourceTree = "<group>"; };
 		A56696111CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlsKeyboardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,14 +121,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A56696081CE8B34B00BD7EAF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2776C282171182EB4F95A5C /* Pods_AlsKeyboardUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -183,7 +165,6 @@
 			children = (
 				A56695EC1CE8B34B00BD7EAF /* AlsKeyboard.app */,
 				A56696001CE8B34B00BD7EAF /* AlsKeyboardTests.xctest */,
-				A566960B1CE8B34B00BD7EAF /* AlsKeyboardUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,7 +311,6 @@
 				A56695E81CE8B34B00BD7EAF /* Sources */,
 				A56695E91CE8B34B00BD7EAF /* Frameworks */,
 				A56695EA1CE8B34B00BD7EAF /* Resources */,
-				507A94E555A4DF41B035D4F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,25 +340,6 @@
 			productReference = A56696001CE8B34B00BD7EAF /* AlsKeyboardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A566960A1CE8B34B00BD7EAF /* AlsKeyboardUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A566961A1CE8B34B00BD7EAF /* Build configuration list for PBXNativeTarget "AlsKeyboardUITests" */;
-			buildPhases = (
-				5DCB781C629364E46272C81A /* [CP] Check Pods Manifest.lock */,
-				A56696071CE8B34B00BD7EAF /* Sources */,
-				A56696081CE8B34B00BD7EAF /* Frameworks */,
-				A56696091CE8B34B00BD7EAF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A566960D1CE8B34B00BD7EAF /* PBXTargetDependency */,
-			);
-			name = AlsKeyboardUITests;
-			productName = DisplayLiveSamplesUITests;
-			productReference = A566960B1CE8B34B00BD7EAF /* AlsKeyboardUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -395,11 +356,6 @@
 						LastSwiftMigration = 0820;
 					};
 					A56695FF1CE8B34B00BD7EAF = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = WCG9HNJRTD;
-						LastSwiftMigration = 0820;
-					};
-					A566960A1CE8B34B00BD7EAF = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = WCG9HNJRTD;
 						LastSwiftMigration = 0820;
@@ -421,7 +377,6 @@
 			targets = (
 				A56695EB1CE8B34B00BD7EAF /* AlsKeyboard */,
 				A56695FF1CE8B34B00BD7EAF /* AlsKeyboardTests */,
-				A566960A1CE8B34B00BD7EAF /* AlsKeyboardUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -440,13 +395,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A56695FE1CE8B34B00BD7EAF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A56696091CE8B34B00BD7EAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,42 +434,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-AlsKeyboardTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		507A94E555A4DF41B035D4F7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/EFAutoScrollLabel/EFAutoScrollLabel.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFAutoScrollLabel.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5DCB781C629364E46272C81A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AlsKeyboardUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -576,22 +488,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A56696071CE8B34B00BD7EAF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A56696101CE8B34B00BD7EAF /* AlsKeyboardUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A566960D1CE8B34B00BD7EAF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A56695EB1CE8B34B00BD7EAF /* AlsKeyboard */;
-			targetProxy = A566960C1CE8B34B00BD7EAF /* PBXContainerItemProxy */;
-		};
 		BB62CBAD20E6AFDA009472C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A56695EB1CE8B34B00BD7EAF /* AlsKeyboard */;
@@ -732,13 +631,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WCG9HNJRTD;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					DLIB_JPEG_SUPPORT,
-					DLIB_NO_GUI_SUPPORT,
-					NDEBUG,
-					DLIB_USE_BLAS,
-					DLIB_USE_LAPACK,
-				);
 				INFOPLIST_FILE = AlsKeyboard/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -758,13 +650,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WCG9HNJRTD;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					DLIB_JPEG_SUPPORT,
-					DLIB_NO_GUI_SUPPORT,
-					NDEBUG,
-					DLIB_USE_BLAS,
-					DLIB_USE_LAPACK,
-				);
 				INFOPLIST_FILE = AlsKeyboard/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -800,32 +685,6 @@
 			};
 			name = Release;
 		};
-		A566961B1CE8B34B00BD7EAF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE39840255B4EA271704529E /* Pods-AlsKeyboardUITests.debug.xcconfig */;
-			buildSettings = {
-				DEVELOPMENT_TEAM = WCG9HNJRTD;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlskeyboardUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		A566961C1CE8B34B00BD7EAF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 118EFC3CA248C26C06544824 /* Pods-AlsKeyboardUITests.release.xcconfig */;
-			buildSettings = {
-				DEVELOPMENT_TEAM = WCG9HNJRTD;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlskeyboardUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -852,15 +711,6 @@
 			buildConfigurations = (
 				A56696181CE8B34B00BD7EAF /* Debug */,
 				A56696191CE8B34B00BD7EAF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A566961A1CE8B34B00BD7EAF /* Build configuration list for PBXNativeTarget "AlsKeyboardUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A566961B1CE8B34B00BD7EAF /* Debug */,
-				A566961C1CE8B34B00BD7EAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
