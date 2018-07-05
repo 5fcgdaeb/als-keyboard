@@ -48,7 +48,7 @@ class TyperVC: UIViewController {
         
         var storyboard: UIStoryboard? = .none
 
-        if !ALSEngine.arkitSupported { // Use ARKit 1.5 FaceTrackingConfiguration + TrueDepth Camera
+        if ALSEngine.arkitSupported { // Use ARKit 1.5 FaceTrackingConfiguration + TrueDepth Camera
             storyboard = UIStoryboard(name: "ARSceneKit", bundle: nil)
         }
         else { // Use Vision Framework
