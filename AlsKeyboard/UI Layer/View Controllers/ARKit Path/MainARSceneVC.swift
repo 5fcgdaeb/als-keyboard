@@ -12,25 +12,9 @@ import ARKit
 class MainARSceneVC: UIViewController, ARSessionDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet var facialMovesLabel: UILabel!
-    @IBOutlet var charactersLabel: UILabel!
-    
-    private var engine: ALSEngine?
-    
-    private var moveDetector: MoveDetector {
-        get {
-            return (self.engine?.moveDetector)!
-        }
-    }
-    
-    private var moveReceived: (FacialMove) -> () = { facialMove in }
-    private var keyboardEventReceived: (String) -> () = { character in }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        self.integrateToALSEngine()
         self.startUpSceneKit()
     }
     
@@ -54,7 +38,7 @@ class MainARSceneVC: UIViewController, ARSessionDelegate {
         
         let convertedInput = Dictionary(uniqueKeysWithValues: faceAnchor.blendShapes.map({ ($0.0.rawValue, $0.1.floatValue) }))
         let faceInput = FaceInputData(faceAnchors: convertedInput)
-        self.moveDetector.feed(faceData: faceInput)
+        ALSEngine.shared().moveDetector.feed(faceData: faceInput)
     }
 
     public func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {}
@@ -73,18 +57,6 @@ class MainARSceneVC: UIViewController, ARSessionDelegate {
         DispatchQueue.main.async {
             print("The AR session failed: \(errorMessage)")
         }
-    }
-    
-    // MARK: - Private methods
-    private func integrateToALSEngine() {
-        
-        self.engine = ALSEngine.shared()
-        self.moveReceived = { [unowned self] facialMove  in
-            DispatchQueue.main.async {
-                self.facialMovesLabel.text = self.facialMovesLabel.text! + facialMove.expression.coolDescription()
-            }
-        }
-        self.moveDetector.listenForMoves(withHandler: self.moveReceived)
     }
     
     private func startUpSceneKit() {

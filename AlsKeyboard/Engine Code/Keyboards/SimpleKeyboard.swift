@@ -17,13 +17,13 @@ class SimpleKeyboard: FacialMoveKeyboard {
     
     private var moveDetector: MoveDetector
     private var bufferedFacialMoves: [FacialMove] = []
-    private var shouldItType = false
+    private var shouldItType = true
     private var observers: [(String) -> ()] = []
     
     init(withMoveDetector moveDetector: MoveDetector) {
         
         self.moveDetector = moveDetector
-        self.commandMapping = [[.blink, .jawMove]: "C"]
+        self.commandMapping = [[.lookLeft, .jawMove, .lookLeft]: "G", [.jawMove, .jawMove, .jawMove]: "S"]
         
         self.moveDetector.listenForMoves(withHandler: self.moveReceivedClosure())
     }
@@ -61,7 +61,7 @@ class SimpleKeyboard: FacialMoveKeyboard {
     }
     
     func resetState() {
-        self.bufferedFacialMoves.removeAll()
+        self.clearBufferedMoves()
     }
     
     private func analyzeCommandToGenerateText() {
@@ -77,12 +77,20 @@ class SimpleKeyboard: FacialMoveKeyboard {
             
             let expressions = [facialMove1, facialMove2, facialMove3].map { $0.expression }
             
+            var generatedCharacter = ""
             if let mappingValue = self.commandMapping[expressions] {
-                for observer in self.observers {
-                    observer(mappingValue)
-                }
+                generatedCharacter = mappingValue
+                
             }
+            for observer in self.observers {
+                observer(generatedCharacter)
+            }
+            self.clearBufferedMoves()
         }
+    }
+    
+    private func clearBufferedMoves() {
+        self.bufferedFacialMoves.removeAll()
     }
 }
 
