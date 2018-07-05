@@ -310,24 +310,21 @@ class VisionSceneVC: UIViewController {
         self.requests = [faceDetectionRequest]
     }
     
-    func handleFaces(request: VNRequest, error: Error?) {
-        DispatchQueue.main.async {
-            //perform all the UI updates on the main queue
-            guard let results = request.results as? [VNFaceObservation] else { return }
-            self.previewView.removeMask()
-            for face in results {
-                self.previewView.drawFaceboundingBox(face: face)
-            }
-        }
-    }
-    
     func handleFaceLandmarks(request: VNRequest, error: Error?) {
+        
         DispatchQueue.main.async {
-            //perform all the UI updates on the main queue
+            
             guard let results = request.results as? [VNFaceObservation] else { return }
+            
             self.previewView.removeMask()
             for face in results {
                 self.previewView.drawFaceWithLandmarks(face: face)
+            }
+            
+            if let theFace = results.first {
+//                for landmark in theFace.landmarks {
+//
+//                }
             }
         }
     }

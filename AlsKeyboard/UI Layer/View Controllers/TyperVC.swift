@@ -48,7 +48,7 @@ class TyperVC: UIViewController {
         
         var storyboard: UIStoryboard? = .none
 
-        if ALSEngine.arkitSupported { // Use ARKit 1.5 FaceTrackingConfiguration + TrueDepth Camera
+        if !ALSEngine.arkitSupported { // Use ARKit 1.5 FaceTrackingConfiguration + TrueDepth Camera
             storyboard = UIStoryboard(name: "ARSceneKit", bundle: nil)
         }
         else { // Use Vision Framework
@@ -80,8 +80,9 @@ class TyperVC: UIViewController {
         
         self.engine = ALSEngine.shared()
         
-        self.moveReceived = { [unowned self] facialMove  in
+        self.moveReceived = { [unowned self] facialMove in
             DispatchQueue.main.async {
+                print("VC received move")
                 self.facialMovesLabel.text = self.facialMovesLabel.text! + facialMove.expression.coolDescription()
             }
         }
@@ -89,6 +90,7 @@ class TyperVC: UIViewController {
         
         self.keyboardEventReceived = { [unowned self] character in
             DispatchQueue.main.async {
+                print("VC received keyboard")
                 self.charactersLabel.text = self.charactersLabel.text! + character
                 self.facialMovesLabel.text = ""
             }

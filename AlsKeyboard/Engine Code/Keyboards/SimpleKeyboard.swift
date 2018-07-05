@@ -33,7 +33,7 @@ class SimpleKeyboard: FacialMoveKeyboard {
         return {
             
             [unowned self] facialMove in
-            
+            print("Keyboard received move")
             let areThereBufferedMoves = self.bufferedFacialMoves.count > 0
             
             if areThereBufferedMoves {
@@ -53,7 +53,7 @@ class SimpleKeyboard: FacialMoveKeyboard {
     }
     
     func listenForKeyboardEvents(withHandler handler: @escaping (String) -> ()) {
-        self.observers.append(handler)
+        self.observers.insert(handler, at: 0)
     }
     
     func startTyping() {

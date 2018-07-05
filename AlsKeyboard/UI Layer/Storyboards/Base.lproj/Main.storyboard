@@ -11,35 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ZOy-oJ-obz">
-            <objects>
-                <viewController id="mGO-Yi-7Rs" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ilk-it-lx2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The app works only with iPhone X (requires TrueDepth camera). Support for other devices will be coming in shortly!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rao-Hc-urv">
-                                <rect key="frame" x="20.5" y="219.5" width="279.5" height="149.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Rao-Hc-urv" firstAttribute="centerY" secondItem="evY-Ct-feK" secondAttribute="centerY" id="3qK-iS-w4l"/>
-                            <constraint firstItem="Rao-Hc-urv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="evY-Ct-feK" secondAttribute="leading" constant="20" id="8Sg-TO-7BD"/>
-                            <constraint firstItem="Rao-Hc-urv" firstAttribute="centerX" secondItem="evY-Ct-feK" secondAttribute="centerX" id="NJt-FS-SHF"/>
-                            <constraint firstItem="evY-Ct-feK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rao-Hc-urv" secondAttribute="trailing" constant="20" id="QAO-LQ-RiL"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="evY-Ct-feK"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MIY-7Q-Bh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="835"/>
-        </scene>
         <!--TyperVC-->
         <scene sceneID="9dq-bf-dy6">
             <objects>
