@@ -44,6 +44,9 @@
 		BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4812F20D9659D00762EAE /* UserHardware.swift */; };
 		BBE71A8720EA7C7A00ECDC88 /* VisionKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE71A8620EA7C7A00ECDC88 /* VisionKit.storyboard */; };
 		BBE71A9820EE493A00ECDC88 /* TyperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE71A9720EE493A00ECDC88 /* TyperVC.swift */; };
+		BBE71A9A20EF82C500ECDC88 /* MappingGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE71A9920EF82C500ECDC88 /* MappingGeneratorTests.swift */; };
+		BBE71A9C20EF82F200ECDC88 /* MappingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE71A9B20EF82F200ECDC88 /* MappingGenerator.swift */; };
+		BBE71A9D20EF833B00ECDC88 /* MappingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE71A9B20EF82F200ECDC88 /* MappingGenerator.swift */; };
 		BBEE83E720E537F700618FBD /* VisionSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E620E537F700618FBD /* VisionSceneVC.swift */; };
 		BBEE83E920E5384500618FBD /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E820E5384500618FBD /* PreviewView.swift */; };
 		BBEE83EB20E5407000618FBD /* OrientationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */; };
@@ -101,6 +104,8 @@
 		BBD4812F20D9659D00762EAE /* UserHardware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHardware.swift; sourceTree = "<group>"; };
 		BBE71A8620EA7C7A00ECDC88 /* VisionKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VisionKit.storyboard; sourceTree = "<group>"; };
 		BBE71A9720EE493A00ECDC88 /* TyperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TyperVC.swift; sourceTree = "<group>"; };
+		BBE71A9920EF82C500ECDC88 /* MappingGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingGeneratorTests.swift; sourceTree = "<group>"; };
+		BBE71A9B20EF82F200ECDC88 /* MappingGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingGenerator.swift; sourceTree = "<group>"; };
 		BBEE83E620E537F700618FBD /* VisionSceneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionSceneVC.swift; sourceTree = "<group>"; };
 		BBEE83E820E5384500618FBD /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationExtensions.swift; sourceTree = "<group>"; };
@@ -151,6 +156,7 @@
 				BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */,
 				BB4F492220DFC04C00F19109 /* Move Detectors */,
 				BB4F492720DFC9E900F19109 /* Keyboards */,
+				BBE71A9B20EF82F200ECDC88 /* MappingGenerator.swift */,
 				A22EA9171F2F622800423D84 /* ALSEngine.swift */,
 			);
 			path = "Engine Code";
@@ -195,6 +201,7 @@
 				BB49DA0D20E690DE00D87620 /* FaceInputDataTests.swift */,
 				BB49DA1020E6ADA100D87620 /* FacialExpressionTests.swift */,
 				BBA8E3A120EA1F1F005660A8 /* FacialMoveTests.swift */,
+				BBE71A9920EF82C500ECDC88 /* MappingGeneratorTests.swift */,
 				A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */,
 				A56696061CE8B34B00BD7EAF /* Info.plist */,
 			);
@@ -461,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE71A9C20EF82F200ECDC88 /* MappingGenerator.swift in Sources */,
 				BBE71A9820EE493A00ECDC88 /* TyperVC.swift in Sources */,
 				BB4F492B20DFCA2700F19109 /* SimpleKeyboard.swift in Sources */,
 				A22EA9231F2F626500423D84 /* FaceInputData.swift in Sources */,
@@ -491,8 +499,10 @@
 				BB62CBAF20E6B365009472C7 /* FacialExpression.swift in Sources */,
 				BB62CBB020E6B365009472C7 /* FacialMove.swift in Sources */,
 				BB62CBB120E6B365009472C7 /* MoveDetector.swift in Sources */,
+				BBE71A9D20EF833B00ECDC88 /* MappingGenerator.swift in Sources */,
 				BB62CBB220E6B365009472C7 /* ARKitMoveDetector.swift in Sources */,
 				BB62CBB320E6B365009472C7 /* VisionKitMoveDetector.swift in Sources */,
+				BBE71A9A20EF82C500ECDC88 /* MappingGeneratorTests.swift in Sources */,
 				BBA8E3A220EA1F1F005660A8 /* FacialMoveTests.swift in Sources */,
 				BB62CBB420E6B365009472C7 /* DLibMoveDetector.swift in Sources */,
 				BB62CBB520E6B365009472C7 /* FacialMoveKeyboard.swift in Sources */,
