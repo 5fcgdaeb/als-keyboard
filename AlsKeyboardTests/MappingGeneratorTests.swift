@@ -65,4 +65,14 @@ class MappingGeneratorTests: XCTestCase {
         
     }
     
+    func testRequiredExpressionCountWIthSixExpressions() {
+        
+        let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft, .lookRight, .smile, .eyebrowMove])
+        XCTAssertTrue(mapping.count > 0)
+        
+        let randomKey = mapping.keys.first!
+        XCTAssertTrue(randomKey.count == 2)
+        
+    }
+    
 }

@@ -32,7 +32,7 @@ struct MappingGenerator {
             return [:]
         }
         
-        var allPossibleExpressionCombinations = self.allCombinations(ofExpressions: Array(expressionsOfUser[0 ..< expressionCountRequiredToTypeOneCharacter]))
+        var allPossibleExpressionCombinations = self.allCombinations(ofExpressions: expressionsOfUser, withLength: expressionCountRequiredToTypeOneCharacter)
         
         if countOfAllCharacters > allPossibleExpressionCombinations.count {
             return [:]
@@ -47,17 +47,17 @@ struct MappingGenerator {
         return mapping
     }
     
-    private func allCombinations(ofExpressions expressions: [FacialExpression]) -> [[FacialExpression]] {
+    private func allCombinations(ofExpressions expressions: [FacialExpression], withLength length: Int) -> [[FacialExpression]] {
         
-        let totalCombinationCount = Int( pow(Double(expressions.count), Double(expressions.count)) )
+        let totalCombinationCount = Int( pow(Double(expressions.count), Double(length)) )
         var allPossibleExpressionCombinations: [[FacialExpression]] = []
         
         for i in 0..<totalCombinationCount {
             
-            let paddedString = String(i, radix:3).pad(with:"0", toLength:3)
+            let paddedString = String(i, radix:length).pad(with:"0", toLength:length)
             var resultForThisCombination: [FacialExpression] = []
             
-            for j in 0..<expressions.count {
+            for j in 0..<length {
                 let indexToUse = Int(String(paddedString.characterAtIndex(index: j)!))!
                 let expressionToUse = expressions[indexToUse]
                 resultForThisCombination.append(expressionToUse)
