@@ -10,31 +10,46 @@ import Foundation
 
 struct MappingGenerator {
     
-    private var a: Int = 0
     private var availableCharacters: [String] = []
     
     init() {
         self.availableCharacters = self.charactersUserCanType()
     }
     
-    func generateMapping(fromEasyToHardExpressions expressions: [FacialExpression]) -> [[FacialExpression]: String] {
+    func generateMapping(fromEasyToHardExpressions expressionsOfUser: [FacialExpression]) -> [[FacialExpression]: String] {
         
-        guard expressions.count > 1 else { return [:] }
+        guard expressionsOfUser.count > 1 else { return [:] }
         
-        let expressionCount = expressions.count
-        let characterCount = self.availableCharacters.count
+        let userExpressionCount = expressionsOfUser.count
+        let countOfAllCharacters = self.availableCharacters.count
         
         var expressionCountRequiredToTypeOneCharacter = 1
-        while(Int(pow(Double(expressionCount), Double(expressionCountRequiredToTypeOneCharacter))) < characterCount) {
+        while(Int(pow(Double(userExpressionCount), Double(expressionCountRequiredToTypeOneCharacter))) < countOfAllCharacters) {
             expressionCountRequiredToTypeOneCharacter += 1
         }
         
-        if expressionCountRequiredToTypeOneCharacter > expressionCount {
+        if expressionCountRequiredToTypeOneCharacter > userExpressionCount {
             return [:]
         }
         
-        let totalCombinationCount = Int( pow(Double(expressionCountRequiredToTypeOneCharacter), Double(expressionCountRequiredToTypeOneCharacter)) )
-        let expressionsWeWillUse = expressions[0..<expressionCountRequiredToTypeOneCharacter]
+        var allPossibleExpressionCombinations = self.allCombinations(ofExpressions: Array(expressionsOfUser[0 ..< expressionCountRequiredToTypeOneCharacter]))
+        
+        if countOfAllCharacters > allPossibleExpressionCombinations.count {
+            return [:]
+        }
+        
+        var mapping: [[FacialExpression]: String] = [:]
+        for (index, character) in self.availableCharacters.enumerated() {
+            let combination = allPossibleExpressionCombinations[index]
+            mapping[combination] = String(character)
+        }
+        
+        return mapping
+    }
+    
+    private func allCombinations(ofExpressions expressions: [FacialExpression]) -> [[FacialExpression]] {
+        
+        let totalCombinationCount = Int( pow(Double(expressions.count), Double(expressions.count)) )
         var allPossibleExpressionCombinations: [[FacialExpression]] = []
         
         for i in 0..<totalCombinationCount {
@@ -42,19 +57,16 @@ struct MappingGenerator {
             let paddedString = String(i, radix:3).pad(with:"0", toLength:3)
             var resultForThisCombination: [FacialExpression] = []
             
-            for j in 0..<expressionsWeWillUse.count {
+            for j in 0..<expressions.count {
                 let indexToUse = Int(String(paddedString.characterAtIndex(index: j)!))!
-                let expressionToUse = expressionsWeWillUse[indexToUse]
+                let expressionToUse = expressions[indexToUse]
                 resultForThisCombination.append(expressionToUse)
             }
             
             allPossibleExpressionCombinations.append(resultForThisCombination)
         }
         
-//        for (index, character) in self.availableCharacters.enumerated() {
-//
-//        }
-        return [[.blink]:"a"]
+        return allPossibleExpressionCombinations
     }
     
     private func charactersUserCanType() -> [String] {

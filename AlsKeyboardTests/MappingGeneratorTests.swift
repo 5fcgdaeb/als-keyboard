@@ -43,8 +43,25 @@ class MappingGeneratorTests: XCTestCase {
         let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft])
         XCTAssertTrue(mapping.count > 0)
         
-        let sampleKey = mapping.keys.first!
-        XCTAssertTrue(sampleKey.count == 3)
+        let randomKey = mapping.keys.first!
+        XCTAssertTrue(randomKey.count == 3)
+        
+        let firstValue = mapping[[.blink, .blink, .blink]]
+        XCTAssertEqual(firstValue, "a")
+        
+    }
+    
+    func testOnlyRequiredExpressionsBeingUsed() {
+        
+        let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft, .eyebrowMove])
+        XCTAssertTrue(mapping.count > 0)
+        
+        let randomKey = mapping.keys.first!
+        XCTAssertTrue(randomKey.count == 3)
+        
+        for (key, _) in mapping {
+            XCTAssertFalse(key.contains(.eyebrowMove))
+        }
         
     }
     
