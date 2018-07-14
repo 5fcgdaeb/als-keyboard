@@ -38,6 +38,8 @@
 		BB62CBB620E6B365009472C7 /* SimpleKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F492A20DFCA2700F19109 /* SimpleKeyboard.swift */; };
 		BB62CBB720E6B365009472C7 /* ALSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EA9171F2F622800423D84 /* ALSEngine.swift */; };
 		BB8D512B20DD3EAF00D81E51 /* FacialMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */; };
+		BB8F8A6C20FA5C9600C0668F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8F8A6B20FA5C9600C0668F /* Extensions.swift */; };
+		BB8F8A6D20FA5D2A00C0668F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8F8A6B20FA5C9600C0668F /* Extensions.swift */; };
 		BBA8E3A020EA110D005660A8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BBA8E39F20EA110D005660A8 /* README.md */; };
 		BBA8E3A220EA1F1F005660A8 /* FacialMoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8E3A120EA1F1F005660A8 /* FacialMoveTests.swift */; };
 		BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */; };
@@ -98,6 +100,7 @@
 		BB4F492A20DFCA2700F19109 /* SimpleKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleKeyboard.swift; sourceTree = "<group>"; };
 		BB4F492C20DFCA3C00F19109 /* FacialExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
 		BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialMove.swift; sourceTree = "<group>"; };
+		BB8F8A6B20FA5C9600C0668F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BBA8E39F20EA110D005660A8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		BBA8E3A120EA1F1F005660A8 /* FacialMoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialMoveTests.swift; sourceTree = "<group>"; };
 		BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -158,6 +161,7 @@
 				BB4F492720DFC9E900F19109 /* Keyboards */,
 				BBE71A9B20EF82F200ECDC88 /* MappingGenerator.swift */,
 				A22EA9171F2F622800423D84 /* ALSEngine.swift */,
+				BB8F8A6B20FA5C9600C0668F /* Extensions.swift */,
 			);
 			path = "Engine Code";
 			sourceTree = "<group>";
@@ -481,6 +485,7 @@
 				BBEE83E720E537F700618FBD /* VisionSceneVC.swift in Sources */,
 				A22EA91F1F2F625C00423D84 /* ALSEngine.swift in Sources */,
 				BB4F492420DFC05C00F19109 /* ARKitMoveDetector.swift in Sources */,
+				BB8F8A6C20FA5C9600C0668F /* Extensions.swift in Sources */,
 				BB49DA0C20E688B600D87620 /* TutorialPracticeVC.swift in Sources */,
 				BB4F492120DFC03E00F19109 /* MoveDetector.swift in Sources */,
 				BBEE83F320E54FE400618FBD /* TutorialIntroVC.swift in Sources */,
@@ -509,6 +514,7 @@
 				BB62CBB620E6B365009472C7 /* SimpleKeyboard.swift in Sources */,
 				BB62CBB720E6B365009472C7 /* ALSEngine.swift in Sources */,
 				BB49DA0E20E690DE00D87620 /* FaceInputDataTests.swift in Sources */,
+				BB8F8A6D20FA5D2A00C0668F /* Extensions.swift in Sources */,
 				BB49DA1120E6ADA100D87620 /* FacialExpressionTests.swift in Sources */,
 				A56696051CE8B34B00BD7EAF /* KeyboardTests.swift in Sources */,
 			);
