@@ -42,6 +42,9 @@
 		BB8F8A6D20FA5D2A00C0668F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8F8A6B20FA5C9600C0668F /* Extensions.swift */; };
 		BBA8E3A020EA110D005660A8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BBA8E39F20EA110D005660A8 /* README.md */; };
 		BBA8E3A220EA1F1F005660A8 /* FacialMoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8E3A120EA1F1F005660A8 /* FacialMoveTests.swift */; };
+		BBB659E620FCB57A00E64920 /* KeyboardMappingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB659E520FCB57A00E64920 /* KeyboardMappingVC.swift */; };
+		BBB659E820FCC16800E64920 /* LetterMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB659E720FCC16800E64920 /* LetterMapping.swift */; };
+		BBB659E920FCC1B600E64920 /* LetterMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB659E720FCC16800E64920 /* LetterMapping.swift */; };
 		BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */; };
 		BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4812F20D9659D00762EAE /* UserHardware.swift */; };
 		BBE71A8720EA7C7A00ECDC88 /* VisionKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE71A8620EA7C7A00ECDC88 /* VisionKit.storyboard */; };
@@ -103,6 +106,8 @@
 		BB8F8A6B20FA5C9600C0668F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BBA8E39F20EA110D005660A8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		BBA8E3A120EA1F1F005660A8 /* FacialMoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialMoveTests.swift; sourceTree = "<group>"; };
+		BBB659E520FCB57A00E64920 /* KeyboardMappingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMappingVC.swift; sourceTree = "<group>"; };
+		BBB659E720FCC16800E64920 /* LetterMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterMapping.swift; sourceTree = "<group>"; };
 		BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BBD4812F20D9659D00762EAE /* UserHardware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHardware.swift; sourceTree = "<group>"; };
 		BBE71A8620EA7C7A00ECDC88 /* VisionKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VisionKit.storyboard; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 				BB8D512A20DD3EAF00D81E51 /* FacialMove.swift */,
 				BB4F492220DFC04C00F19109 /* Move Detectors */,
 				BB4F492720DFC9E900F19109 /* Keyboards */,
+				BBB659E720FCC16800E64920 /* LetterMapping.swift */,
 				BBE71A9B20EF82F200ECDC88 /* MappingGenerator.swift */,
 				A22EA9171F2F622800423D84 /* ALSEngine.swift */,
 				BB8F8A6B20FA5C9600C0668F /* Extensions.swift */,
@@ -258,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE71A9720EE493A00ECDC88 /* TyperVC.swift */,
+				BBB659E520FCB57A00E64920 /* KeyboardMappingVC.swift */,
 				BBEE83EE20E54ABE00618FBD /* ARKit Path */,
 				BBEE83EF20E54AD200618FBD /* Vision Framework Path */,
 			);
@@ -474,6 +481,7 @@
 			files = (
 				BBE71A9C20EF82F200ECDC88 /* MappingGenerator.swift in Sources */,
 				BBE71A9820EE493A00ECDC88 /* TyperVC.swift in Sources */,
+				BBB659E620FCB57A00E64920 /* KeyboardMappingVC.swift in Sources */,
 				BB4F492B20DFCA2700F19109 /* SimpleKeyboard.swift in Sources */,
 				A22EA9231F2F626500423D84 /* FaceInputData.swift in Sources */,
 				BBEE83EB20E5407000618FBD /* OrientationExtensions.swift in Sources */,
@@ -489,6 +497,7 @@
 				BB49DA0C20E688B600D87620 /* TutorialPracticeVC.swift in Sources */,
 				BB4F492120DFC03E00F19109 /* MoveDetector.swift in Sources */,
 				BBEE83F320E54FE400618FBD /* TutorialIntroVC.swift in Sources */,
+				BBB659E820FCC16800E64920 /* LetterMapping.swift in Sources */,
 				BB4AA64120DD3192006EE5FA /* MainARSceneVC.swift in Sources */,
 				BB4F492920DFCA0000F19109 /* FacialMoveKeyboard.swift in Sources */,
 				A56695F01CE8B34B00BD7EAF /* AppDelegate.swift in Sources */,
@@ -502,6 +511,7 @@
 			files = (
 				BB62CBAE20E6B365009472C7 /* FaceInputData.swift in Sources */,
 				BB62CBAF20E6B365009472C7 /* FacialExpression.swift in Sources */,
+				BBB659E920FCC1B600E64920 /* LetterMapping.swift in Sources */,
 				BB62CBB020E6B365009472C7 /* FacialMove.swift in Sources */,
 				BB62CBB120E6B365009472C7 /* MoveDetector.swift in Sources */,
 				BBE71A9D20EF833B00ECDC88 /* MappingGenerator.swift in Sources */,

@@ -42,6 +42,10 @@ class TyperVC: UIViewController {
         self.initializeLabels()
     }
     
+    @IBAction func unwindToViewControllerNameHere(segue: UIStoryboardSegue) {
+        //nothing goes here
+    }
+    
     // MARK: - Private methods
     
     private func activateCamera() {
