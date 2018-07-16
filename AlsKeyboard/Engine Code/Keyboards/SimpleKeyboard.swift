@@ -8,8 +8,7 @@
 
 import Foundation
 
-let MINIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = 0.3
-let MAXIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = Double(3.5) // 500 milliseconds
+let MINIMUM_SECONDS_REQUIREMENT_BETWEEN_INPUTS = 0.2
 
 class SimpleKeyboard: FacialMoveKeyboard {
     
@@ -39,7 +38,7 @@ class SimpleKeyboard: FacialMoveKeyboard {
             if areThereBufferedMoves {
                 let previousMove = self.bufferedFacialMoves[self.bufferedFacialMoves.count - 1]
                 let timeDifferenceInSeconds = Double(facialMove.secondsSince1970() - previousMove.secondsSince1970())
-                if timeDifferenceInSeconds < MINIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS {
+                if timeDifferenceInSeconds < MINIMUM_SECONDS_REQUIREMENT_BETWEEN_INPUTS {
                     return
                 }
             }

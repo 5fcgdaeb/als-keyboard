@@ -46,6 +46,7 @@
 		BBB659E820FCC16800E64920 /* LetterMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB659E720FCC16800E64920 /* LetterMapping.swift */; };
 		BBB659E920FCC1B600E64920 /* LetterMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB659E720FCC16800E64920 /* LetterMapping.swift */; };
 		BBB659EB20FCCA4600E64920 /* LetterMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB659EA20FCCA4600E64920 /* LetterMappingTests.swift */; };
+		BBB659EF20FCE9DF00E64920 /* UI_Texts.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBB659F120FCE9DF00E64920 /* UI_Texts.strings */; };
 		BBCE8DAD20CAA59B00DBE34A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */; };
 		BBD4813020D9659D00762EAE /* UserHardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4812F20D9659D00762EAE /* UserHardware.swift */; };
 		BBE71A8720EA7C7A00ECDC88 /* VisionKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE71A8620EA7C7A00ECDC88 /* VisionKit.storyboard */; };
@@ -110,6 +111,7 @@
 		BBB659E520FCB57A00E64920 /* KeyboardMappingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMappingVC.swift; sourceTree = "<group>"; };
 		BBB659E720FCC16800E64920 /* LetterMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterMapping.swift; sourceTree = "<group>"; };
 		BBB659EA20FCCA4600E64920 /* LetterMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterMappingTests.swift; sourceTree = "<group>"; };
+		BBB659F020FCE9DF00E64920 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UI_Texts.strings; sourceTree = "<group>"; };
 		BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BBD4812F20D9659D00762EAE /* UserHardware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHardware.swift; sourceTree = "<group>"; };
 		BBE71A8620EA7C7A00ECDC88 /* VisionKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VisionKit.storyboard; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				A56695EF1CE8B34B00BD7EAF /* AppDelegate.swift */,
 				BBCE8DAF20CAA5CB00DBE34A /* UI Layer */,
 				A22EA9161F2F622800423D84 /* Engine Code */,
+				BBB659EC20FCE99D00E64920 /* Resources */,
 				BBCE8DAE20CAA5AA00DBE34A /* Configuration */,
 			);
 			path = AlsKeyboard;
@@ -274,10 +277,18 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		BBCE8DAE20CAA5AA00DBE34A /* Configuration */ = {
+		BBB659EC20FCE99D00E64920 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				A56695F61CE8B34B00BD7EAF /* Assets.xcassets */,
+				BBB659F120FCE9DF00E64920 /* UI_Texts.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BBCE8DAE20CAA5AA00DBE34A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
 				A56695FB1CE8B34B00BD7EAF /* Info.plist */,
 			);
 			path = Configuration;
@@ -424,6 +435,7 @@
 				A56695FA1CE8B34B00BD7EAF /* LaunchScreen.storyboard in Resources */,
 				A56695F71CE8B34B00BD7EAF /* Assets.xcassets in Resources */,
 				BB4AA63F20DD30F4006EE5FA /* ARSceneKit.storyboard in Resources */,
+				BBB659EF20FCE9DF00E64920 /* UI_Texts.strings in Resources */,
 				BBEE83F120E54EE900618FBD /* Tutorial.storyboard in Resources */,
 				A56695F51CE8B34B00BD7EAF /* Main.storyboard in Resources */,
 			);
@@ -559,6 +571,14 @@
 				A56695F91CE8B34B00BD7EAF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BBB659F120FCE9DF00E64920 /* UI_Texts.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBB659F020FCE9DF00E64920 /* en */,
+			);
+			name = UI_Texts.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

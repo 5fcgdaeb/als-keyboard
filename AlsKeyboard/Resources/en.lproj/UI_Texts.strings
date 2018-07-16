@@ -1,0 +1,10 @@
+/* 
+  UI_Texts.strings
+  AlsKeyboard
+
+  Created by Guven Bolukbasi on 16.07.2018.
+  Copyright © 2018 DorianLabs. All rights reserved.
+*/
+
+"initial_status" = "Press Start to Start Typing";
+"tracking_status" = "Tracking Your Face for Expresssions";

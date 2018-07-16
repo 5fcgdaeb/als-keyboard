@@ -33,12 +33,6 @@ class DLibMoveDetector: MoveDetector {
         
         let previousInput = self.allFaceRecognitionInputs[currentInputCount - 2]
         
-        let difference = previousInput.timeDifference(fromInput:input)
-        
-        if difference > MAXIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS {
-            return []
-        }
-        
         let coordinatesToCompareTo = previousInput.comparisonCoordinates(withOtherInput: input)
         
         let haveEyebrowsBeenRaised = self.haveEyebrowsBeenRaised(comparisonCoordinates: coordinatesToCompareTo)

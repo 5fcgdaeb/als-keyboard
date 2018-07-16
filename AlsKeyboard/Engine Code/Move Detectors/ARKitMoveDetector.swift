@@ -10,7 +10,7 @@ import Foundation
 import ARKit
 
 let MOVE_DETECTION_THRESHOLD_BETWEEN_ZERO_AND_ONE: Float = 0.7
-let SECONDS_REQUIRED_BETWEEN_MOVES = 0.8
+let SECONDS_REQUIRED_BETWEEN_MOVES = 0.6
 
 class ARKitMoveDetector: MoveDetector {
     

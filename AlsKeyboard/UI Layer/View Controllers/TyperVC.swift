@@ -11,8 +11,10 @@ import UIKit
 class TyperVC: UIViewController {
 
     @IBOutlet var facialMovesLabel: UILabel!
+    @IBOutlet var facialMoveDescriptionsLabel: UILabel!
     @IBOutlet var charactersLabel: UILabel!
     @IBOutlet var containerView: UIView!
+    @IBOutlet var statusLabel: UILabel!
     
     private var engine: ALSEngine?
     
@@ -35,16 +37,19 @@ class TyperVC: UIViewController {
         super.viewDidLoad()
         self.initializeLabels()
         self.activateCamera()
-        self.integrateToALSEngine()
     }
     
     @IBAction func resetTapped(_ sender: UIControl) {
         self.initializeLabels()
     }
     
-    @IBAction func unwindToViewControllerNameHere(segue: UIStoryboardSegue) {
-        //nothing goes here
+    @IBAction func startTapped(_ sender: UIControl) {
+        self.integrateToALSEngine()
+        self.statusLabel.text = NSLocalizedString("tracking_status", tableName: "UI_Texts", comment: "")
+        
     }
+    
+    @IBAction func unwindToViewControllerNameHere(segue: UIStoryboardSegue) {}
     
     // MARK: - Private methods
     
@@ -88,6 +93,7 @@ class TyperVC: UIViewController {
             DispatchQueue.main.async {
                 print("VC received move")
                 self.facialMovesLabel.text = self.facialMovesLabel.text! + facialMove.expression.coolDescription()
+                self.facialMoveDescriptionsLabel.text = self.facialMoveDescriptionsLabel.text! + facialMove.expression.shortDescription()
             }
         }
         self.moveDetector.listenForMoves(withHandler: self.moveReceived)
@@ -97,6 +103,7 @@ class TyperVC: UIViewController {
                 print("VC received keyboard")
                 self.charactersLabel.text = self.charactersLabel.text! + character
                 self.facialMovesLabel.text = ""
+                self.facialMoveDescriptionsLabel.text = ""
             }
         }
         self.keyboard.listenForKeyboardEvents(withHandler: self.keyboardEventReceived)
@@ -105,6 +112,8 @@ class TyperVC: UIViewController {
     private func initializeLabels() {
         self.charactersLabel.text = ""
         self.facialMovesLabel.text = ""
+        self.facialMoveDescriptionsLabel.text = ""
+        self.statusLabel.text = NSLocalizedString("initial_status", tableName: "UI_Texts", comment: "")
     }
  
 
