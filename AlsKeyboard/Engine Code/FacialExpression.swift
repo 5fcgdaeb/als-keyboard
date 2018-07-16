@@ -62,7 +62,7 @@ public enum FacialExpression: String {
 extension Array: Hashable where Element == FacialExpression {
     
     func expressionListDescription () -> String {
-        return self.reduce("", { $0 + $1.rawValue })
+        return self.reduce("", { $0 + " - " + $1.rawValue })
     }
     
     public var hashValue: Int {

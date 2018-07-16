@@ -32,7 +32,7 @@ struct MappingGenerator {
             return LetterMapping.emptyMapping()
         }
         
-        var allPossibleExpressionCombinations = self.allCombinations(ofExpressions: expressionsOfUser, withLength: expressionCountRequiredToTypeOneCharacter)
+        let allPossibleExpressionCombinations = self.allCombinations(ofExpressions: expressionsOfUser, withLength: expressionCountRequiredToTypeOneCharacter)
         
         if countOfAllCharacters > allPossibleExpressionCombinations.count {
             return LetterMapping.emptyMapping()
@@ -54,7 +54,7 @@ struct MappingGenerator {
         
         for i in 0..<totalCombinationCount {
             
-            let paddedString = String(i, radix:length).pad(with:"0", toLength:length)
+            let paddedString = String(i, radix:expressions.count).pad(with:"0", toLength:length)
             var resultForThisCombination: [FacialExpression] = []
             
             for j in 0..<length {

@@ -42,6 +42,7 @@ class MappingGeneratorTests: XCTestCase {
         
         let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft])
         XCTAssertFalse(mapping.isEmptyMapping)
+        XCTAssertTrue(mapping.hasMappingForEachLetter)
         
         XCTAssertTrue(mapping.minimumExpressionCount == 3)
         
@@ -50,23 +51,11 @@ class MappingGeneratorTests: XCTestCase {
         
     }
     
-    func testOnlyRequiredExpressionsBeingUsed() {
-        
-        let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft, .eyebrowMove])
-        XCTAssertFalse(mapping.isEmptyMapping)
-        
-        XCTAssertTrue(mapping.minimumExpressionCount == 3)
-        
-        for (key, _) in mapping.mapping {
-            XCTAssertFalse(key.contains(.eyebrowMove))
-        }
-        
-    }
-    
     func testRequiredExpressionCountWIthSixExpressions() {
         
         let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft, .lookRight, .smile, .eyebrowMove])
         XCTAssertFalse(mapping.isEmptyMapping)
+        XCTAssertTrue(mapping.hasMappingForEachLetter)
         
         XCTAssertTrue(mapping.minimumExpressionCount == 2)
         

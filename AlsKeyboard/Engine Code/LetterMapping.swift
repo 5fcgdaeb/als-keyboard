@@ -25,6 +25,18 @@ struct LetterMapping {
         }
     }
     
+    var mappingCount: Int {
+        get {
+            return self.mapping.count
+        }
+    }
+    
+    var hasMappingForEachLetter: Bool {
+        get {
+            return !self.isEmptyMapping && self.mappingCount == self.letterCount
+        }
+    }
+    
     var sortedLetters: [String] {
         get {
             return self.allLetters.sorted()
@@ -34,7 +46,7 @@ struct LetterMapping {
     
     var isEmptyMapping: Bool {
         get {
-            return self.letterCount == 0 || self.mapping.count == 0
+            return min(self.letterCount, self.mappingCount) == 0
         }
     }
     
