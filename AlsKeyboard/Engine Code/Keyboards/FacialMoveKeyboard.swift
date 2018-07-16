@@ -11,11 +11,11 @@ import Foundation
 
 protocol FacialMoveKeyboard {
     
-    func listenForKeyboardEvents(withHandler handler: @escaping (String) -> ())
-    
     var letterMapping: LetterMapping { get }
     
     func startTyping()
     func resetState()
+    
+    func listenForKeyboardEvents(withHandler handler: @escaping (String) -> ())
 
 }

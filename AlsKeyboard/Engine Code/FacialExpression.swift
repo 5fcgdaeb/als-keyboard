@@ -37,6 +37,25 @@ public enum FacialExpression: String {
         }
     }
     
+    func shortDescription() -> String {
+        switch self {
+        case .eyebrowMove:
+            return "Eyebrow Move"
+        case .lookLeft:
+            return "Look Left"
+        case .lookRight:
+            return "Look Right"
+        case .blink:
+            return "Blink"
+        case .longBlink:
+            return "Long Blink"
+        case .jawMove:
+            return "Jaw Move"
+        case .smile:
+            return "Smile"
+        }
+    }
+    
     func formalDescription() -> String {
         switch self {
         case .eyebrowMove:
@@ -62,7 +81,7 @@ public enum FacialExpression: String {
 extension Array: Hashable where Element == FacialExpression {
     
     func expressionListDescription () -> String {
-        return self.reduce("", { $0 + " - " + $1.rawValue })
+        return self.map {$0.shortDescription()}.joined(separator: "-")
     }
     
     public var hashValue: Int {

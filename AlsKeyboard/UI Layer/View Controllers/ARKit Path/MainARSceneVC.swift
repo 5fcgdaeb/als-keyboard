@@ -15,6 +15,7 @@ class MainARSceneVC: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.clipsToBounds = true
         self.startUpSceneKit()
     }
     

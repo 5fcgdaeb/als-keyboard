@@ -32,9 +32,8 @@ class ARKitMoveDetector: MoveDetector {
             }
         }
         
-        let sortedAnchors = faceAnchors.sorted { $0.value < $1.value}
-        
-        let debugDescription = sortedAnchors.map { "\($0.0) - \($0.1)" }
+//        let sortedAnchors = faceAnchors.sorted { $0.value < $1.value}
+//        let debugDescription = sortedAnchors.map { "\($0.0) - \($0.1)" }
 //        print(debugDescription)
         
         var detectedExpression: FacialExpression?
@@ -53,6 +52,8 @@ class ARKitMoveDetector: MoveDetector {
                 detectedExpression = .eyebrowMove
             case ARFaceAnchor.BlendShapeLocation.mouthSmileLeft.rawValue, ARFaceAnchor.BlendShapeLocation.mouthSmileRight.rawValue:
                 detectedExpression = .smile
+            case ARFaceAnchor.BlendShapeLocation.eyeBlinkLeft.rawValue, ARFaceAnchor.BlendShapeLocation.eyeBlinkRight.rawValue:
+                detectedExpression = .blink
             default:
                 detectedExpression = .none
             }

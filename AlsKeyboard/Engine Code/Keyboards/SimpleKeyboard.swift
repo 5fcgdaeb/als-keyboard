@@ -67,15 +67,11 @@ class SimpleKeyboard: FacialMoveKeyboard {
     private func analyzeCommandToGenerateText() {
         
         let bufferedMoveCount = self.bufferedFacialMoves.count
-        if bufferedMoveCount < 3 {
+        if self.letterMapping.minimumExpressionCount != bufferedMoveCount { // We don't have enough moves yet
             return
         }
         else {
-            let facialMove1 = self.bufferedFacialMoves[bufferedMoveCount - 3]
-            let facialMove2 = self.bufferedFacialMoves[bufferedMoveCount - 2]
-            let facialMove3 = self.bufferedFacialMoves[bufferedMoveCount - 1]
-            
-            let expressions = [facialMove1, facialMove2, facialMove3].map { $0.expression }
+            let expressions = self.bufferedFacialMoves.map { $0.expression }
             
             var generatedCharacter = ""
             if let mappingValue = self.letterMapping[expressions] {
