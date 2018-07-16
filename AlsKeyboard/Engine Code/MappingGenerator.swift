@@ -16,9 +16,9 @@ struct MappingGenerator {
         self.availableCharacters = self.charactersUserCanType()
     }
     
-    func generateMapping(fromEasyToHardExpressions expressionsOfUser: [FacialExpression]) -> [[FacialExpression]: String] {
+    func generateMapping(fromEasyToHardExpressions expressionsOfUser: [FacialExpression]) -> LetterMapping {
         
-        guard expressionsOfUser.count > 1 else { return [:] }
+        guard expressionsOfUser.count > 1 else { return LetterMapping.emptyMapping() }
         
         let userExpressionCount = expressionsOfUser.count
         let countOfAllCharacters = self.availableCharacters.count
@@ -29,13 +29,13 @@ struct MappingGenerator {
         }
         
         if expressionCountRequiredToTypeOneCharacter > userExpressionCount {
-            return [:]
+            return LetterMapping.emptyMapping()
         }
         
         var allPossibleExpressionCombinations = self.allCombinations(ofExpressions: expressionsOfUser, withLength: expressionCountRequiredToTypeOneCharacter)
         
         if countOfAllCharacters > allPossibleExpressionCombinations.count {
-            return [:]
+            return LetterMapping.emptyMapping()
         }
         
         var mapping: [[FacialExpression]: String] = [:]
@@ -44,7 +44,7 @@ struct MappingGenerator {
             mapping[combination] = String(character)
         }
         
-        return mapping
+        return LetterMapping(allLetters: self.charactersUserCanType(), mapping: mapping)
     }
     
     private func allCombinations(ofExpressions expressions: [FacialExpression], withLength length: Int) -> [[FacialExpression]] {

@@ -23,28 +23,27 @@ class MappingGeneratorTests: XCTestCase {
     func testFailureWithJustOneExpression() {
         
         let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink])
-        XCTAssertTrue(mapping.count == 0)
+        XCTAssertTrue(mapping.isEmptyMapping)
     }
     
     func testFailureWithTwoExpressions() {
         
         let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove])
-        XCTAssertTrue(mapping.count == 0)
+        XCTAssertTrue(mapping.isEmptyMapping)
     }
     
     func testSuccessWithMoreThanTwoExpressions() {
         
         let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft])
-        XCTAssertTrue(mapping.count > 0)
+        XCTAssertFalse(mapping.isEmptyMapping)
     }
     
     func testRequiredExpressionCountWIthThreeExpressions() {
         
         let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft])
-        XCTAssertTrue(mapping.count > 0)
+        XCTAssertFalse(mapping.isEmptyMapping)
         
-        let randomKey = mapping.keys.first!
-        XCTAssertTrue(randomKey.count == 3)
+        XCTAssertTrue(mapping.minimumExpressionCount == 3)
         
         let firstValue = mapping[[.blink, .blink, .blink]]
         XCTAssertEqual(firstValue, "a")
@@ -54,12 +53,11 @@ class MappingGeneratorTests: XCTestCase {
     func testOnlyRequiredExpressionsBeingUsed() {
         
         let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft, .eyebrowMove])
-        XCTAssertTrue(mapping.count > 0)
+        XCTAssertFalse(mapping.isEmptyMapping)
         
-        let randomKey = mapping.keys.first!
-        XCTAssertTrue(randomKey.count == 3)
+        XCTAssertTrue(mapping.minimumExpressionCount == 3)
         
-        for (key, _) in mapping {
+        for (key, _) in mapping.mapping {
             XCTAssertFalse(key.contains(.eyebrowMove))
         }
         
@@ -68,10 +66,9 @@ class MappingGeneratorTests: XCTestCase {
     func testRequiredExpressionCountWIthSixExpressions() {
         
         let mapping = self.generator.generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft, .lookRight, .smile, .eyebrowMove])
-        XCTAssertTrue(mapping.count > 0)
+        XCTAssertFalse(mapping.isEmptyMapping)
         
-        let randomKey = mapping.keys.first!
-        XCTAssertTrue(randomKey.count == 2)
+        XCTAssertTrue(mapping.minimumExpressionCount == 2)
         
     }
     

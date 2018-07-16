@@ -15,20 +15,21 @@ class KeyboardMappingVC: UIViewController {
 extension KeyboardMappingVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let allKeys = Array(ALSEngine.shared().keyboardEngine.commandMapping.keys)
-        return allKeys.count
+        let letterMapping = ALSEngine.shared().keyboardEngine.letterMapping
+        return letterMapping.letterCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MappingCell", for: indexPath)
         
-        var allKeys = Array(ALSEngine.shared().keyboardEngine.commandMapping.keys)
-        let currentKey = allKeys[indexPath.row]
-        let currentValue = ALSEngine.shared().keyboardEngine.commandMapping[currentKey]
+        let letterMapping = ALSEngine.shared().keyboardEngine.letterMapping
+        let sortedLetters = letterMapping.sortedLetters
+        let letter = sortedLetters[indexPath.row]
+        let expressions = letterMapping.expressionsRequired(forLetter: letter)
         
-        cell.textLabel?.text = currentKey.expressionListDescription()
-        cell.detailTextLabel?.text = currentValue
+        cell.textLabel?.text = letter
+        cell.detailTextLabel?.text = expressions.expressionListDescription()
         
         return cell
     }

@@ -13,7 +13,7 @@ let MAXIMUM_TIME_REQUIREMENT_BETWEEN_INPUTS = Double(3.5) // 500 milliseconds
 
 class SimpleKeyboard: FacialMoveKeyboard {
     
-    var commandMapping: [[FacialExpression]: String]
+    var letterMapping: LetterMapping
     
     private var moveDetector: MoveDetector
     private var bufferedFacialMoves: [FacialMove] = []
@@ -23,7 +23,7 @@ class SimpleKeyboard: FacialMoveKeyboard {
     init(withMoveDetector moveDetector: MoveDetector) {
         
         self.moveDetector = moveDetector
-        self.commandMapping = [[.lookLeft, .jawMove, .lookLeft]: "G", [.jawMove, .jawMove, .jawMove]: "S"]
+        self.letterMapping = MappingGenerator().generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft, .lookRight, .smile, .eyebrowMove])
         
         self.moveDetector.listenForMoves(withHandler: self.moveReceivedClosure())
     }
@@ -78,7 +78,7 @@ class SimpleKeyboard: FacialMoveKeyboard {
             let expressions = [facialMove1, facialMove2, facialMove3].map { $0.expression }
             
             var generatedCharacter = ""
-            if let mappingValue = self.commandMapping[expressions] {
+            if let mappingValue = self.letterMapping[expressions] {
                 generatedCharacter = mappingValue
                 
             }

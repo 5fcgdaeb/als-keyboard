@@ -13,7 +13,7 @@ protocol FacialMoveKeyboard {
     
     func listenForKeyboardEvents(withHandler handler: @escaping (String) -> ())
     
-    var commandMapping: [[FacialExpression] : String] { get }
+    var letterMapping: LetterMapping { get }
     
     func startTyping()
     func resetState()

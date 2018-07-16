@@ -10,4 +10,58 @@ import Foundation
 
 struct LetterMapping {
     
+    var allLetters: [String]
+    var mapping: [[FacialExpression] : String]
+    
+    subscript(expressions: [FacialExpression]) -> String? {
+        get {
+            return self.mapping[expressions]
+        }
+    }
+    
+    var letterCount: Int {
+        get {
+            return self.allLetters.count
+        }
+    }
+    
+    var sortedLetters: [String] {
+        get {
+            return self.allLetters.sorted()
+        }
+    }
+    
+    
+    var isEmptyMapping: Bool {
+        get {
+            return self.letterCount == 0 || self.mapping.count == 0
+        }
+    }
+    
+    var minimumExpressionCount: Int {
+        get {
+            if self.isEmptyMapping {
+                return 0
+            }
+            else {
+                return self.mapping.keys.first!.count
+            }
+        }
+    }
+    
+    func expressionsRequired(forLetter letterToLookFor:String) -> [FacialExpression] {
+        
+        for (expressions, letter) in self.mapping {
+            if letter == letterToLookFor {
+                return expressions
+            }
+        }
+        
+        return []
+    }
+    
+    static func emptyMapping() -> LetterMapping {
+        return LetterMapping(allLetters: [], mapping: [:])
+    }
+    
 }
