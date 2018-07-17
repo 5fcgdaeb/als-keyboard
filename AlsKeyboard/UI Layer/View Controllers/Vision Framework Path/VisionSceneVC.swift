@@ -50,13 +50,13 @@ class VisionSceneVC: UIViewController {
          access is optional. If audio access is denied, audio is not recorded
          during movie recording.
          */
-        switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo){
+        switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video){
         case .authorized:
             break
             
         case .notDetermined:
             self.sessionQueue.suspend()
-            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { [unowned self] granted in
+            AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { [unowned self] granted in
                 if !granted {
                     self.setupResult = .notAuthorized
                 }
@@ -141,13 +141,13 @@ class VisionSceneVC: UIViewController {
         }
         
         self.session.beginConfiguration()
-        self.session.sessionPreset = AVCaptureSessionPresetHigh
+        self.session.sessionPreset = AVCaptureSession.Preset.high
         
         // Add video input.
         do {
             var defaultVideoDevice: AVCaptureDevice?
             
-            if let frontCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .front) {
+            if let frontCameraDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
                 defaultVideoDevice = frontCameraDevice
             }
             
@@ -333,7 +333,7 @@ class VisionSceneVC: UIViewController {
 extension VisionSceneVC: AVCaptureVideoDataOutputSampleBufferDelegate{
     
     // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
-    func captureOutput(_ output: AVCaptureOutput, didOutputSampleBuffer sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
         print("Incoming sample buffer: \(Date())")
 //        connection.videoMinFrameDuration = CMTimeMake(20, FPS);

@@ -391,12 +391,12 @@
 					A56695EB1CE8B34B00BD7EAF = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = WCG9HNJRTD;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0940;
 					};
 					A56695FF1CE8B34B00BD7EAF = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = WCG9HNJRTD;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -696,7 +696,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -714,7 +714,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -727,7 +727,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -739,7 +740,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
