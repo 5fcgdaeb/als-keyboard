@@ -14,7 +14,7 @@
 		A56695F51CE8B34B00BD7EAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F31CE8B34B00BD7EAF /* Main.storyboard */; };
 		A56695F71CE8B34B00BD7EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56695F61CE8B34B00BD7EAF /* Assets.xcassets */; };
 		A56695FA1CE8B34B00BD7EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */; };
-		A56696051CE8B34B00BD7EAF /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */; };
+		A56696051CE8B34B00BD7EAF /* ARKitMoveDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56696041CE8B34B00BD7EAF /* ARKitMoveDetectorTests.swift */; };
 		BB49DA0A20E681D000D87620 /* VisionKitMoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0920E681D000D87620 /* VisionKitMoveDetector.swift */; };
 		BB49DA0C20E688B600D87620 /* TutorialPracticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0B20E688B600D87620 /* TutorialPracticeVC.swift */; };
 		BB49DA0E20E690DE00D87620 /* FaceInputDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0D20E690DE00D87620 /* FaceInputDataTests.swift */; };
@@ -86,7 +86,7 @@
 		A56695F91CE8B34B00BD7EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A56695FB1CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A56696001CE8B34B00BD7EAF /* AlsKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlsKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
+		A56696041CE8B34B00BD7EAF /* ARKitMoveDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitMoveDetectorTests.swift; sourceTree = "<group>"; };
 		A56696061CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A566960F1CE8B34B00BD7EAF /* AlsKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsKeyboardUITests.swift; sourceTree = "<group>"; };
 		A56696111CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 				BBA8E3A120EA1F1F005660A8 /* FacialMoveTests.swift */,
 				BBB659EA20FCCA4600E64920 /* LetterMappingTests.swift */,
 				BBE71A9920EF82C500ECDC88 /* MappingGeneratorTests.swift */,
-				A56696041CE8B34B00BD7EAF /* KeyboardTests.swift */,
+				A56696041CE8B34B00BD7EAF /* ARKitMoveDetectorTests.swift */,
 				A56696061CE8B34B00BD7EAF /* Info.plist */,
 			);
 			path = AlsKeyboardTests;
@@ -542,7 +542,7 @@
 				BB49DA0E20E690DE00D87620 /* FaceInputDataTests.swift in Sources */,
 				BB8F8A6D20FA5D2A00C0668F /* Extensions.swift in Sources */,
 				BB49DA1120E6ADA100D87620 /* FacialExpressionTests.swift in Sources */,
-				A56696051CE8B34B00BD7EAF /* KeyboardTests.swift in Sources */,
+				A56696051CE8B34B00BD7EAF /* ARKitMoveDetectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

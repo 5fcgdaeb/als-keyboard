@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-let MOTION_THRESHOLD = CGFloat(4)
-
 class FaceInputData: NSObject {
     
     let faceCoordinates: [CGPoint]
@@ -60,7 +58,7 @@ class FaceInputData: NSObject {
         return maximum
     }
     
-    func isEverythingBelowMotionThreshold(fromInput otherInput:FaceInputData) -> Bool {
+    func isEverythingBelow(motionThreshold threshold:CGFloat, comparedToInput otherInput:FaceInputData) -> Bool {
         
         guard self.isCoordinateBased else { return false }
         
@@ -68,7 +66,7 @@ class FaceInputData: NSObject {
             let otherCoordinate = otherInput.faceCoordinates[index]
             let differenceInX = abs(coordinate.x - otherCoordinate.x)
             let differenceInY = abs(coordinate.y - otherCoordinate.y)
-            if differenceInX > MOTION_THRESHOLD || differenceInY > MOTION_THRESHOLD {
+            if differenceInX > threshold || differenceInY > threshold {
                 return false
             }
         }

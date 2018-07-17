@@ -52,7 +52,7 @@ class FaceInputDataTests: XCTestCase {
         let input2 = FaceInputData(faceAnchors: ["a": Float(0.3)])
         
         XCTAssertTrue(input1.maximumMovement(fromInput: input2) == -1)
-        XCTAssertTrue(input1.isEverythingBelowMotionThreshold(fromInput: input2) == false)
+        XCTAssertTrue(input1.isEverythingBelow(motionThreshold: 0.2, comparedToInput: input2) == false)
         XCTAssertTrue(input1.comparisonCoordinates(withOtherInput: input2) == [CGPoint.init()])
         
     }
