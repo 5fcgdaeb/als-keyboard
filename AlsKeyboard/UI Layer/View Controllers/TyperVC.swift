@@ -9,9 +9,10 @@
 import UIKit
 
 class TyperVC: UIViewController {
-
-    @IBOutlet var facialMovesLabel: UILabel!
-    @IBOutlet var facialMoveDescriptionsLabel: UILabel!
+    
+    @IBOutlet var move1View: DetectedExpressionView!
+    @IBOutlet var move2View: DetectedExpressionView!
+    
     @IBOutlet var charactersLabel: UILabel!
     @IBOutlet var containerView: UIView!
     @IBOutlet var statusLabel: UILabel!
@@ -91,28 +92,40 @@ class TyperVC: UIViewController {
         
         self.moveReceived = { [unowned self] facialMove in
             DispatchQueue.main.async {
+                
                 print("VC received move")
-                self.facialMovesLabel.text = self.facialMovesLabel.text! + facialMove.expression.coolDescription()
-                self.facialMoveDescriptionsLabel.text = self.facialMoveDescriptionsLabel.text! + facialMove.expression.shortDescription()
+                
+                if !self.move1View.containsMove() {
+                    self.move1View.update(withDetectedMove: facialMove)
+                }
+                else {
+                    self.move2View.update(withDetectedMove: facialMove)
+                }
             }
         }
         self.moveDetector.listenForMoves(withHandler: self.moveReceived)
         
         self.keyboardEventReceived = { [unowned self] character in
             DispatchQueue.main.async {
+                
                 print("VC received keyboard")
                 self.charactersLabel.text = self.charactersLabel.text! + character
-                self.facialMovesLabel.text = ""
-                self.facialMoveDescriptionsLabel.text = ""
+                
+                UIView.animate(withDuration: 0.6, animations: {
+                    self.move1View.reset()
+                    self.move2View.reset()
+                })
             }
         }
         self.keyboard.listenForKeyboardEvents(withHandler: self.keyboardEventReceived)
     }
     
     private func initializeLabels() {
+        
+        self.move1View.reset()
+        self.move2View.reset()
+        
         self.charactersLabel.text = ""
-        self.facialMovesLabel.text = ""
-        self.facialMoveDescriptionsLabel.text = ""
         self.statusLabel.text = NSLocalizedString("initial_status", tableName: "UI_Texts", comment: "")
     }
  

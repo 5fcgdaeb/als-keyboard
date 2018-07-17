@@ -16,6 +16,7 @@
 		A56695FA1CE8B34B00BD7EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56695F81CE8B34B00BD7EAF /* LaunchScreen.storyboard */; };
 		A56696051CE8B34B00BD7EAF /* ARKitMoveDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56696041CE8B34B00BD7EAF /* ARKitMoveDetectorTests.swift */; };
 		BB0C8FB320FE0F79000D3764 /* AllFacialExpressionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0C8FB220FE0F79000D3764 /* AllFacialExpressionsVC.swift */; };
+		BB0C8FB520FE1B4A000D3764 /* DetectedExpressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0C8FB420FE1B4A000D3764 /* DetectedExpressionView.swift */; };
 		BB49DA0A20E681D000D87620 /* VisionKitMoveDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0920E681D000D87620 /* VisionKitMoveDetector.swift */; };
 		BB49DA0E20E690DE00D87620 /* FaceInputDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA0D20E690DE00D87620 /* FaceInputDataTests.swift */; };
 		BB49DA1120E6ADA100D87620 /* FacialExpressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49DA1020E6ADA100D87620 /* FacialExpressionTests.swift */; };
@@ -91,6 +92,7 @@
 		A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlsKeyboardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B596517905A7D32CF66AC5CE /* Pods-AlsKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.release.xcconfig"; sourceTree = "<group>"; };
 		BB0C8FB220FE0F79000D3764 /* AllFacialExpressionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFacialExpressionsVC.swift; sourceTree = "<group>"; };
+		BB0C8FB420FE1B4A000D3764 /* DetectedExpressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedExpressionView.swift; sourceTree = "<group>"; };
 		BB49DA0920E681D000D87620 /* VisionKitMoveDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionKitMoveDetector.swift; sourceTree = "<group>"; };
 		BB49DA0D20E690DE00D87620 /* FaceInputDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceInputDataTests.swift; sourceTree = "<group>"; };
 		BB49DA1020E6ADA100D87620 /* FacialExpressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialExpressionTests.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			children = (
 				BBD4812F20D9659D00762EAE /* UserHardware.swift */,
 				BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */,
+				BB0C8FB420FE1B4A000D3764 /* DetectedExpressionView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				BBEE83E920E5384500618FBD /* PreviewView.swift in Sources */,
 				BBEE83E720E537F700618FBD /* VisionSceneVC.swift in Sources */,
 				BB0C8FB320FE0F79000D3764 /* AllFacialExpressionsVC.swift in Sources */,
+				BB0C8FB520FE1B4A000D3764 /* DetectedExpressionView.swift in Sources */,
 				A22EA91F1F2F625C00423D84 /* ALSEngine.swift in Sources */,
 				BB4F492420DFC05C00F19109 /* ARKitMoveDetector.swift in Sources */,
 				BB8F8A6C20FA5C9600C0668F /* Extensions.swift in Sources */,
@@ -727,7 +731,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -740,7 +743,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorianlabs.AlsKeyboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
