@@ -15,17 +15,7 @@ class MainARSceneVC: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.clipsToBounds = true
         self.startUpSceneKit()
-    }
-    
-    // MARK: - UI Outlets
-    
-    @IBAction func settingsTapped(_ sender: UIControl) {
-        let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()
-        viewController?.modalPresentationStyle = .overCurrentContext
-        self.present(viewController!, animated: true, completion: nil)
     }
     
     // MARK: - ARSessionDelegate methods

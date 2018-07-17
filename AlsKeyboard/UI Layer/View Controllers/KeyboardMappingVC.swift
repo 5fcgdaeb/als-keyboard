@@ -8,9 +8,7 @@
 
 import UIKit
 
-class KeyboardMappingVC: UIViewController {
-    
-}
+class KeyboardMappingVC: UIViewController { }
 
 extension KeyboardMappingVC: UITableViewDelegate, UITableViewDataSource {
     

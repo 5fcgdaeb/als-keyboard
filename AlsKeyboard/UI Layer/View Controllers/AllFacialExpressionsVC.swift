@@ -1,22 +1,17 @@
 //
-//  TutorialFaceVC.swift
+//  AllFacialExpressionsVC.swift
 //  AlsKeyboard
 //
-//  Created by Guven Bolukbasi on 28.06.2018.
+//  Created by Guven Bolukbasi on 17.07.2018.
 //  Copyright © 2018 DorianLabs. All rights reserved.
 //
 
 import UIKit
 
-class TutorialIntroVC: UIViewController {
-    
-    @IBAction func cancelTapped(_ sender: UIControl) {
-        self.dismiss(animated: true, completion: nil)
-    }
-}
+class AllFacialExpressionsVC: UIViewController {}
 
-extension TutorialIntroVC: UITableViewDelegate, UITableViewDataSource {
- 
+extension AllFacialExpressionsVC: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FacialExpression.allValues.count
     }
