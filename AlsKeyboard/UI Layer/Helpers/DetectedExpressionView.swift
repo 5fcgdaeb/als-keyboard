@@ -12,31 +12,48 @@ class DetectedExpressionView: UIView {
     
     var expressionLabel: UILabel!
     var descriptiveLabel: UILabel!
+    var detectedMove: FacialMove?
     
     override func awakeFromNib() {
         
         super.awakeFromNib()
         
-        self.backgroundColor = .white
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.borderWidth = 1.0
-        
+        self.initializeLayer()
         self.createAndAddExpressionLabel()
         self.createAndAddDescriptiveLabel()
     }
     
     public func update(withDetectedMove move:FacialMove) {
+        self.detectedMove = move
         self.expressionLabel.text = move.expression.coolDescription()
         self.descriptiveLabel.text = move.expression.shortDescription()
     }
     
     public func containsMove() -> Bool {
-        return self.expressionLabel.text != "-"
+        return self.detectedMove != nil
     }
     
-    public func reset() {
-        self.expressionLabel.text = "-"
-        self.descriptiveLabel.text = ""
+    public func moveConsumed() {
+        self.detectedMove = nil
+        
+        UIView.animate(withDuration: 0.8, animations: {
+            self.expressionLabel.center.y += 80
+            self.descriptiveLabel.center.y += 80
+        }) { (isCompleted) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.expressionLabel.center.y -= 80
+                self.descriptiveLabel.center.y -= 80
+            }) { (isCompleted) in
+                self.expressionLabel.text = "-"
+                self.descriptiveLabel.text = ""
+            }
+        }
+    }
+    
+    private func initializeLayer() {
+        self.layer.backgroundColor = UIColor.white.cgColor
+        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderWidth = 1.0
     }
     
     private func createAndAddExpressionLabel() {
@@ -44,6 +61,7 @@ class DetectedExpressionView: UIView {
         self.expressionLabel = UILabel()
         self.expressionLabel.textAlignment = .center
         self.expressionLabel.text = "-"
+        self.expressionLabel.font = self.expressionLabel.font.withSize(22)
         self.expressionLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.expressionLabel)
         
@@ -60,6 +78,7 @@ class DetectedExpressionView: UIView {
         self.descriptiveLabel = UILabel()
         self.descriptiveLabel.textAlignment = .center
         self.descriptiveLabel.text = ""
+        self.descriptiveLabel.font = self.descriptiveLabel.font.withSize(22)
         self.descriptiveLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.descriptiveLabel)
         

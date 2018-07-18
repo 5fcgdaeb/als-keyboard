@@ -13,7 +13,7 @@ class TyperVC: UIViewController {
     @IBOutlet var move1View: DetectedExpressionView!
     @IBOutlet var move2View: DetectedExpressionView!
     
-    @IBOutlet var charactersLabel: UILabel!
+    @IBOutlet var typedText: UITextView!
     @IBOutlet var containerView: UIView!
     @IBOutlet var statusLabel: UILabel!
     
@@ -36,18 +36,17 @@ class TyperVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initializeLabels()
+        self.initializeUIElements()
         self.activateCamera()
     }
     
     @IBAction func resetTapped(_ sender: UIControl) {
-        self.initializeLabels()
+        self.initializeUIElements()
     }
     
     @IBAction func startTapped(_ sender: UIControl) {
         self.integrateToALSEngine()
         self.statusLabel.text = NSLocalizedString("tracking_status", tableName: "UI_Texts", comment: "")
-        
     }
     
     @IBAction func unwindToViewControllerNameHere(segue: UIStoryboardSegue) {}
@@ -109,23 +108,18 @@ class TyperVC: UIViewController {
             DispatchQueue.main.async {
                 
                 print("VC received keyboard")
-                self.charactersLabel.text = self.charactersLabel.text! + character
+                self.typedText.text = self.typedText.text + character
                 
-                UIView.animate(withDuration: 0.6, animations: {
-                    self.move1View.reset()
-                    self.move2View.reset()
-                })
+                self.move1View.moveConsumed()
+                self.move2View.moveConsumed()
             }
         }
         self.keyboard.listenForKeyboardEvents(withHandler: self.keyboardEventReceived)
     }
     
-    private func initializeLabels() {
+    private func initializeUIElements() {
         
-        self.move1View.reset()
-        self.move2View.reset()
-        
-        self.charactersLabel.text = ""
+        self.typedText.text = ""
         self.statusLabel.text = NSLocalizedString("initial_status", tableName: "UI_Texts", comment: "")
     }
  
