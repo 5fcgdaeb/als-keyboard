@@ -29,9 +29,8 @@ class SimpleKeyboard: FacialMoveKeyboard {
     
     func moveReceivedClosure() -> (FacialMove) -> () {
         
-        return {
+        return { [unowned self] facialMove in
             
-            [unowned self] facialMove in
             print("Keyboard received move")
             let areThereBufferedMoves = self.bufferedFacialMoves.count > 0
             

@@ -14,7 +14,6 @@ public enum FacialExpression: String {
     case lookLeft
     case lookRight
     case blink
-    case longBlink
     case jawMove
     case smile
     
@@ -28,8 +27,6 @@ public enum FacialExpression: String {
             return "😜"
         case .blink:
             return "☺️"
-        case .longBlink:
-            return "😑"
         case .jawMove:
             return "😮"
         case .smile:
@@ -47,8 +44,6 @@ public enum FacialExpression: String {
             return "Look Right"
         case .blink:
             return "Blink"
-        case .longBlink:
-            return "Long Blink"
         case .jawMove:
             return "Jaw Move"
         case .smile:
@@ -66,8 +61,6 @@ public enum FacialExpression: String {
             return "Looking Right"
         case .blink:
             return "Blink"
-        case .longBlink:
-            return "Long Blink"
         case .jawMove:
             return "Moving the Jaw"
         case .smile:
@@ -75,7 +68,7 @@ public enum FacialExpression: String {
         }
     }
     
-    static let allValues = [FacialExpression.eyebrowMove, FacialExpression.lookLeft, FacialExpression.lookRight, FacialExpression.blink, FacialExpression.longBlink, FacialExpression.jawMove, FacialExpression.smile]
+    static let allValues = [FacialExpression.eyebrowMove, FacialExpression.lookLeft, FacialExpression.lookRight, FacialExpression.blink, FacialExpression.jawMove, FacialExpression.smile]
 }
 
 extension Array: Hashable where Element == FacialExpression {

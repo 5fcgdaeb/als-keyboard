@@ -20,9 +20,23 @@ class ARKitMoveDetector: MoveDetector {
     func feed(faceData input: FaceInputData) {
         
         guard !self.tooEarlyToDetect(forInput: input) else {
-//            print("Just detected recently, waiting a bit")
+            print("Just detected recently, waiting a bit")
             return
         }
+        
+        DispatchQueue.global(qos: .background).async {
+            self.process(faceInput: input)
+        }
+    }
+    
+    func listenForMoves(withHandler handler: @escaping (FacialMove) -> ()) {
+        self.observers.insert(handler, at: 0)
+    }
+    
+    
+    // MARK: Private Methods
+    
+    private func process(faceInput input:FaceInputData) {
         
         var faceAnchors = input.faceAnchors
         
@@ -32,20 +46,20 @@ class ARKitMoveDetector: MoveDetector {
             }
         }
         
-//        let sortedAnchors = faceAnchors.sorted { $0.value < $1.value}
-//        let debugDescription = sortedAnchors.map { "\($0.0) - \($0.1)" }
-//        print(debugDescription)
+        //        let sortedAnchors = faceAnchors.sorted { $0.value < $1.value}
+        //        let debugDescription = sortedAnchors.map { "\($0.0) - \($0.1)" }
+        //        print(debugDescription)
         
         var detectedExpression: FacialExpression?
         
         for (key, _) in faceAnchors {
             
             switch key {
-            
+                
             case ARFaceAnchor.BlendShapeLocation.eyeLookOutRight.rawValue, ARFaceAnchor.BlendShapeLocation.eyeLookInLeft.rawValue:
-                detectedExpression = .lookRight
-            case ARFaceAnchor.BlendShapeLocation.eyeLookOutLeft.rawValue, ARFaceAnchor.BlendShapeLocation.eyeLookInRight.rawValue:
                 detectedExpression = .lookLeft
+            case ARFaceAnchor.BlendShapeLocation.eyeLookOutLeft.rawValue, ARFaceAnchor.BlendShapeLocation.eyeLookInRight.rawValue:
+                detectedExpression = .lookRight
             case ARFaceAnchor.BlendShapeLocation.jawOpen.rawValue:
                 detectedExpression = .jawMove
             case ARFaceAnchor.BlendShapeLocation.browInnerUp.rawValue, ARFaceAnchor.BlendShapeLocation.browOuterUpLeft.rawValue, ARFaceAnchor.BlendShapeLocation.browOuterUpRight.rawValue:
@@ -66,15 +80,8 @@ class ARKitMoveDetector: MoveDetector {
             self.lastDetectedMove = theMove
             self.notifyObservers(ofMove: theMove)
         }
-        
     }
     
-    func listenForMoves(withHandler handler: @escaping (FacialMove) -> ()) {
-        self.observers.insert(handler, at: 0)
-    }
-    
-    
-    // MARK: Private Methods
     private func notifyObservers(ofMove move: FacialMove) {
         
         for observer in observers {

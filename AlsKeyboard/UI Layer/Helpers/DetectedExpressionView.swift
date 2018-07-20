@@ -8,17 +8,22 @@
 
 import UIKit
 
-class DetectedExpressionView: UIView {
+@IBDesignable class DetectedExpressionView: UIView {
+    
+    @IBInspectable var order: UInt = 0
     
     var expressionLabel: UILabel!
     var descriptiveLabel: UILabel!
-    var detectedMove: FacialMove?
+    var topLabel: UILabel!
+    
+    private var detectedMove: FacialMove?
     
     override func awakeFromNib() {
         
         super.awakeFromNib()
         
         self.initializeLayer()
+        self.createAndAddTopLabel()
         self.createAndAddExpressionLabel()
         self.createAndAddDescriptiveLabel()
     }
@@ -36,17 +41,33 @@ class DetectedExpressionView: UIView {
     public func moveConsumed() {
         self.detectedMove = nil
         
+        var xCoordinateMoveAmount: CGFloat = 0
+        if self.order == 1 {
+            xCoordinateMoveAmount = 20
+        }
+        else {
+            xCoordinateMoveAmount = -20
+        }
+        
         UIView.animate(withDuration: 0.8, animations: {
             self.expressionLabel.center.y += 80
+            self.expressionLabel.center.x += xCoordinateMoveAmount
+            self.expressionLabel.alpha = 0
+            
             self.descriptiveLabel.center.y += 80
+            self.descriptiveLabel.center.x += xCoordinateMoveAmount
+            self.descriptiveLabel.alpha = 0
         }) { (isCompleted) in
-            UIView.animate(withDuration: 0.3, animations: {
-                self.expressionLabel.center.y -= 80
-                self.descriptiveLabel.center.y -= 80
-            }) { (isCompleted) in
-                self.expressionLabel.text = "-"
-                self.descriptiveLabel.text = ""
-            }
+            self.expressionLabel.center.y -= 80
+            self.expressionLabel.center.x -= xCoordinateMoveAmount
+            self.expressionLabel.alpha = 1
+            
+            self.descriptiveLabel.center.y -= 80
+            self.descriptiveLabel.center.x -= xCoordinateMoveAmount
+            self.descriptiveLabel.alpha = 1
+            
+            self.expressionLabel.text = ""
+            self.descriptiveLabel.text = ""
         }
     }
     
@@ -60,8 +81,8 @@ class DetectedExpressionView: UIView {
         
         self.expressionLabel = UILabel()
         self.expressionLabel.textAlignment = .center
-        self.expressionLabel.text = "-"
-        self.expressionLabel.font = self.expressionLabel.font.withSize(22)
+        self.expressionLabel.text = ""
+        self.expressionLabel.font = UIFont(name: "AvenirNext-Regular", size: 30)!
         self.expressionLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.expressionLabel)
         
@@ -78,13 +99,33 @@ class DetectedExpressionView: UIView {
         self.descriptiveLabel = UILabel()
         self.descriptiveLabel.textAlignment = .center
         self.descriptiveLabel.text = ""
-        self.descriptiveLabel.font = self.descriptiveLabel.font.withSize(22)
+        self.descriptiveLabel.font = UIFont(name: "AvenirNext-Regular", size: 20)!
         self.descriptiveLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.descriptiveLabel)
         
         NSLayoutConstraint.activate(
             [self.descriptiveLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
              self.descriptiveLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 10)
+            ])
+    }
+    
+    private func createAndAddTopLabel() {
+        
+        self.topLabel = UILabel()
+        self.topLabel.textAlignment = .center
+        if self.order == 1 {
+            self.topLabel.text = "First Move"
+        }
+        else {
+            self.topLabel.text = "Second Move"
+        }
+        self.topLabel.font = UIFont(name: "AvenirNext-Regular", size: 24)!
+        self.topLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.topLabel)
+        
+        NSLayoutConstraint.activate(
+            [self.topLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+             self.topLabel.bottomAnchor.constraint(equalTo: self.topAnchor, constant: -10)
             ])
     }
 }

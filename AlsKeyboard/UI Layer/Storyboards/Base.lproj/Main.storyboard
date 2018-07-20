@@ -26,6 +26,47 @@
                                     <segue destination="AL0-Iu-pf7" kind="presentation" id="BNg-1f-CE9"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMC-5l-hAH" userLabel="Expression1" customClass="DetectedExpressionView" customModule="AlsKeyboard" customModuleProvider="target">
+                                <rect key="frame" x="71" y="132" width="72" height="90"/>
+                                <color key="backgroundColor" red="0.94892626999999996" green="0.94908505679999999" blue="0.94890528919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="9xT-T1-uCW"/>
+                                    <constraint firstAttribute="height" constant="90" id="Cja-MF-a4c"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="order">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dra-s6-EZO" userLabel="AlignerPlaceholderView">
+                                <rect key="frame" x="172" y="132" width="30" height="78"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="4RC-mM-XIF"/>
+                                    <constraint firstAttribute="height" constant="78" id="gKU-Ls-DEh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9z-dL-F6D" userLabel="Expression2" customClass="DetectedExpressionView" customModule="AlsKeyboard" customModuleProvider="target">
+                                <rect key="frame" x="227" y="132" width="72" height="90"/>
+                                <color key="backgroundColor" red="0.94892626999999996" green="0.94908505679999999" blue="0.94890528919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="4vN-f8-Tcg"/>
+                                    <constraint firstAttribute="width" constant="72" id="B0q-G6-hUe"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="order">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text Goes Here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sv4-4Q-zb6" userLabel="Typed TextView">
+                                <rect key="frame" x="16" y="260" width="343" height="309"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94892626999999996" green="0.94908505679999999" blue="0.94890528919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="29"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                            </textView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtT-ZZ-ybU">
                                 <rect key="frame" x="246.00000000000003" y="589.66666666666663" width="112.33333333333334" height="162.33333333333337"/>
                                 <userDefinedRuntimeAttributes>
@@ -76,37 +117,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9z-dL-F6D" userLabel="Expression2" customClass="DetectedExpressionView" customModule="AlsKeyboard" customModuleProvider="target">
-                                <rect key="frame" x="227" y="90" width="72" height="90"/>
-                                <color key="backgroundColor" red="0.94892626999999996" green="0.94908505679999999" blue="0.94890528919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="4vN-f8-Tcg"/>
-                                    <constraint firstAttribute="width" constant="72" id="B0q-G6-hUe"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMC-5l-hAH" userLabel="Expression1" customClass="DetectedExpressionView" customModule="AlsKeyboard" customModuleProvider="target">
-                                <rect key="frame" x="71" y="90" width="72" height="90"/>
-                                <color key="backgroundColor" red="0.94892626999999996" green="0.94908505679999999" blue="0.94890528919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="9xT-T1-uCW"/>
-                                    <constraint firstAttribute="height" constant="90" id="Cja-MF-a4c"/>
-                                </constraints>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text Goes Here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sv4-4Q-zb6" userLabel="Typed TextView">
-                                <rect key="frame" x="16" y="260" width="343" height="309"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94892626999999996" green="0.94908505679999999" blue="0.94890528919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="29"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
-                            </textView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dra-s6-EZO" userLabel="AlignerPlaceholderView">
-                                <rect key="frame" x="172" y="90" width="30" height="78"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="4RC-mM-XIF"/>
-                                    <constraint firstAttribute="height" constant="78" id="gKU-Ls-DEh"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -120,7 +130,7 @@
                             <constraint firstItem="cHu-ss-aSo" firstAttribute="top" secondItem="EmC-hi-2Ay" secondAttribute="top" constant="8" id="Ll4-vJ-L1M"/>
                             <constraint firstItem="ZQi-4u-LHc" firstAttribute="leading" secondItem="EmC-hi-2Ay" secondAttribute="leading" constant="16" id="T6e-P3-Cc4"/>
                             <constraint firstAttribute="bottom" secondItem="vut-mj-vo2" secondAttribute="bottom" constant="24" id="X0G-9t-MVA"/>
-                            <constraint firstItem="U9z-dL-F6D" firstAttribute="top" secondItem="cHu-ss-aSo" secondAttribute="bottom" constant="8" id="YVx-AC-PUc"/>
+                            <constraint firstItem="U9z-dL-F6D" firstAttribute="top" secondItem="cHu-ss-aSo" secondAttribute="bottom" constant="50" id="YVx-AC-PUc"/>
                             <constraint firstItem="EmC-hi-2Ay" firstAttribute="trailing" secondItem="DtT-ZZ-ybU" secondAttribute="trailing" constant="16" id="aJE-Me-KFt"/>
                             <constraint firstItem="Dra-s6-EZO" firstAttribute="centerX" secondItem="EmC-hi-2Ay" secondAttribute="centerX" id="cPf-7e-qfH"/>
                             <constraint firstItem="U9z-dL-F6D" firstAttribute="top" secondItem="Dra-s6-EZO" secondAttribute="top" id="dhf-ix-C7D"/>
