@@ -43,6 +43,12 @@ class TyperVC: UIViewController {
         self.activateCamera()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.switchToPausingState()
+        
+    }
+    
     @IBAction func resetTapped(_ sender: UIControl) {
         self.clearOutTypedText()
     }
@@ -50,18 +56,11 @@ class TyperVC: UIViewController {
     @IBAction func startOrPauseTapped(_ sender: UIControl) {
         
         if self.isListeningToEngineEvents {
-            self.isListeningToEngineEvents = false
-            self.stopListeningToEngineEvents()
-            self.statusLabel.text = NSLocalizedString("paused_status", tableName: "UI_Texts", comment: "")
-            self.startStopButton.setTitle("Start", for: .normal)
+            self.switchToPausingState()
         }
         else {
-            self.isListeningToEngineEvents = true
-            self.startListeningToEngineEvents()
-            self.statusLabel.text = NSLocalizedString("tracking_status", tableName: "UI_Texts", comment: "")
-            self.startStopButton.setTitle("Pause", for: .normal)
+            self.switchToTypingState()
         }
-        
     }
     
     @IBAction func unwindToViewControllerNameHere(segue: UIStoryboardSegue) {}
@@ -100,23 +99,33 @@ class TyperVC: UIViewController {
     }
     
     
-    private func startListeningToEngineEvents() {
-        
-        self.moveDetector.listenForMoves(withListenerId: "TyperVC", andWithHandler: self.moveReceived)
-        self.keyboard.listenForKeyboardEvents(withListenerId: "TyperVC", andWithHandler: self.keyboardEventReceived)
-    }
-    
-    private func stopListeningToEngineEvents() {
-        
-        self.moveDetector.stopListeningMoves(forListenerId: "TyperVC")
-        self.keyboard.stopListeningEvents(forListenerId: "TyperVC")
-    }
+    // MARK: UI Elements Logic
     
     private func initializeUIElements() {
         
         self.clearOutTypedText()
         self.statusLabel.text = NSLocalizedString("initial_status", tableName: "UI_Texts", comment: "")
     }
+    
+    private func switchToTypingState() {
+        self.isListeningToEngineEvents = true
+        self.startListeningToEngineEvents()
+        self.statusLabel.text = NSLocalizedString("tracking_status", tableName: "UI_Texts", comment: "")
+        self.startStopButton.setTitle("Pause", for: .normal)
+    }
+    
+    private func switchToPausingState() {
+        self.isListeningToEngineEvents = false
+        self.stopListeningToEngineEvents()
+        self.statusLabel.text = NSLocalizedString("paused_status", tableName: "UI_Texts", comment: "")
+        self.startStopButton.setTitle("Start", for: .normal)
+    }
+    
+    private func clearOutTypedText() {
+        self.typedText.text = ""
+    }
+    
+    // MARK: Engine Interaction Logic
     
     private func initializeEngineHandlers() {
         
@@ -146,9 +155,19 @@ class TyperVC: UIViewController {
         }
     }
     
-    private func clearOutTypedText() {
-        self.typedText.text = ""
+    private func startListeningToEngineEvents() {
+        
+        self.moveDetector.listenForMoves(withListenerId: "TyperVC", andWithHandler: self.moveReceived)
+        self.keyboard.listenForKeyboardEvents(withListenerId: "TyperVC", andWithHandler: self.keyboardEventReceived)
     }
+    
+    private func stopListeningToEngineEvents() {
+        
+        self.moveDetector.stopListeningMoves(forListenerId: "TyperVC")
+        self.keyboard.stopListeningEvents(forListenerId: "TyperVC")
+    }
+    
+    
     
  
 
