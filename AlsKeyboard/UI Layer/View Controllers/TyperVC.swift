@@ -16,37 +16,52 @@ class TyperVC: UIViewController {
     @IBOutlet var typedText: UITextView!
     @IBOutlet var containerView: UIView!
     @IBOutlet var statusLabel: UILabel!
-    
-    private var engine: ALSEngine?
+    @IBOutlet var startStopButton: UIButton!
     
     private var moveDetector: MoveDetector {
         get {
-            return (self.engine?.moveDetector)!
+            return ALSEngine.shared().moveDetector
         }
     }
     
     private var keyboard: FacialMoveKeyboard {
         get {
-            return (self.engine?.keyboardEngine)!
+            return ALSEngine.shared().keyboardEngine
         }
     }
     
     private var moveReceived: (FacialMove) -> () = { facialMove in }
     private var keyboardEventReceived: (String) -> () = { character in }
     
+    private var isListeningToEngineEvents: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.initializeUIElements()
+        self.initializeEngineHandlers()
         self.activateCamera()
     }
     
     @IBAction func resetTapped(_ sender: UIControl) {
-        self.initializeUIElements()
+        self.clearOutTypedText()
     }
     
-    @IBAction func startTapped(_ sender: UIControl) {
-        self.integrateToALSEngine()
-        self.statusLabel.text = NSLocalizedString("tracking_status", tableName: "UI_Texts", comment: "")
+    @IBAction func startOrPauseTapped(_ sender: UIControl) {
+        
+        if self.isListeningToEngineEvents {
+            self.isListeningToEngineEvents = false
+            self.stopListeningToEngineEvents()
+            self.statusLabel.text = NSLocalizedString("paused_status", tableName: "UI_Texts", comment: "")
+            self.startStopButton.setTitle("Start", for: .normal)
+        }
+        else {
+            self.isListeningToEngineEvents = true
+            self.startListeningToEngineEvents()
+            self.statusLabel.text = NSLocalizedString("tracking_status", tableName: "UI_Texts", comment: "")
+            self.startStopButton.setTitle("Pause", for: .normal)
+        }
+        
     }
     
     @IBAction func unwindToViewControllerNameHere(segue: UIStoryboardSegue) {}
@@ -85,14 +100,30 @@ class TyperVC: UIViewController {
     }
     
     
-    private func integrateToALSEngine() {
+    private func startListeningToEngineEvents() {
         
-        self.engine = ALSEngine.shared()
+        self.moveDetector.listenForMoves(withListenerId: "TyperVC", andWithHandler: self.moveReceived)
+        self.keyboard.listenForKeyboardEvents(withListenerId: "TyperVC", andWithHandler: self.keyboardEventReceived)
+    }
+    
+    private func stopListeningToEngineEvents() {
+        
+        self.moveDetector.stopListeningMoves(forListenerId: "TyperVC")
+        self.keyboard.stopListeningEvents(forListenerId: "TyperVC")
+    }
+    
+    private func initializeUIElements() {
+        
+        self.clearOutTypedText()
+        self.statusLabel.text = NSLocalizedString("initial_status", tableName: "UI_Texts", comment: "")
+    }
+    
+    private func initializeEngineHandlers() {
         
         self.moveReceived = { [unowned self] facialMove in
             DispatchQueue.main.async {
                 
-                print("VC received move")
+                print("TyperVC received move")
                 
                 if !self.move1View.containsMove() {
                     self.move1View.update(withDetectedMove: facialMove)
@@ -102,26 +133,23 @@ class TyperVC: UIViewController {
                 }
             }
         }
-        self.moveDetector.listenForMoves(withHandler: self.moveReceived)
         
         self.keyboardEventReceived = { [unowned self] character in
             DispatchQueue.main.async {
                 
-                print("VC received keyboard")
+                print("TyperVC received keyboard")
                 self.typedText.text = self.typedText.text + character
                 
                 self.move1View.moveConsumed()
                 self.move2View.moveConsumed()
             }
         }
-        self.keyboard.listenForKeyboardEvents(withHandler: self.keyboardEventReceived)
     }
     
-    private func initializeUIElements() {
-        
+    private func clearOutTypedText() {
         self.typedText.text = ""
-        self.statusLabel.text = NSLocalizedString("initial_status", tableName: "UI_Texts", comment: "")
     }
+    
  
 
 }

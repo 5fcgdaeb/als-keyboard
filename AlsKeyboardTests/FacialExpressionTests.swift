@@ -20,9 +20,9 @@ class FacialExpressionTests: XCTestCase {
     
     func testEqualityOfExpressionArrays() {
         
-        let expressions1: [FacialExpression] = [.jawMove, .blink, .longBlink]
-        let expressions2: [FacialExpression] = [.jawMove, .lookRight, .longBlink]
-        let expressions3: [FacialExpression] = [.jawMove, .lookRight, .longBlink]
+        let expressions1: [FacialExpression] = [.jawMove, .blink, .eyebrowMove]
+        let expressions2: [FacialExpression] = [.jawMove, .lookRight, .eyebrowMove]
+        let expressions3: [FacialExpression] = [.jawMove, .lookRight, .eyebrowMove]
         
         XCTAssertFalse(expressions1 == expressions3)
         
@@ -31,7 +31,7 @@ class FacialExpressionTests: XCTestCase {
     
     func testExpressionListDescription() {
         
-        let expressions1: [FacialExpression] = [.jawMove, .blink, .longBlink]
+        let expressions1: [FacialExpression] = [.jawMove, .blink, .eyebrowMove]
         
         XCTAssertNotNil(expressions1.expressionListDescription())
         XCTAssertTrue(expressions1.expressionListDescription().count > 0)

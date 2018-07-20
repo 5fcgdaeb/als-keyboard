@@ -17,14 +17,14 @@ class SimpleKeyboard: FacialMoveKeyboard {
     private var moveDetector: MoveDetector
     private var bufferedFacialMoves: [FacialMove] = []
     private var shouldItType = true
-    private var observers: [(String) -> ()] = []
+    private var observersById: [String: (String) -> ()] = [:]
     
     init(withMoveDetector moveDetector: MoveDetector) {
         
         self.moveDetector = moveDetector
         self.letterMapping = MappingGenerator().generateMapping(fromEasyToHardExpressions: [.blink, .jawMove, .lookLeft, .lookRight, .smile, .eyebrowMove])
         
-        self.moveDetector.listenForMoves(withHandler: self.moveReceivedClosure())
+        self.moveDetector.listenForMoves(withListenerId: "als.keyboard", andWithHandler: self.moveReceivedClosure())
     }
     
     func moveReceivedClosure() -> (FacialMove) -> () {
@@ -50,8 +50,12 @@ class SimpleKeyboard: FacialMoveKeyboard {
         }
     }
     
-    func listenForKeyboardEvents(withHandler handler: @escaping (String) -> ()) {
-        self.observers.insert(handler, at: 0)
+    func listenForKeyboardEvents(withListenerId listenerId: String, andWithHandler handler: @escaping (String) -> ()) {
+        self.observersById[listenerId] = handler
+    }
+    
+    func stopListeningEvents(forListenerId listenerId: String) {
+        self.observersById.removeValue(forKey: listenerId)
     }
     
     func startTyping() {
@@ -76,10 +80,15 @@ class SimpleKeyboard: FacialMoveKeyboard {
                 generatedCharacter = mappingValue
                 
             }
-            for observer in self.observers {
-                observer(generatedCharacter)
-            }
+            self.notifyObservers(ofCharacter: generatedCharacter)
             self.clearBufferedMoves()
+        }
+    }
+    
+    private func notifyObservers(ofCharacter character: String) {
+        
+        for (_, completionHandler) in observersById {
+            completionHandler(character)
         }
     }
     

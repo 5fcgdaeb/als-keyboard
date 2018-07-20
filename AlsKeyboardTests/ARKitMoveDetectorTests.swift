@@ -27,7 +27,7 @@ class ARKitMoveDetectorTests: XCTestCase {
         
         let moveExpectation = XCTestExpectation(description: "There should be a detected move!")
         
-        self.moveDetector?.listenForMoves { (facialMove) in
+        self.moveDetector?.listenForMoves(withListenerId: "unit.tests") { (facialMove) in
             
             XCTAssertTrue(facialMove.secondsSince1970() > 0)
             moveExpectation.fulfill()
@@ -45,7 +45,7 @@ class ARKitMoveDetectorTests: XCTestCase {
         
         let moveExpectation = XCTestExpectation(description: "No move should be detected!")
         
-        self.moveDetector?.listenForMoves { (facialMove) in
+        self.moveDetector?.listenForMoves(withListenerId: "unit.tests") { (facialMove) in
             
             XCTAssertTrue(facialMove.secondsSince1970() > 0)
             moveExpectation.fulfill()
@@ -53,6 +53,26 @@ class ARKitMoveDetectorTests: XCTestCase {
         
         let inputData2 = FaceInputData(faceAnchors: [:])
         self.moveDetector?.feed(faceData: inputData2)
+        
+        let result = XCTWaiter().wait(for: [moveExpectation], timeout: 1.0)
+        XCTAssertTrue(result == .timedOut)
+        
+    }
+    
+    func testStoppingToListenMoveDetection() {
+        
+        let moveExpectation = XCTestExpectation(description: "No move should be detected!")
+        
+        self.moveDetector?.listenForMoves(withListenerId: "unit.tests") { (facialMove) in
+            
+            XCTAssertTrue(facialMove.secondsSince1970() > 0)
+            moveExpectation.fulfill()
+        }
+        
+        self.moveDetector?.stopListeningMoves(forListenerId: "unit.tests")
+        
+        let inputData1 = FaceInputData(faceAnchors: [ARFaceAnchor.BlendShapeLocation.eyeBlinkLeft.rawValue:0.9])
+        self.moveDetector?.feed(faceData: inputData1)
         
         let result = XCTWaiter().wait(for: [moveExpectation], timeout: 1.0)
         XCTAssertTrue(result == .timedOut)

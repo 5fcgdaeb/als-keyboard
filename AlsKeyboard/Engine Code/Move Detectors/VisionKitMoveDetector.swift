@@ -32,7 +32,7 @@ let MINIMUM_EYE_MOVEMENT_DISTANCE = CGFloat(200)
 
 class VisionKitMoveDetector: MoveDetector {
     
-    private var observers: [(FacialMove) -> ()] = []
+    private var observersById: [String: (FacialMove) -> ()] = [:]
     private var lastDetectedMove: FacialMove?
     
     func feed(faceData input: FaceInputData) {
@@ -52,23 +52,26 @@ class VisionKitMoveDetector: MoveDetector {
         
     }
     
-    func listenForMoves(withHandler handler: @escaping (FacialMove) -> ()) {
-        self.observers.append(handler)
+    func listenForMoves(withListenerId listenerId:String, andWithHandler handler: @escaping (FacialMove) -> ()) {
+        self.observersById[listenerId] = handler
     }
     
+    func stopListeningMoves(forListenerId listenerId: String) {
+        self.observersById.removeValue(forKey: listenerId)
+    }
     
     // MARK: Private Methods
     private func notifyObservers(ofMove move: FacialMove) {
         
-        for observer in observers {
-            observer(move)
+        for (_, completionHandler) in observersById {
+            completionHandler(move)
         }
     }
     
     private func tooEarlyToDetect(forInput input: FaceInputData) -> Bool {
         guard let latestMove = self.lastDetectedMove else { return false }
         
-        return input.timeStamp.timeIntervalSince1970 < latestMove.secondsSince1970() + 1
+        return input.timeStamp.timeIntervalSince1970 < latestMove.secondsSince1970() + SECONDS_REQUIRED_BETWEEN_MOVES
     }
 }
 

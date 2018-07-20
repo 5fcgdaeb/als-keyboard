@@ -90,5 +90,6 @@ class DLibMoveDetector: MoveDetector {
     }
     
     func feed(faceData input: FaceInputData) {}
-    func listenForMoves(withHandler handler: @escaping (FacialMove) -> ()) {}
+    func listenForMoves(withListenerId listenerId:String, andWithHandler handler: @escaping (FacialMove) -> ()) {}
+    func stopListeningMoves(forListenerId listenerId: String) {}
 }

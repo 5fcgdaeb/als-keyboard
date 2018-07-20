@@ -14,7 +14,7 @@ let SECONDS_REQUIRED_BETWEEN_MOVES = 0.6
 
 class ARKitMoveDetector: MoveDetector {
     
-    private var observers: [(FacialMove) -> ()] = []
+    private var observersById: [String: (FacialMove) -> ()] = [:]
     private var lastDetectedMove: FacialMove?
     
     func feed(faceData input: FaceInputData) {
@@ -29,8 +29,12 @@ class ARKitMoveDetector: MoveDetector {
         }
     }
     
-    func listenForMoves(withHandler handler: @escaping (FacialMove) -> ()) {
-        self.observers.insert(handler, at: 0)
+    func listenForMoves(withListenerId listenerId:String, andWithHandler handler: @escaping (FacialMove) -> ()) {
+        self.observersById[listenerId] = handler
+    }
+    
+    func stopListeningMoves(forListenerId listenerId: String) {
+        self.observersById.removeValue(forKey: listenerId)
     }
     
     
@@ -84,8 +88,8 @@ class ARKitMoveDetector: MoveDetector {
     
     private func notifyObservers(ofMove move: FacialMove) {
         
-        for observer in observers {
-            observer(move)
+        for (_, completionHandler) in observersById {
+            completionHandler(move)
         }
     }
     

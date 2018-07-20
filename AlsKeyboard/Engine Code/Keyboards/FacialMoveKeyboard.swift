@@ -15,6 +15,7 @@ protocol FacialMoveKeyboard {
     
     func resetState()
     
-    func listenForKeyboardEvents(withHandler handler: @escaping (String) -> ())
+    func listenForKeyboardEvents(withListenerId listenerId: String, andWithHandler handler: @escaping (String) -> ())
+    func stopListeningEvents(forListenerId listenerId: String)
 
 }

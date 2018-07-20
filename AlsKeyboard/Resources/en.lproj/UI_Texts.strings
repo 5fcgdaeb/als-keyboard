@@ -7,4 +7,5 @@
 */
 
 "initial_status" = "Press Start to Start Typing";
-"tracking_status" = "Tracking Your Face for Expresssions";
+"tracking_status" = "Typing...";
+"paused_status" = "Paused";
