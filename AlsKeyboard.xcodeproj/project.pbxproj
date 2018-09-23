@@ -58,7 +58,7 @@
 		BBEE83E720E537F700618FBD /* VisionSceneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E620E537F700618FBD /* VisionSceneVC.swift */; };
 		BBEE83E920E5384500618FBD /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83E820E5384500618FBD /* PreviewView.swift */; };
 		BBEE83EB20E5407000618FBD /* OrientationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */; };
-		F6BD193CF5094A5FF14C0BA4 /* Pods_AlsKeyboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */; };
+		F4D3D9906C50C8ACA07AB662 /* libPods-AlsKeyboardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C5A62B46B4C6EF8A590E15 /* libPods-AlsKeyboardTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +89,6 @@
 		A56696061CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A566960F1CE8B34B00BD7EAF /* AlsKeyboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlsKeyboardUITests.swift; sourceTree = "<group>"; };
 		A56696111CE8B34B00BD7EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlsKeyboardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B596517905A7D32CF66AC5CE /* Pods-AlsKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.release.xcconfig"; sourceTree = "<group>"; };
 		BB0C8FB220FE0F79000D3764 /* AllFacialExpressionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFacialExpressionsVC.swift; sourceTree = "<group>"; };
 		BB0C8FB420FE1B4A000D3764 /* DetectedExpressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedExpressionView.swift; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		BBEE83E820E5384500618FBD /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		BBEE83EA20E5407000618FBD /* OrientationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationExtensions.swift; sourceTree = "<group>"; };
 		BE39840255B4EA271704529E /* Pods-AlsKeyboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardUITests/Pods-AlsKeyboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3C5A62B46B4C6EF8A590E15 /* libPods-AlsKeyboardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlsKeyboardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9D7C778D7DF89115900D1F /* Pods-AlsKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		E40E4001567FC2C86E92C8AC /* Pods-AlsKeyboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlsKeyboardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlsKeyboardTests/Pods-AlsKeyboardTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6BD193CF5094A5FF14C0BA4 /* Pods_AlsKeyboardTests.framework in Frameworks */,
+				F4D3D9906C50C8ACA07AB662 /* libPods-AlsKeyboardTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +152,8 @@
 			children = (
 				BBCE8DAC20CAA42600DBE34A /* Accelerate.framework */,
 				8A06847AF1653B5891D83AF7 /* Pods_AlsKeyboard.framework */,
-				A7322841C55E4AB95F6FEF98 /* Pods_AlsKeyboardTests.framework */,
 				3E895BA39EEEA06CD290C48C /* Pods_AlsKeyboardUITests.framework */,
+				C3C5A62B46B4C6EF8A590E15 /* libPods-AlsKeyboardTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -352,6 +352,7 @@
 				A56695E81CE8B34B00BD7EAF /* Sources */,
 				A56695E91CE8B34B00BD7EAF /* Frameworks */,
 				A56695EA1CE8B34B00BD7EAF /* Resources */,
+				E885949015418C196E0AE5F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -481,6 +482,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E885949015418C196E0AE5F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlsKeyboard/Pods-AlsKeyboard-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
