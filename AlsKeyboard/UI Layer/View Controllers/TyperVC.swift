@@ -84,7 +84,7 @@ class TyperVC: UIViewController {
     
     private func embed(viewController controller: UIViewController) {
         
-        addChildViewController(controller)
+        addChild(controller)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(controller.view)
         
@@ -95,7 +95,7 @@ class TyperVC: UIViewController {
             controller.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
             ])
         
-        controller.didMove(toParentViewController: self)
+        controller.didMove(toParent: self)
     }
     
     

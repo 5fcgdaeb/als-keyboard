@@ -71,7 +71,7 @@ public enum FacialExpression: String {
     static let allValues = [FacialExpression.eyebrowMove, FacialExpression.lookLeft, FacialExpression.lookRight, FacialExpression.blink, FacialExpression.jawMove, FacialExpression.smile]
 }
 
-extension Array: Hashable where Element == FacialExpression {
+extension Array where Element == FacialExpression {
     
     func expressionListDescription () -> String {
         return self.map {$0.shortDescription()}.joined(separator: "-")
