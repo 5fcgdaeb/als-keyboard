@@ -32,6 +32,6 @@ $ open "AlsKeyboard.xcworkspace"
 
 # Requirements
 
-* Xcode 9
+* Xcode 10
 * iOS 11.3+
-* Swift 3.3+
+* Swift 4.2
